@@ -22,8 +22,8 @@ class _LoginViewState extends State<LoginView> {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Color.fromARGB(255, 36, 0, 255),
-                Color.fromARGB(255, 186, 49, 235),
+                Color.fromARGB(255, 26, 73, 128),
+                Color.fromARGB(255, 2, 124, 204),
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
