@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/register.dart';
+import 'package:inovasi_budaya/view/HomePage.dart';
 
 void main() {
   runApp(SplashView());
@@ -115,7 +116,10 @@ class LoginPage extends StatelessWidget {
                       print('Email: $email');
                       print('Password: $password');
 
-                      Navigator.of(context).pop();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomePage()),
+                      );
                     },
                   ),
                 ],

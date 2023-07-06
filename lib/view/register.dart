@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/SplashView.dart';
 import 'package:quickalert/quickalert.dart';
+import 'package:inovasi_budaya/view/HomePage.dart';
 
 class Register extends StatefulWidget {
   Register({Key? key}) : super(key: key);
@@ -24,7 +25,7 @@ class _RegisterState extends State<Register> {
         onConfirmBtnTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => LoginPage()),
+            MaterialPageRoute(builder: (context) => HomePage()),
           );
         },
       );
