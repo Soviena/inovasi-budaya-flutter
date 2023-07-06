@@ -1,6 +1,6 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/SplashView.dart';
+import 'package:quickalert/quickalert.dart';
 
 class Register extends StatefulWidget {
   Register({Key? key}) : super(key: key);
@@ -15,6 +15,30 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
+    void showAlert1() {
+      QuickAlert.show(
+        context: context,
+        type: QuickAlertType.success,
+        title: 'Yeay!',
+        text: 'Akun berhasil dibuat',
+        onConfirmBtnTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => LoginPage()),
+          );
+        },
+      );
+    }
+
+    void showAlert2() {
+      QuickAlert.show(
+        context: context,
+        type: QuickAlertType.error,
+        title: 'Oops',
+        text: 'Pastikan data diri sudah benar dan lengkap',
+      );
+    }
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       body: SingleChildScrollView(
@@ -159,19 +183,14 @@ class _RegisterState extends State<Register> {
                     child: Center(
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginPage()),
-                          );
+                          showAlert2();
                         },
                         child: Text(
                           'Kembali',
                           style: TextStyle(
                             fontSize: 18,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.black,
-                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
                           ),
                         ),
                         style: ButtonStyle(
@@ -195,19 +214,14 @@ class _RegisterState extends State<Register> {
                     child: Center(
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginPage()),
-                          );
+                          showAlert1();
                         },
                         child: Text(
                           'Daftar',
                           style: TextStyle(
                             fontSize: 18,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.black,
-                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
                           ),
                         ),
                         style: ButtonStyle(
