@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inovasi_budaya/view/register.dart';
 
 void main() {
   runApp(SplashView());
@@ -216,7 +217,13 @@ class LoginPage extends StatelessWidget {
                       SizedBox(height: 40),
                       Center(
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Register()),
+                            );
+                          },
                           child: Text(
                             'Daftar',
                             style: TextStyle(
