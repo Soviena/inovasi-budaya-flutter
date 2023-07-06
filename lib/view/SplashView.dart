@@ -81,7 +81,7 @@ class LoginPage extends StatelessWidget {
           ),
           actions: <Widget>[
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 50),
+              margin: EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -156,28 +156,25 @@ class LoginPage extends StatelessWidget {
                       Text(
                         'APLIKASI',
                         style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w900,
+                          fontSize: 38,
+                          fontWeight: FontWeight.bold,
                           color: Colors.white,
-                          fontFamily: 'Montserrat',
                         ),
                       ),
                       Text(
                         'BUDAYA',
                         style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w900,
+                          fontSize: 38,
+                          fontWeight: FontWeight.bold,
                           color: Colors.blue,
-                          fontFamily: 'Montserrat',
                         ),
                       ),
                       Text(
                         'SUCOFINDO',
                         style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w900,
+                          fontSize: 38,
+                          fontWeight: FontWeight.bold,
                           color: Colors.orange,
-                          fontFamily: 'Montserrat',
                         ),
                       ),
                     ],
@@ -196,10 +193,9 @@ class LoginPage extends StatelessWidget {
                           child: Text(
                             'Login',
                             style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.w900,
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
                               color: Colors.white,
-                              fontFamily: 'Montserrat',
                             ),
                           ),
                           style: ButtonStyle(
@@ -207,7 +203,7 @@ class LoginPage extends StatelessWidget {
                               Color.fromARGB(255, 36, 51, 126),
                             ),
                             fixedSize: MaterialStateProperty.all<Size>(
-                              Size(200, 60),
+                              Size(170, 70),
                             ),
                             shape: MaterialStateProperty.all<OutlinedBorder>(
                               RoundedRectangleBorder(
@@ -224,10 +220,9 @@ class LoginPage extends StatelessWidget {
                           child: Text(
                             'Daftar',
                             style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w900,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
                               color: Colors.black,
-                              fontFamily: 'Montserrat',
                             ),
                           ),
                           style: ButtonStyle(
@@ -235,7 +230,7 @@ class LoginPage extends StatelessWidget {
                               Colors.orange,
                             ),
                             fixedSize: MaterialStateProperty.all<Size>(
-                              Size(150, 50),
+                              Size(130, 50),
                             ),
                             shape: MaterialStateProperty.all<OutlinedBorder>(
                               RoundedRectangleBorder(
