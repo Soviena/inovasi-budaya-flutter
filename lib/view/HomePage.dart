@@ -78,7 +78,7 @@ class HomePage extends StatelessWidget {
                     'assets/image/Akhlak.png',
                     fit: BoxFit.cover,
                   ),
-                  SizedBox(height: 16),
+                  SizedBox(height: 30),
                   Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -105,7 +105,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       child: Text(
-                        'Button',
+                        'Tata Nilai Akhlak',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
