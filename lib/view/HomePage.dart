@@ -41,10 +41,10 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
-        body: Container(
-          child: Padding(
-            padding: EdgeInsets.all(24.0),
-            child: Align(
+        body: ListView(
+          padding: EdgeInsets.all(24.0),
+          children: [
+            Align(
               alignment: Alignment.topLeft,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,7 +123,7 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-          ),
+          ],
         ),
       ),
     );
