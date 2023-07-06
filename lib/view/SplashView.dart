@@ -134,7 +134,7 @@ class LoginPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/backgroundSplash_image.png"),
+            image: AssetImage("assets/image/backgroundSplash_image.png"),
             fit: BoxFit.cover,
           ),
         ),
@@ -156,27 +156,30 @@ class LoginPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Aplikasi',
+                        'APLIKASI',
                         style: TextStyle(
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w900,
                           color: Colors.white,
+                          fontFamily: 'Montserrat',
                         ),
                       ),
                       Text(
-                        'Budaya',
+                        'BUDAYA',
                         style: TextStyle(
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w900,
                           color: Colors.blue,
+                          fontFamily: 'Montserrat',
                         ),
                       ),
                       Text(
-                        'Sucofindo',
+                        'SUCOFINDO',
                         style: TextStyle(
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w900,
                           color: Colors.orange,
+                          fontFamily: 'Montserrat',
                         ),
                       ),
                     ],
@@ -196,8 +199,9 @@ class LoginPage extends StatelessWidget {
                             'Login',
                             style: TextStyle(
                               fontSize: 24,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w900,
                               color: Colors.white,
+                              fontFamily: 'Montserrat',
                             ),
                           ),
                           style: ButtonStyle(
@@ -223,8 +227,9 @@ class LoginPage extends StatelessWidget {
                             'Daftar',
                             style: TextStyle(
                               fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w900,
                               color: Colors.black,
+                              fontFamily: 'Montserrat',
                             ),
                           ),
                           style: ButtonStyle(
