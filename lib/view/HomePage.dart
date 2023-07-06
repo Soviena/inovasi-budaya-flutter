@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inovasi_budaya/view/Aktivitas.dart';
 
 void main() {
   runApp(HomePage());
@@ -21,7 +22,12 @@ class HomePage extends StatelessWidget {
                   color: Colors.orange,
                 ),
                 iconSize: 36,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Budaya()),
+                  );
+                },
               ),
               Text(
                 'Homepage',
