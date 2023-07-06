@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
+void main() {
+  runApp(SplashView());
+}
 
 class SplashView extends StatelessWidget {
   const SplashView({Key? key}) : super(key: key);
@@ -14,6 +17,115 @@ class SplashView extends StatelessWidget {
 }
 
 class LoginPage extends StatelessWidget {
+  void _showLoginPopup(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        final TextEditingController emailController = TextEditingController();
+        final TextEditingController passwordController =
+            TextEditingController();
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+            side: BorderSide(color: Colors.orange, width: 2),
+          ),
+          backgroundColor: const Color.fromARGB(255, 6, 51, 83),
+          title: Center(
+            child: Text(
+              'Login',
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+                color: Colors.orange,
+              ),
+            ),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
+                ),
+                child: TextField(
+                  controller: emailController,
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                  ),
+                ),
+              ),
+              SizedBox(height: 30),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
+                ),
+                child: TextField(
+                  controller: passwordController,
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                  ),
+                  obscureText: true,
+                ),
+              ),
+            ],
+          ),
+          actions: <Widget>[
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.red,
+                      onPrimary: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child: Text('Batal'),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                  SizedBox(width: 10),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.orange,
+                      onPrimary: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child: Text('Masuk'),
+                    onPressed: () {
+                      String email = emailController.text;
+                      String password = passwordController.text;
+                      print('Email: $email');
+                      print('Password: $password');
+
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +144,7 @@ class LoginPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 50),
+                  margin: EdgeInsets.only(top: 20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: const Color.fromARGB(255, 6, 52, 83),
@@ -44,28 +156,25 @@ class LoginPage extends StatelessWidget {
                       Text(
                         'APLIKASI',
                         style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w900,
+                          fontSize: 38,
+                          fontWeight: FontWeight.bold,
                           color: Colors.white,
-                          fontFamily: 'Montserrat',
                         ),
                       ),
                       Text(
                         'BUDAYA',
                         style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w900,
+                          fontSize: 38,
+                          fontWeight: FontWeight.bold,
                           color: Colors.blue,
-                          fontFamily: 'Montserrat',
                         ),
                       ),
                       Text(
                         'SUCOFINDO',
                         style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w900,
+                          fontSize: 38,
+                          fontWeight: FontWeight.bold,
                           color: Colors.orange,
-                          fontFamily: 'Montserrat',
                         ),
                       ),
                     ],
@@ -78,14 +187,15 @@ class LoginPage extends StatelessWidget {
                     children: [
                       Center(
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            _showLoginPopup(context);
+                          },
                           child: Text(
                             'Login',
                             style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.w900,
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
                               color: Colors.white,
-                              fontFamily: 'Montserrat',
                             ),
                           ),
                           style: ButtonStyle(
@@ -93,7 +203,7 @@ class LoginPage extends StatelessWidget {
                               Color.fromARGB(255, 36, 51, 126),
                             ),
                             fixedSize: MaterialStateProperty.all<Size>(
-                              Size(200, 60),
+                              Size(170, 70),
                             ),
                             shape: MaterialStateProperty.all<OutlinedBorder>(
                               RoundedRectangleBorder(
@@ -110,10 +220,9 @@ class LoginPage extends StatelessWidget {
                           child: Text(
                             'Daftar',
                             style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w900,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
                               color: Colors.black,
-                              fontFamily: 'Montserrat',
                             ),
                           ),
                           style: ButtonStyle(
@@ -121,7 +230,7 @@ class LoginPage extends StatelessWidget {
                               Colors.orange,
                             ),
                             fixedSize: MaterialStateProperty.all<Size>(
-                              Size(150, 50),
+                              Size(130, 50),
                             ),
                             shape: MaterialStateProperty.all<OutlinedBorder>(
                               RoundedRectangleBorder(
