@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:inovasi_budaya/view/SplashView.dart';
 
 class Register extends StatefulWidget {
   Register({Key? key}) : super(key: key);
@@ -151,35 +152,81 @@ class _RegisterState extends State<Register> {
                   ]),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 30, left: 200),
-                child: Center(
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Daftar',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.black,
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                        Colors.orange,
-                      ),
-                      fixedSize: MaterialStateProperty.all<Size>(
-                        Size(150, 50),
-                      ),
-                      shape: MaterialStateProperty.all<OutlinedBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 40, right: 20, left: 10),
+                    child: Center(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()),
+                          );
+                        },
+                        child: Text(
+                          'Kembali',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.black,
+                            fontFamily: 'Montserrat',
+                          ),
+                        ),
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                            Colors.red,
+                          ),
+                          fixedSize: MaterialStateProperty.all<Size>(
+                            Size(150, 50),
+                          ),
+                          shape: MaterialStateProperty.all<OutlinedBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 40, left: 20),
+                    child: Center(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()),
+                          );
+                        },
+                        child: Text(
+                          'Daftar',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.black,
+                            fontFamily: 'Montserrat',
+                          ),
+                        ),
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                            Colors.orange,
+                          ),
+                          fixedSize: MaterialStateProperty.all<Size>(
+                            Size(150, 50),
+                          ),
+                          shape: MaterialStateProperty.all<OutlinedBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

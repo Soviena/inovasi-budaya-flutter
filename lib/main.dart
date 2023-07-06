@@ -5,9 +5,9 @@ import 'package:inovasi_budaya/view/SplashView.dart';
 void main() => runApp(
       MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/register',
+        initialRoute: '/SplashView',
         routes: {
-          '/register': (context) => Register(),
+          '/SplashView': (context) => LoginPage(),
         },
       ),
     );
