@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:inovasi_budaya/view/login.dart';
+import 'package:inovasi_budaya/view/register.dart';
 import 'package:inovasi_budaya/view/SplashView.dart';
 
 void main() => runApp(
       MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/SplashView',
+        initialRoute: '/register',
         routes: {
-          '/SplashView': (context) => SplashView(),
+          '/register': (context) => Register(),
         },
       ),
     );
