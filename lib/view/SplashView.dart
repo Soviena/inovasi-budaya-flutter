@@ -53,7 +53,6 @@ class LoginPage extends StatelessWidget {
                   decoration: InputDecoration(
                     labelText: 'Email',
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.orange, width: 2),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     contentPadding: EdgeInsets.symmetric(horizontal: 10),
@@ -71,7 +70,6 @@ class LoginPage extends StatelessWidget {
                   decoration: InputDecoration(
                     labelText: 'Password',
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.orange, width: 2),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     contentPadding: EdgeInsets.symmetric(horizontal: 10),
