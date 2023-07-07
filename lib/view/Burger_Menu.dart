@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/Aktivitas.dart';
 import 'package:inovasi_budaya/view/HomePage.dart';
+import 'package:inovasi_budaya/view/Logout_btn.dart';
+import 'package:inovasi_budaya/view/SplashView.dart';
+import 'package:inovasi_budaya/view/login.dart';
 
 class BurgerList extends StatefulWidget {
   const BurgerList({Key? key}) : super(key: key);
@@ -171,7 +174,12 @@ class _BurgerListState extends State<BurgerList> {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+              },
               child: Container(
                 margin: EdgeInsets.fromLTRB(0, 40, 185, 0),
                 decoration: const BoxDecoration(
