@@ -63,6 +63,9 @@ flutter:
   assets:
   - assets/image/backgroundSplash_image.png
   - assets/image/Akhlak.png
+  - assets/image/Poster1.png
+  - assets/image/Poster2.png
+  - assets/image/Poster3.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
