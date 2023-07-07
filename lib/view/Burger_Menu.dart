@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/Aktivitas.dart';
 import 'package:inovasi_budaya/view/HomePage.dart';
+import 'package:inovasi_budaya/view/Kinerja.dart';
 import 'package:inovasi_budaya/view/Logout_btn.dart';
+import 'package:inovasi_budaya/view/Materi.dart';
+import 'package:inovasi_budaya/view/Profil.dart';
+import 'package:inovasi_budaya/view/SafetyMoment.dart';
+import 'package:inovasi_budaya/view/Settings.dart';
 import 'package:inovasi_budaya/view/SplashView.dart';
-import 'package:inovasi_budaya/view/login.dart';
 
 class BurgerList extends StatefulWidget {
   const BurgerList({Key? key}) : super(key: key);
@@ -114,7 +118,12 @@ class _BurgerListState extends State<BurgerList> {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Materi_Share()),
+                );
+              },
               child: Container(
                 margin: EdgeInsets.fromLTRB(0, 40, 190, 0),
                 decoration: const BoxDecoration(
@@ -126,7 +135,12 @@ class _BurgerListState extends State<BurgerList> {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Kinerja()),
+                );
+              },
               child: Container(
                 margin: EdgeInsets.fromLTRB(0, 40, 190, 0),
                 decoration: const BoxDecoration(
@@ -138,7 +152,12 @@ class _BurgerListState extends State<BurgerList> {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Safety_Moment()),
+                );
+              },
               child: Container(
                 margin: EdgeInsets.fromLTRB(0, 40, 80, 0),
                 decoration: const BoxDecoration(
@@ -150,7 +169,12 @@ class _BurgerListState extends State<BurgerList> {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Profile()),
+                );
+              },
               child: Container(
                 margin: EdgeInsets.fromLTRB(0, 40, 200, 0),
                 decoration: const BoxDecoration(
@@ -162,7 +186,12 @@ class _BurgerListState extends State<BurgerList> {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Settings()),
+                );
+              },
               child: Container(
                 margin: EdgeInsets.fromLTRB(0, 40, 135, 0),
                 decoration: const BoxDecoration(
