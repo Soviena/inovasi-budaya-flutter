@@ -34,93 +34,90 @@ class HomePage extends StatelessWidget {
                   color: Colors.orange,
                 ),
               ),
-              SizedBox(width: 48),
+              Padding(padding: EdgeInsets.all(20))
             ],
           ),
         ),
-        body: ListView(
-          padding: EdgeInsets.all(24.0),
-          children: [
-            Align(
-              alignment: Alignment.topLeft,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Sucofindo',
-                    style: TextStyle(
-                      fontSize: 46,
-                      fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(255, 26, 73, 128),
+        body: Container(
+          child: ListView(
+            children: [
+              Container(
+                padding: EdgeInsets.all(24.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Sucofindo',
+                      style: TextStyle(
+                        fontSize: 46,
+                        fontWeight: FontWeight.bold,
+                        color: const Color.fromARGB(255, 26, 73, 128),
+                      ),
                     ),
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: 'Ber',
-                          style: TextStyle(
-                            fontSize: 46,
-                            fontWeight: FontWeight.bold,
-                            color: const Color.fromARGB(255, 26, 73, 128),
+                    Text(
+                      'Ber-AKHLAK',
+                      style: TextStyle(
+                        fontSize: 42,
+                        fontWeight: FontWeight.bold,
+                        color: const Color.fromARGB(255, 2, 124, 204),
+                      ),
+                    ),
+                    Padding(padding: EdgeInsets.all(16.0)),
+                    Image.asset(
+                      'assets/image/Akhlak.png',
+                      fit: BoxFit.cover,
+                    ),
+                    Padding(padding: EdgeInsets.all(16.0)),
+                    Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            const Color.fromARGB(255, 2, 33, 204),
+                            const Color.fromARGB(255, 95, 220, 216)
+                          ],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          // Aksi yang akan dilakukan saat tombol ditekan
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: const Color.fromARGB(0, 0, 0, 0),
+                          elevation: 0,
+                          padding: EdgeInsets.symmetric(vertical: 16),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
                           ),
                         ),
-                        TextSpan(
-                          text: '-AKHLAK',
+                        child: Text(
+                          'Tata Nilai Akhlak',
                           style: TextStyle(
-                            fontSize: 42,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
-                            color: const Color.fromARGB(255, 2, 124, 204),
+                            color: Colors.white,
                           ),
                         ),
-                      ],
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 30),
-                  Image.asset(
-                    'assets/image/Akhlak.png',
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 20, bottom: 20),
+                height: 1920,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/image/Visi_Misi_Image.png"),
                     fit: BoxFit.cover,
                   ),
-                  SizedBox(height: 30),
-                  Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          const Color.fromARGB(255, 2, 33, 204),
-                          const Color.fromARGB(255, 95, 220, 216)
-                        ],
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                      ),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // Aksi yang akan dilakukan saat tombol ditekan
-                      },
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
-                        elevation: 0,
-                        padding: EdgeInsets.symmetric(vertical: 16),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                      ),
-                      child: Text(
-                        'Tata Nilai Akhlak',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
