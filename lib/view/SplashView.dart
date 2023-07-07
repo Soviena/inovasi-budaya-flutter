@@ -61,7 +61,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 30),
+              Padding(padding: EdgeInsets.all(8.0)),
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
@@ -100,7 +100,7 @@ class LoginPage extends StatelessWidget {
                       Navigator.of(context).pop();
                     },
                   ),
-                  SizedBox(width: 10),
+                  Padding(padding: EdgeInsets.only(left: 3, right: 3)),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       primary: Colors.orange,
@@ -185,7 +185,7 @@ class LoginPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 50),
+                Padding(padding: EdgeInsets.all(5)),
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -218,7 +218,7 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 40),
+                      Padding(padding: EdgeInsets.all(20.0)),
                       Center(
                         child: ElevatedButton(
                           onPressed: () {

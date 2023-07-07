@@ -66,6 +66,7 @@ flutter:
   - assets/image/Poster1.png
   - assets/image/Poster2.png
   - assets/image/Poster3.png
+  - assets/image/Visi_Misi_Image.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
