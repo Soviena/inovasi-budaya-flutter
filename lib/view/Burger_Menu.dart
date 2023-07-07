@@ -176,11 +176,11 @@ class _BurgerListState extends State<BurgerList> {
                 );
               },
               child: Container(
-                margin: EdgeInsets.fromLTRB(0, 40, 200, 0),
+                margin: EdgeInsets.fromLTRB(0, 40, 215, 0),
                 decoration: const BoxDecoration(
                     border: Border(bottom: BorderSide(color: Colors.white))),
                 child: const Text(
-                  "Profile",
+                  "Profil",
                   style: TextStyle(fontSize: 30, color: Colors.white),
                 ),
               ),
