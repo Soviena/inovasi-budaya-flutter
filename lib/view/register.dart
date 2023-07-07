@@ -52,7 +52,7 @@ class _RegisterState extends State<Register> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                alignment: Alignment.topCenter,
+                alignment: Alignment.topLeft,
                 child: Container(
                   margin: EdgeInsets.only(top: 50),
                   child: Column(children: [
@@ -68,12 +68,17 @@ class _RegisterState extends State<Register> {
                       height: 35,
                     ),
                     Container(
-                      child: Text(
-                        'Masukan nama anda',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Masukan nama anda',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     Container(
@@ -90,12 +95,17 @@ class _RegisterState extends State<Register> {
                       height: 35,
                     ),
                     Container(
-                      child: Text(
-                        'Masukan tanggal lahir anda',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Masukan tanggal lahir anda',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     Container(
@@ -112,12 +122,17 @@ class _RegisterState extends State<Register> {
                       height: 35,
                     ),
                     Container(
-                      child: Text(
-                        'Masukan email anda',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Masukan email anda',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     Container(
@@ -134,12 +149,17 @@ class _RegisterState extends State<Register> {
                       height: 35,
                     ),
                     Container(
-                      child: Text(
-                        'Masukan password anda',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Masukan password anda',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     Container(
@@ -156,12 +176,17 @@ class _RegisterState extends State<Register> {
                       height: 35,
                     ),
                     Container(
-                      child: Text(
-                        'Verifikasi password anda',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Verifikasi password anda',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     Container(

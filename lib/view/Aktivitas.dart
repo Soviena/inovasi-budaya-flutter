@@ -27,7 +27,7 @@ class Budaya extends StatelessWidget {
                 },
               ),
               Text(
-                'Aktivitas',
+                'Jadwal',
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,

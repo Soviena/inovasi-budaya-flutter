@@ -37,6 +37,7 @@ class Settings extends StatelessWidget {
             ],
           ),
         ),
+        backgroundColor: Color.fromARGB(255, 6, 51, 83),
       ),
     );
   }
