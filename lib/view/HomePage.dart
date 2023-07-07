@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/Aktivitas.dart';
-
-void main() {
-  runApp(HomePage());
-}
+import 'package:inovasi_budaya/view/Burger_Menu.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -25,7 +22,7 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Budaya()),
+                    MaterialPageRoute(builder: (context) => BurgerList()),
                   );
                 },
               ),

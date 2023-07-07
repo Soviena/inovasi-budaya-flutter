@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inovasi_budaya/view/Burger_Menu.dart';
 import 'package:inovasi_budaya/view/HomePage.dart';
 
 class Budaya extends StatelessWidget {
@@ -18,7 +19,12 @@ class Budaya extends StatelessWidget {
                   color: Colors.orange,
                 ),
                 iconSize: 36,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BurgerList()),
+                  );
+                },
               ),
               Text(
                 'Aktivitas',
