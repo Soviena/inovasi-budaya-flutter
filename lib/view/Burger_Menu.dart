@@ -7,7 +7,7 @@ import 'package:inovasi_budaya/view/Materi.dart';
 import 'package:inovasi_budaya/view/Profil.dart';
 import 'package:inovasi_budaya/view/SafetyMoment.dart';
 import 'package:inovasi_budaya/view/Settings.dart';
-import 'package:inovasi_budaya/view/SplashView.dart';
+import 'package:inovasi_budaya/view/splash_view.dart';
 
 class BurgerList extends StatefulWidget {
   const BurgerList({Key? key}) : super(key: key);
