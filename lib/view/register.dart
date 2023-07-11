@@ -203,7 +203,7 @@ class _RegisterState extends State<Register> {
                 ),
                 Container(
                   alignment: Alignment.topCenter,
-                  margin: EdgeInsets.only(top: 60),
+                  margin: const EdgeInsets.only(top: 60),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

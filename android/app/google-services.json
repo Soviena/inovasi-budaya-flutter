@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "430189687721",
+    "project_id": "inovasi-budaya",
+    "storage_bucket": "inovasi-budaya.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430189687721:android:e7aea1f3f5bf94a3c48ab8",
+        "android_client_info": {
+          "package_name": "com.example.inovasi_budaya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430189687721-knhp4h4mt79k1hmfqlftc3620uvpsr4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDg8nrXFB6j4P4xDtAjNyr-rIIvFWptdJA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430189687721-knhp4h4mt79k1hmfqlftc3620uvpsr4f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "430189687721-ubudapuulsn2bv67ro5eh310nbddqiai.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.inovasiBudaya"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
