@@ -243,175 +243,126 @@ class HomePage extends StatelessWidget {
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(40),
-                                            child: Container(
-                                              width: 80,
-                                              height: 80,
-                                              decoration: BoxDecoration(
-                                                color: const Color.fromARGB(
-                                                    255, 26, 73, 128),
-                                                borderRadius:
-                                                    BorderRadius.circular(40),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: Colors.orange,
-                                                    offset: Offset(2, 4),
+                                          Expanded(
+                                            child: Column(
+                                              children: [
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(40),
+                                                  child: Image.asset(
+                                                    'assets/image/Inspeksi.png', // Ganti dengan path gambar Anda
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                ],
-                                              ),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(40),
-                                                child: Image.asset(
-                                                  'assets/image/Inspeksi.png', // Ganti dengan path gambar Anda
-                                                  fit: BoxFit.cover,
                                                 ),
-                                              ),
-                                            ),
-                                          ),
-                                          SizedBox(width: 40),
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(40),
-                                            child: Container(
-                                              width: 80,
-                                              height: 80,
-                                              decoration: BoxDecoration(
-                                                color: const Color.fromARGB(
-                                                    255, 26, 73, 128),
-                                                borderRadius:
-                                                    BorderRadius.circular(40),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: Colors.orange,
-                                                    offset: Offset(2, 4),
+                                                SizedBox(height: 8),
+                                                Container(
+                                                  width: 80,
+                                                  height: 25,
+                                                  decoration: BoxDecoration(
+                                                    color: const Color.fromARGB(
+                                                        255, 26, 73, 128),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12.5),
+                                                    border: Border.all(
+                                                      color: Colors
+                                                          .orange, // Warna outline
+                                                      width: 2, // Lebar outline
+                                                    ),
                                                   ),
-                                                ],
-                                              ),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(40),
-                                                child: Image.asset(
-                                                  'assets/image/Pengujian.png',
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          SizedBox(width: 40),
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(40),
-                                            child: Container(
-                                              width: 80,
-                                              height: 80,
-                                              decoration: BoxDecoration(
-                                                color: const Color.fromARGB(
-                                                    255, 26, 73, 128),
-                                                borderRadius:
-                                                    BorderRadius.circular(40),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: Colors.orange,
-                                                    offset: Offset(2, 4),
+                                                  child: Center(
+                                                    child: Text(
+                                                      'Inspeksi',
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 14,
+                                                      ),
+                                                    ),
                                                   ),
-                                                ],
-                                              ),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(40),
-                                                child: Image.asset(
-                                                  'assets/image/Sertifikasi.png', // Ganti dengan path gambar Anda
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Padding(
-                                          padding: EdgeInsets.only(top: 1.0)),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Container(
-                                            width: 80,
-                                            height: 25,
-                                            decoration: BoxDecoration(
-                                              color: const Color.fromARGB(
-                                                  255, 26, 73, 128),
-                                              borderRadius:
-                                                  BorderRadius.circular(12.5),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: Colors.orange,
-                                                  offset: Offset(2, 2),
                                                 ),
                                               ],
                                             ),
-                                            child: Center(
-                                              child: Text(
-                                                'Inspeksi',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 14,
-                                                ),
-                                              ),
-                                            ),
                                           ),
                                           SizedBox(width: 40),
-                                          Container(
-                                            width: 80,
-                                            height: 25,
-                                            decoration: BoxDecoration(
-                                              color: const Color.fromARGB(
-                                                  255, 26, 73, 128),
-                                              borderRadius:
-                                                  BorderRadius.circular(12.5),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: Colors.orange,
-                                                  offset: Offset(2, 2),
+                                          Expanded(
+                                            child: Column(
+                                              children: [
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(40),
+                                                  child: Image.asset(
+                                                    'assets/image/Pengujian.png',
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                                SizedBox(height: 8),
+                                                Container(
+                                                  width: 80,
+                                                  height: 25,
+                                                  decoration: BoxDecoration(
+                                                    color: const Color.fromARGB(
+                                                        255, 26, 73, 128),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12.5),
+                                                    border: Border.all(
+                                                      color: Colors
+                                                          .orange, // Warna outline
+                                                      width: 2, // Lebar outline
+                                                    ),
+                                                  ),
+                                                  child: Center(
+                                                    child: Text(
+                                                      'Pengujian',
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 14,
+                                                      ),
+                                                    ),
+                                                  ),
                                                 ),
                                               ],
                                             ),
-                                            child: Center(
-                                              child: Text(
-                                                'Pengujian',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 14,
-                                                ),
-                                              ),
-                                            ),
                                           ),
                                           SizedBox(width: 40),
-                                          Container(
-                                            width: 80,
-                                            height: 25,
-                                            decoration: BoxDecoration(
-                                              color: const Color.fromARGB(
-                                                  255, 26, 73, 128),
-                                              borderRadius:
-                                                  BorderRadius.circular(12.5),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: Colors.orange,
-                                                  offset: Offset(2, 2),
+                                          Expanded(
+                                            child: Column(
+                                              children: [
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(40),
+                                                  child: Image.asset(
+                                                    'assets/image/Sertifikasi.png', // Ganti dengan path gambar Anda
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                                SizedBox(height: 8),
+                                                Container(
+                                                  width: 80,
+                                                  height: 25,
+                                                  decoration: BoxDecoration(
+                                                    color: const Color.fromARGB(
+                                                        255, 26, 73, 128),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12.5),
+                                                    border: Border.all(
+                                                      color: Colors
+                                                          .orange, // Warna outline
+                                                      width: 2, // Lebar outline
+                                                    ),
+                                                  ),
+                                                  child: Center(
+                                                    child: Text(
+                                                      'Sertifikasi',
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 14,
+                                                      ),
+                                                    ),
+                                                  ),
                                                 ),
                                               ],
-                                            ),
-                                            child: Center(
-                                              child: Text(
-                                                'Sertifikasi',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 14,
-                                                ),
-                                              ),
                                             ),
                                           ),
                                         ],
@@ -422,120 +373,85 @@ class HomePage extends StatelessWidget {
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(40),
-                                            child: Container(
-                                              width: 80,
-                                              height: 80,
-                                              decoration: BoxDecoration(
-                                                color: const Color.fromARGB(
-                                                    255, 26, 73, 128),
-                                                borderRadius:
-                                                    BorderRadius.circular(40),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: Colors.orange,
-                                                    offset: Offset(2, 4),
+                                          Expanded(
+                                            child: Column(
+                                              children: [
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(40),
+                                                  child: Image.asset(
+                                                    'assets/image/Konsultasi.png', // Ganti dengan path gambar Anda
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                ],
-                                              ),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(40),
-                                                child: Image.asset(
-                                                  'assets/image/Konsultasi.png', // Ganti dengan path gambar Anda
-                                                  fit: BoxFit.cover,
                                                 ),
-                                              ),
-                                            ),
-                                          ),
-                                          SizedBox(width: 40),
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(40),
-                                            child: Container(
-                                              width: 80,
-                                              height: 80,
-                                              decoration: BoxDecoration(
-                                                color: const Color.fromARGB(
-                                                    255, 26, 73, 128),
-                                                borderRadius:
-                                                    BorderRadius.circular(40),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: Colors.orange,
-                                                    offset: Offset(2, 4),
+                                                SizedBox(height: 8),
+                                                Container(
+                                                  width: 80,
+                                                  height: 25,
+                                                  decoration: BoxDecoration(
+                                                    color: const Color.fromARGB(
+                                                        255, 26, 73, 128),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12.5),
+                                                    border: Border.all(
+                                                      color: Colors
+                                                          .orange, // Warna outline
+                                                      width: 2, // Lebar outline
+                                                    ),
                                                   ),
-                                                ],
-                                              ),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(40),
-                                                child: Image.asset(
-                                                  'assets/image/Pelatihan.png',
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Padding(
-                                          padding: EdgeInsets.only(top: 1.0)),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Container(
-                                            width: 80,
-                                            height: 25,
-                                            decoration: BoxDecoration(
-                                              color: const Color.fromARGB(
-                                                  255, 26, 73, 128),
-                                              borderRadius:
-                                                  BorderRadius.circular(12.5),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: Colors.orange,
-                                                  offset: Offset(2, 2),
+                                                  child: Center(
+                                                    child: Text(
+                                                      'Konsultasi',
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 14,
+                                                      ),
+                                                    ),
+                                                  ),
                                                 ),
                                               ],
                                             ),
-                                            child: Center(
-                                              child: Text(
-                                                'Konsultasi',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 14,
-                                                ),
-                                              ),
-                                            ),
                                           ),
                                           SizedBox(width: 40),
-                                          Container(
-                                            width: 80,
-                                            height: 25,
-                                            decoration: BoxDecoration(
-                                              color: const Color.fromARGB(
-                                                  255, 26, 73, 128),
-                                              borderRadius:
-                                                  BorderRadius.circular(12.5),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: Colors.orange,
-                                                  offset: Offset(2, 2),
+                                          Expanded(
+                                            child: Column(
+                                              children: [
+                                                ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(40),
+                                                  child: Image.asset(
+                                                    'assets/image/Pelatihan.png',
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                                SizedBox(height: 8),
+                                                Container(
+                                                  width: 80,
+                                                  height: 25,
+                                                  decoration: BoxDecoration(
+                                                    color: const Color.fromARGB(
+                                                        255, 26, 73, 128),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12.5),
+                                                    border: Border.all(
+                                                      color: Colors
+                                                          .orange, // Warna outline
+                                                      width: 2, // Lebar outline
+                                                    ),
+                                                  ),
+                                                  child: Center(
+                                                    child: Text(
+                                                      'Pelatihan',
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 14,
+                                                      ),
+                                                    ),
+                                                  ),
                                                 ),
                                               ],
-                                            ),
-                                            child: Center(
-                                              child: Text(
-                                                'Pelatihan',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 14,
-                                                ),
-                                              ),
                                             ),
                                           ),
                                         ],
@@ -548,7 +464,7 @@ class HomePage extends StatelessWidget {
                                           child: Text(
                                             'WEB SUCOFINDO',
                                             style: TextStyle(
-                                              fontSize: 14,
+                                              fontSize: 16,
                                               fontWeight: FontWeight.bold,
                                               color: Colors.white,
                                             ),
@@ -586,6 +502,197 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+          Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(3),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Container(
+                              width: 240,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(24),
+                                color: Colors.orange,
+                              ),
+                            ),
+                            Container(
+                              width: double.infinity,
+                              height: 2,
+                              margin: EdgeInsets.symmetric(horizontal: 8),
+                              color: Colors.orange,
+                            ),
+                            Container(
+                              width: 230,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(24),
+                                color: const Color.fromARGB(255, 2, 124, 204),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Juni',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(padding: EdgeInsets.only(top: 18.0)),
+                      Container(
+                        width: 320,
+                        height: 240,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(24),
+                          color: const Color.fromARGB(255, 26, 73, 128),
+                          border: Border.all(
+                            color: Colors.orange,
+                            width: 4,
+                          ),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(14.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Kegiatan',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Padding(padding: EdgeInsets.only(top: 12.0)),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    width: 8,
+                                    height: 8,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      shape: BoxShape.circle,
+                                    ),
+                                    margin: EdgeInsets.only(top: 8, right: 8),
+                                  ),
+                                  Text(
+                                    'Lorem ipsum',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Padding(padding: EdgeInsets.only(top: 32.0)),
+                      Container(
+                        child: Column(
+                          children: [
+                            Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Container(
+                                  width: 240,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(24),
+                                    color: Colors.orange,
+                                  ),
+                                ),
+                                Container(
+                                  width: double.infinity,
+                                  height: 2,
+                                  margin: EdgeInsets.symmetric(horizontal: 8),
+                                  color: Colors.orange,
+                                ),
+                                Container(
+                                  width: 230,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(24),
+                                    color:
+                                        const Color.fromARGB(255, 2, 124, 204),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      'Jadwal Program Budaya',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 16),
+                            SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: 280,
+                                    height: 200,
+                                    margin: EdgeInsets.symmetric(
+                                        vertical: 8, horizontal: 8),
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey[300],
+                                      borderRadius: BorderRadius.circular(16),
+                                    ),
+                                  ),
+                                  Padding(
+                                      padding: EdgeInsets.only(right: 12.0)),
+                                  Container(
+                                    width: 280,
+                                    height: 200,
+                                    margin: EdgeInsets.symmetric(
+                                        vertical: 8, horizontal: 8),
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey[300],
+                                      borderRadius: BorderRadius.circular(16),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 280,
+                                    height: 200,
+                                    margin: EdgeInsets.symmetric(
+                                        vertical: 8, horizontal: 8),
+                                    decoration: BoxDecoration(
+                                      color: Colors.grey[300],
+                                      borderRadius: BorderRadius.circular(16),
+                                    ),
+                                  ),
+                                  // Tambahkan container lainnya di sini sesuai kebutuhan
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           )
         ],
       ),
