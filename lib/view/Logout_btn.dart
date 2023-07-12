@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:inovasi_budaya/view/register.dart';
-import 'package:quickalert/quickalert.dart';
+// import 'package:flutter/material.dart';
+// import 'package:inovasi_budaya/view/register.dart';
+// import 'package:quickalert/quickalert.dart';
 
 // class Logout extends StatelessWidget {
 //   @override

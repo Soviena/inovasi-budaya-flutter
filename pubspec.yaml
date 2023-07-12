@@ -72,6 +72,7 @@ flutter:
   - assets/image/Sertifikasi.png
   - assets/image/Konsultasi.png
   - assets/image/Pelatihan.png
+  - assets/image/profil.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

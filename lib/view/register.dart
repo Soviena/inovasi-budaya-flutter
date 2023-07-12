@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:inovasi_budaya/view/SplashView.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:inovasi_budaya/view/HomePage.dart';
 

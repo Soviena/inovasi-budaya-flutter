@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:inovasi_budaya/view/register.dart';
 import 'package:inovasi_budaya/view/SplashView.dart';
-import 'package:inovasi_budaya/view/HomePage.dart';
 
 void main() => runApp(
       MaterialApp(
