@@ -38,10 +38,7 @@ class _BurgerListState extends State<BurgerList> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => HomePage()),
-                        );
+                        Navigator.pop(context);
                       },
                       child: Container(
                         margin: EdgeInsets.fromLTRB(0, 60, 0, 0),
