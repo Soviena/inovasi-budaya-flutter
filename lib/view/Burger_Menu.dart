@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/Aktivitas.dart';
 import 'package:inovasi_budaya/view/HomePage.dart';
 import 'package:inovasi_budaya/view/Kinerja.dart';
-import 'package:inovasi_budaya/view/Logout_btn.dart';
 import 'package:inovasi_budaya/view/Materi.dart';
 import 'package:inovasi_budaya/view/Profil.dart';
 import 'package:inovasi_budaya/view/SafetyMoment.dart';
