@@ -3,13 +3,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:inovasi_budaya/view/SplashView.dart';
-=======
 import 'package:inovasi_budaya/view/register.dart';
 import 'package:inovasi_budaya/view/splash_view.dart';
 import 'package:inovasi_budaya/view/HomePage.dart';
->>>>>>> aefdd42cd2fd71aab041f569f11aae5836fed9a5
 
 String? token;
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
