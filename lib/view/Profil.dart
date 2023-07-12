@@ -32,169 +32,139 @@ class Profile extends StatelessWidget {
                 color: Colors.orange,
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(10),
-            ),
+            SizedBox(width: 10),
           ],
         ),
       ),
-      body: Stack(
-        alignment: Alignment.center,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/image/profil.png"),
-                    fit: BoxFit.fill)),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/image/profil.png"),
+            fit: BoxFit.cover,
           ),
-          SingleChildScrollView(
-            child: Container(
-              width: 250,
-              decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 6, 51, 83),
-                  border: Border.all(color: Colors.black, width: 2)),
-              child: Column(children: [
-                Container(
-                  alignment: Alignment.centerLeft,
-                  margin: EdgeInsets.fromLTRB(10, 90, 0, 10),
-                  child: Column(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(right: 195),
-                        child: Text(
-                          'Nama',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
+        ),
+        child: Align(
+          alignment: Alignment.center,
+          child: Container(
+            width: 350,
+            height: 500,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              border: Border.all(
+                color: Colors.orange,
+                width: 4,
+              ),
+              color: const Color.fromARGB(255, 6, 52, 83),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: Container(
+                      width: 120,
+                      height: 120,
+                      child: Center(
+                        child: Container(
+                          width: 120,
+                          height: 120,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.grey,
                           ),
                         ),
                       ),
-                      Container(
-                        height: 30,
-                        width: 230,
-                        margin: EdgeInsets.only(right: 10),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          border: Border.all(color: Colors.orange, width: 1),
-                          color: Colors.white,
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.centerLeft,
-                        margin: EdgeInsets.only(top: 40, left: 2),
-                        child: Text(
-                          'Email',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        height: 30,
-                        width: 230,
-                        margin: EdgeInsets.only(bottom: 250, right: 10),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          border: Border.all(color: Colors.orange, width: 1),
-                          color: Colors.white,
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.centerLeft,
-                        margin: EdgeInsets.only(bottom: 100, left: 2),
-                        child: Text(
-                          'Tanggal Lahir',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        height: 30,
-                        width: 230,
-                        margin: EdgeInsets.only(bottom: 200, right: 10),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          border: Border.all(color: Colors.orange, width: 1),
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-                // Container(
-                //   margin: EdgeInsets.only(bottom: 100),
-                //   child: Column(
-                //     children: [
-                //       Container(
-                //         margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                //         child: Text(
-                //           'Email',
-                //           style: TextStyle(
-                //             color: Colors.white,
-                //             fontWeight: FontWeight.w500,
-                //           ),
-                //         ),
-                //       ),
-                //       Container(
-                //         height: 30,
-                //         width: 230,
-                //         margin: EdgeInsets.only(bottom: 100),
-                //         decoration: BoxDecoration(
-                //           borderRadius: BorderRadius.circular(5),
-                //           border: Border.all(color: Colors.orange, width: 1),
-                //           color: Colors.white,
-                //         ),
-                //       ),
-                //     ],
-                //   ),
-                // ),
-                // Container(
-                //   margin: EdgeInsets.only(bottom: 10),
-                //   child: Column(
-                //     children: [
-                //       Container(
-                //         margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                //         child: Row(
-                //           children: [
-                //             Text(
-                //               'Tanggal Lahir',
-                //               style: TextStyle(
-                //                 color: Colors.white,
-                //                 fontWeight: FontWeight.w500,
-                //               ),
-                //             ),
-                //           ],
-                //         ),
-                //       ),
-                //       Container(
-                //         height: 30,
-                //         width: 230,
-                //         alignment: Alignment.center,
-                //         decoration: BoxDecoration(
-                //           borderRadius: BorderRadius.circular(5),
-                //           border: Border.all(color: Colors.orange, width: 1),
-                //           color: Colors.white,
-                //         ),
-                //       ),
-                //     ],
-                //   ),
-                // ),
-              ]),
+                  SizedBox(height: 10),
+                  Text(
+                    'Nama',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  SizedBox(height: 5),
+                  Container(
+                    height: 30,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(color: Colors.orange, width: 1),
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    'Email',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  SizedBox(height: 5),
+                  Container(
+                    height: 30,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(color: Colors.orange, width: 1),
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    'Tanggal Lahir',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  SizedBox(height: 5),
+                  Container(
+                    height: 30,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(color: Colors.orange, width: 1),
+                      color: Colors.white,
+                    ),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 24.0)),
+                  Container(
+                    alignment: Alignment.center,
+                    margin: const EdgeInsets.symmetric(vertical: 10),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Colors.orange),
+                        fixedSize: MaterialStateProperty.all<Size>(
+                          const Size(115, 40),
+                        ),
+                        shape: MaterialStateProperty.all<OutlinedBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                      ),
+                      child: const Text(
+                        'edit',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
-          Container(
-              alignment: Alignment.topCenter,
-              margin: EdgeInsets.only(bottom: 550),
-              height: 80,
-              width: 80,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(200),
-                  color: Color.fromARGB(255, 217, 217, 217),
-                  border: Border.all(color: Colors.orange, width: 2))),
-        ],
+        ),
       ),
     );
   }
