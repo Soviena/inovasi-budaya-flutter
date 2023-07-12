@@ -643,45 +643,81 @@ class HomePage extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(height: 16),
+                            Padding(padding: EdgeInsets.only(top: 24.0)),
                             SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: Row(
-                                children: [
-                                  Container(
-                                    width: 280,
-                                    height: 200,
-                                    margin: EdgeInsets.symmetric(
-                                        vertical: 8, horizontal: 8),
-                                    decoration: BoxDecoration(
-                                      color: Colors.grey[300],
-                                      borderRadius: BorderRadius.circular(16),
+                                children: List.generate(5, (index) {
+                                  return Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 16.0),
+                                    child: Container(
+                                      width: 250,
+                                      height: 210,
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(16),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Colors.grey.withOpacity(1),
+                                              spreadRadius: 1,
+                                              blurRadius: 5,
+                                              offset: Offset(0, 5),
+                                            ),
+                                          ],
+                                        ),
+                                        padding: EdgeInsets.only(top: 24.0),
+                                        child: Column(
+                                          children: [
+                                            Stack(
+                                              children: [
+                                                Container(
+                                                  width: double.infinity,
+                                                  height: 50,
+                                                  decoration: BoxDecoration(
+                                                    color: Colors.blue,
+                                                  ),
+                                                  child: Center(
+                                                    child: Text(
+                                                      'Januari',
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 16,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(height: 8.0),
+                                            Expanded(
+                                              child: SingleChildScrollView(
+                                                child: Container(
+                                                  alignment: Alignment.topLeft,
+                                                  padding: EdgeInsets.symmetric(
+                                                      horizontal: 16.0),
+                                                  child: Text(
+                                                    'lorem ipsum',
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                  Padding(
-                                      padding: EdgeInsets.only(right: 12.0)),
-                                  Container(
-                                    width: 280,
-                                    height: 200,
-                                    margin: EdgeInsets.symmetric(
-                                        vertical: 8, horizontal: 8),
-                                    decoration: BoxDecoration(
-                                      color: Colors.grey[300],
-                                      borderRadius: BorderRadius.circular(16),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 280,
-                                    height: 200,
-                                    margin: EdgeInsets.symmetric(
-                                        vertical: 8, horizontal: 8),
-                                    decoration: BoxDecoration(
-                                      color: Colors.grey[300],
-                                      borderRadius: BorderRadius.circular(16),
-                                    ),
-                                  ),
-                                  // Tambahkan container lainnya di sini sesuai kebutuhan
-                                ],
+                                  );
+                                }),
                               ),
                             ),
                           ],
