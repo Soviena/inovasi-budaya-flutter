@@ -14,21 +14,19 @@ class _SettingsState extends State<Settings> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        leading: Builder(builder: (context) {
+          return IconButton(
+            icon: const Icon(
+              Icons.menu,
+              color: Colors.orange,
+            ),
+            iconSize: 36,
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          );
+        }),
         backgroundColor: const Color.fromARGB(255, 6, 51, 83),
-        leading: IconButton(
-          icon: const Icon(
-            Icons.menu,
-            color: Colors.orange,
-          ),
-          iconSize: 36,
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => BurgerList()),
-            );
-          },
-        ),
         title: const Text(
           'Pengaturan',
           style: TextStyle(
@@ -38,6 +36,7 @@ class _SettingsState extends State<Settings> {
           ),
         ),
       ),
+      drawer: const BurgerList(),
       backgroundColor: const Color.fromARGB(255, 6, 51, 83),
       body: SingleChildScrollView(
         child: Container(

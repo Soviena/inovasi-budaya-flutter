@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/burger_menu.dart';
 
-class Kinerja extends StatelessWidget {
+class Jadwal extends StatelessWidget {
+  const Jadwal({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +22,7 @@ class Kinerja extends StatelessWidget {
         }),
         backgroundColor: const Color.fromARGB(255, 6, 51, 83),
         title: const Text(
-          'Kinerja',
+          'Jadwal Budaya',
           style: TextStyle(
             fontSize: 32,
             fontWeight: FontWeight.bold,

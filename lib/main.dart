@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/register.dart';
 import 'package:inovasi_budaya/view/splash_view.dart';
 import 'package:inovasi_budaya/view/HomePage.dart';
-import 'package:inovasi_budaya/view/Aktivitas.dart';
+import 'package:inovasi_budaya/view/Jadwal.dart';
 import 'package:inovasi_budaya/view/Kinerja.dart';
 import 'package:inovasi_budaya/view/Materi.dart';
 import 'package:inovasi_budaya/view/Profil.dart';
@@ -98,7 +98,7 @@ void main() async {
         '/splashView': (context) => const LoginPage(),
         '/home': (context) => HomePage(),
         '/register': (context) => const Register(),
-        '/aktivitas': (context) => const Aktivitas(),
+        '/jadwal': (context) => const Jadwal(),
         '/kinerja': (context) => Kinerja(),
         '/materi': (context) => Materi(),
         '/profil': (context) => Profile(),

@@ -62,7 +62,7 @@ class _BurgerListState extends State<BurgerList> {
             ),
             ListTile(
               onTap: () {
-                Navigator.popAndPushNamed(context, "/home");
+                Navigator.popAndPushNamed(context, "/jadwal");
               },
               contentPadding:
                   const EdgeInsets.symmetric(horizontal: 30, vertical: 5),

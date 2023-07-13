@@ -7,36 +7,29 @@ class Safety_Moment extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        leading: Builder(builder: (context) {
+          return IconButton(
+            icon: const Icon(
+              Icons.menu,
+              color: Colors.orange,
+            ),
+            iconSize: 36,
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          );
+        }),
         backgroundColor: const Color.fromARGB(255, 6, 51, 83),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton(
-              icon: Icon(
-                Icons.menu,
-                color: Colors.orange,
-              ),
-              iconSize: 36,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => BurgerList()),
-                );
-              },
-            ),
-            Text(
-              'Safety Moment',
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-                color: Colors.orange,
-              ),
-            ),
-            SizedBox(width: 48),
-          ],
+        title: const Text(
+          'Safety Moments',
+          style: TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+            color: Colors.orange,
+          ),
         ),
       ),
+      drawer: const BurgerList(),
       body: ListView(
         padding: EdgeInsets.all(24.0),
         children: [
