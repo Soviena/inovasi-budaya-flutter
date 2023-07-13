@@ -1,46 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:inovasi_budaya/view/Burger_Menu.dart';
+import 'package:inovasi_budaya/view/burger_menu.dart';
 
 class Profile extends StatelessWidget {
+  const Profile({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        leading: Builder(builder: (context) {
+          return IconButton(
+            icon: const Icon(
+              Icons.menu,
+              color: Colors.orange,
+            ),
+            iconSize: 36,
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          );
+        }),
         backgroundColor: const Color.fromARGB(255, 6, 51, 83),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton(
-              icon: Icon(
-                Icons.menu,
-                color: Colors.orange,
-              ),
-              iconSize: 36,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => BurgerList()),
-                );
-              },
-            ),
-            Text(
-              'Profil',
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-                color: Colors.orange,
-              ),
-            ),
-            SizedBox(width: 10),
-          ],
+        title: const Text(
+          'Profil',
+          style: TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+            color: Colors.orange,
+          ),
         ),
       ),
+      drawer: const BurgerList(),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/image/profil.png"),
-            fit: BoxFit.cover,
+            image: AssetImage("assets/image/Profil.png"),
+            fit: BoxFit.fill,
           ),
         ),
         child: Align(
@@ -71,7 +66,7 @@ class Profile extends StatelessWidget {
                           child: Container(
                             width: 120,
                             height: 120,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               shape: BoxShape.circle,
                               color: Colors.grey,
                             ),
@@ -79,15 +74,15 @@ class Profile extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10),
-                    Text(
+                    const SizedBox(height: 10),
+                    const Text(
                       'Nama',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Container(
                       height: 30,
                       width: double.infinity,
@@ -97,15 +92,15 @@ class Profile extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(height: 20),
-                    Text(
+                    const SizedBox(height: 20),
+                    const Text(
                       'Email',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Container(
                       height: 30,
                       width: double.infinity,
@@ -115,15 +110,15 @@ class Profile extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(height: 20),
-                    Text(
+                    const SizedBox(height: 20),
+                    const Text(
                       'Tanggal Lahir',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Container(
                       height: 30,
                       width: double.infinity,
@@ -133,7 +128,7 @@ class Profile extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    Padding(padding: EdgeInsets.only(top: 24.0)),
+                    const Padding(padding: EdgeInsets.only(top: 24.0)),
                     Container(
                       alignment: Alignment.center,
                       margin: const EdgeInsets.symmetric(vertical: 10),
