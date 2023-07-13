@@ -38,21 +38,26 @@ void callbackDispatcher() {
     // initialise the plugin of flutterlocalnotifications.
     final FlutterLocalNotificationsPlugin notif =
         FlutterLocalNotificationsPlugin();
+    switch (task) {
+      case "pengingatPeregangan":
+        if (TimeOfDay.now().hour >= 8 && TimeOfDay.now().hour >= 17) {
+          notif.show(
+              1,
+              "Pengingat peregangan",
+              "Jangan lupa meregangkan badan agar badan tetap sehat",
+              const NotificationDetails(
+                android: AndroidNotificationDetails(
+                    "high_importance_channel", "High Importance Notifications",
+                    channelDescription:
+                        "This channel is used for important notifications.",
+                    importance: Importance.high,
+                    color: Colors.blue,
+                    playSound: true,
+                    icon: '@mipmap/ic_launcher'),
+              ));
+        }
+    }
 
-    notif.show(
-        0,
-        "Testing ",
-        "This is an Flutter Push Notification",
-        const NotificationDetails(
-          android: AndroidNotificationDetails(
-              "high_importance_channel", "High Importance Notifications",
-              channelDescription:
-                  "This channel is used for important notifications.",
-              importance: Importance.high,
-              color: Colors.blue,
-              playSound: true,
-              icon: '@mipmap/ic_launcher'),
-        ));
     return Future.value(true);
   });
 }
@@ -81,15 +86,6 @@ void main() async {
       // the task is running. Handy for debugging tasks
       isInDebugMode: true);
   // Periodic task registration
-  Workmanager().registerPeriodicTask(
-    "2",
-
-    //This is the value that will be
-    // returned in the callbackDispatcher
-    "simplePeriodicTask",
-
-    frequency: Duration(minutes: 15),
-  );
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
