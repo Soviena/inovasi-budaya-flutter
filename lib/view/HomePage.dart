@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:inovasi_budaya/view/burger_menu.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,6 +10,21 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    void posterAkhlak(BuildContext context) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
+            backgroundColor: const Color.fromARGB(255, 6, 51, 83),
+            title: const Center(),
+          );
+        },
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         leading: Builder(builder: (context) {
@@ -78,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   child: ElevatedButton(
                     onPressed: () {
-                      // Aksi yang akan dilakukan saat tombol ditekan
+                      posterAkhlak(context);
                     },
                     style: ElevatedButton.styleFrom(
                       primary: Colors.transparent,
@@ -457,7 +473,10 @@ class _HomePageState extends State<HomePage> {
                                           padding: EdgeInsets.only(top: 84.0)),
                                       Center(
                                         child: ElevatedButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            launchUrl(Uri.parse(
+                                                'https://www.sucofindo.co.id/'));
+                                          },
                                           child: const Text(
                                             'WEB SUCOFINDO',
                                             style: TextStyle(

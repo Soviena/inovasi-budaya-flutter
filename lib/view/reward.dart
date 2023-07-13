@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:inovasi_budaya/view/burger_menu.dart';
+import 'package:inovasi_budaya/view/HomePage.dart';
 import 'package:accordion/accordion.dart';
 
 class Jadwal extends StatefulWidget {
@@ -11,7 +11,7 @@ class Jadwal extends StatefulWidget {
 
 class _JadwalState extends State<Jadwal> {
   final _headerStyle = const TextStyle(
-      color: Color.fromARGB(255, 0, 0, 0),
+      color: Color.fromARGB(255, 136, 136, 136),
       fontSize: 24,
       fontWeight: FontWeight.bold);
 
@@ -39,7 +39,7 @@ class _JadwalState extends State<Jadwal> {
         }),
         backgroundColor: const Color.fromARGB(255, 6, 51, 83),
         title: const Text(
-          'Jadwal Budaya',
+          'Reward',
           style: TextStyle(
             fontSize: 32,
             fontWeight: FontWeight.bold,
@@ -47,13 +47,17 @@ class _JadwalState extends State<Jadwal> {
           ),
         ),
       ),
-      drawer: const BurgerList(),
+      drawer: HomePage(),
       body: Accordion(
-          scaleWhenAnimating: false,
+          headerBackgroundColorOpened: Colors.black54,
+          scaleWhenAnimating: true,
+          openAndCloseAnimation: true,
           headerPadding:
               const EdgeInsets.symmetric(vertical: 13, horizontal: 15),
           children: [
             AccordionSection(
+              isOpen: false,
+
               headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
               headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
               header: Text('Januari', style: _headerStyle),

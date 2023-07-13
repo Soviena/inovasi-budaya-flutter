@@ -43,6 +43,7 @@ dependencies:
   timezone: ^0.9.2
   workmanager: ^0.5.1
   accordion: ^2.5.1
+  url_launcher: ^6.1.12
 
 dev_dependencies:
   flutter_test:
@@ -80,6 +81,11 @@ flutter:
   - assets/image/Konsultasi.png
   - assets/image/Pelatihan.png
   - assets/image/Profil.png
+  - assets/image/PosterAkhlak.png
+  - assets/image/Posterlandscape1.png
+  - assets/image/Posterlandscape2.png
+  - assets/image/PosterPerilakuAkhlak.png
+  - assets/image/Siapkeakhlak.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
