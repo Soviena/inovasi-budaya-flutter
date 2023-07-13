@@ -261,7 +261,10 @@ class _SettingsState extends State<Settings> {
                   Workmanager().cancelByUniqueName("peregangan");
                   Workmanager().registerPeriodicTask(
                       "peregangan", "pengingatPeregangan",
-                      frequency: Duration(hours: int.parse(jam.text)));
+                      frequency: Duration(
+                          hours: int.parse(jam.text
+                              .replaceAll(RegExp(r'[\.,].*'), "")
+                              .replaceAll("-", ""))));
                 } else {
                   print("off");
                   Workmanager().cancelByUniqueName("peregangan");
