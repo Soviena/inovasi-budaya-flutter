@@ -80,7 +80,11 @@ flutter:
   - assets/image/Konsultasi.png
   - assets/image/Pelatihan.png
   - assets/image/profil.png
-
+  - assets/image/Materi_Sharing.png
+  - assets/image/Kinerja.png
+  - assets/image/Aktivitas.png
+  - assets/image/Safety_Moment.png
+  - assets/image/Feedback.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

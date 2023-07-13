@@ -720,6 +720,1179 @@ class HomePage extends StatelessWidget {
                                 }),
                               ),
                             ),
+                            Padding(padding: EdgeInsets.only(top: 24.0)),
+                            Container(
+                              padding: EdgeInsets.all(3),
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Container(
+                                    width: 240,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(24),
+                                      color: Colors.orange,
+                                    ),
+                                  ),
+                                  Container(
+                                    width: double.infinity,
+                                    height: 2,
+                                    margin: EdgeInsets.symmetric(horizontal: 8),
+                                    color: Colors.orange,
+                                  ),
+                                  Container(
+                                    width: 230,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(24),
+                                      color: const Color.fromARGB(
+                                          255, 2, 124, 204),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        'Sekilas Informasi',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(padding: EdgeInsets.only(top: 24.0)),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: 160,
+                                  height: 240,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(24),
+                                        topRight: Radius.circular(96),
+                                        bottomLeft: Radius.circular(24),
+                                        bottomRight: Radius.circular(24)),
+                                    border: Border.all(
+                                      color: const Color.fromARGB(
+                                          255, 2, 124, 204),
+                                      width: 2,
+                                    ),
+                                    color: Colors.white,
+                                  ),
+                                  child: Stack(
+                                    children: [
+                                      Positioned.fill(
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(24.0),
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                'Materi Sharing',
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: Align(
+                                                  alignment: Alignment.center,
+                                                  child: Container(
+                                                    child: Image.asset(
+                                                      'assets/image/Materi_Sharing.png',
+                                                      fit: BoxFit.contain,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Positioned(
+                                        left: 0,
+                                        right: 0,
+                                        bottom: 0,
+                                        child: InkWell(
+                                          onTap: () {
+                                            // Tindakan yang ingin dilakukan saat tombol "Selengkapnya" diklik
+                                            print(
+                                                'Tombol "Selengkapnya" diklik!');
+                                            // Panggil fungsi atau lakukan tindakan yang diinginkan di sini
+                                          },
+                                          child: Container(
+                                            height: 40,
+                                            decoration: BoxDecoration(
+                                              gradient: LinearGradient(
+                                                colors: [
+                                                  const Color.fromARGB(
+                                                      255, 2, 124, 204),
+                                                  const Color.fromARGB(
+                                                      255, 95, 220, 216)
+                                                ],
+                                              ),
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft: Radius.circular(20),
+                                                bottomRight:
+                                                    Radius.circular(20),
+                                              ),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                'Selengkapnya',
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                    padding: EdgeInsets.all(
+                                        16.0)), // Jarak antara kedua container
+                                Container(
+                                  width: 160,
+                                  height: 240,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(96),
+                                        topRight: Radius.circular(24),
+                                        bottomLeft: Radius.circular(24),
+                                        bottomRight: Radius.circular(24)),
+                                    border: Border.all(
+                                      color: const Color.fromARGB(
+                                          255, 2, 124, 204),
+                                      width: 2,
+                                    ),
+                                    color: Colors.white,
+                                  ),
+                                  child: Stack(
+                                    children: [
+                                      Positioned.fill(
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(24.0),
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                '          Kinerja',
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                                textAlign: TextAlign.right,
+                                              ),
+                                              Expanded(
+                                                child: Align(
+                                                  alignment: Alignment.center,
+                                                  child: Container(
+                                                    child: Image.asset(
+                                                      'assets/image/Kinerja.png',
+                                                      fit: BoxFit.contain,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Positioned(
+                                        left: 0,
+                                        right: 0,
+                                        bottom: 0,
+                                        child: InkWell(
+                                          onTap: () {
+                                            // Tindakan yang ingin dilakukan saat tombol "Selengkapnya" diklik
+                                            print(
+                                                'Tombol "Selengkapnya" diklik!');
+                                            // Panggil fungsi atau lakukan tindakan yang diinginkan di sini
+                                          },
+                                          child: Container(
+                                            height: 40,
+                                            decoration: BoxDecoration(
+                                              gradient: LinearGradient(
+                                                colors: [
+                                                  const Color.fromARGB(
+                                                      255, 2, 124, 204),
+                                                  const Color.fromARGB(
+                                                      255, 95, 220, 216)
+                                                ],
+                                              ),
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft: Radius.circular(20),
+                                                bottomRight:
+                                                    Radius.circular(20),
+                                              ),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                'Selengkapnya',
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Padding(padding: EdgeInsets.only(top: 32.0)),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: 160,
+                                  height: 240,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(24),
+                                        topRight: Radius.circular(96),
+                                        bottomLeft: Radius.circular(24),
+                                        bottomRight: Radius.circular(24)),
+                                    border: Border.all(
+                                      color: const Color.fromARGB(
+                                          255, 2, 124, 204),
+                                      width: 2,
+                                    ),
+                                    color: Colors.white,
+                                  ),
+                                  child: Stack(
+                                    children: [
+                                      Positioned.fill(
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(24.0),
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                'Aktivitas         ',
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                                textAlign: TextAlign.left,
+                                              ),
+                                              Expanded(
+                                                child: Align(
+                                                  alignment: Alignment.center,
+                                                  child: Container(
+                                                    child: Image.asset(
+                                                      'assets/image/Aktivitas.png',
+                                                      fit: BoxFit.contain,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Positioned(
+                                        left: 0,
+                                        right: 0,
+                                        bottom: 0,
+                                        child: InkWell(
+                                          onTap: () {
+                                            // Tindakan yang ingin dilakukan saat tombol "Selengkapnya" diklik
+                                            print(
+                                                'Tombol "Selengkapnya" diklik!');
+                                            // Panggil fungsi atau lakukan tindakan yang diinginkan di sini
+                                          },
+                                          child: Container(
+                                            height: 40,
+                                            decoration: BoxDecoration(
+                                              gradient: LinearGradient(
+                                                colors: [
+                                                  const Color.fromARGB(
+                                                      255, 2, 124, 204),
+                                                  const Color.fromARGB(
+                                                      255, 95, 220, 216)
+                                                ],
+                                              ),
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft: Radius.circular(20),
+                                                bottomRight:
+                                                    Radius.circular(20),
+                                              ),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                'Selengkapnya',
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                    padding: EdgeInsets.all(
+                                        16.0)), // Jarak antara kedua container
+                                Container(
+                                  width: 160,
+                                  height: 240,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(96),
+                                        topRight: Radius.circular(24),
+                                        bottomLeft: Radius.circular(24),
+                                        bottomRight: Radius.circular(24)),
+                                    border: Border.all(
+                                      color: const Color.fromARGB(
+                                          255, 2, 124, 204),
+                                      width: 2,
+                                    ),
+                                    color: Colors.white,
+                                  ),
+                                  child: Stack(
+                                    children: [
+                                      Positioned.fill(
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(24.0),
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                'Safety Moment',
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                                textAlign: TextAlign.right,
+                                              ),
+                                              Expanded(
+                                                child: Align(
+                                                  alignment: Alignment.center,
+                                                  child: Container(
+                                                    child: Image.asset(
+                                                      'assets/image/Safety_Moment.png',
+                                                      fit: BoxFit.contain,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Positioned(
+                                        left: 0,
+                                        right: 0,
+                                        bottom: 0,
+                                        child: InkWell(
+                                          onTap: () {
+                                            // Tindakan yang ingin dilakukan saat tombol "Selengkapnya" diklik
+                                            print(
+                                                'Tombol "Selengkapnya" diklik!');
+                                            // Panggil fungsi atau lakukan tindakan yang diinginkan di sini
+                                          },
+                                          child: Container(
+                                            height: 40,
+                                            decoration: BoxDecoration(
+                                              gradient: LinearGradient(
+                                                colors: [
+                                                  const Color.fromARGB(
+                                                      255, 2, 124, 204),
+                                                  const Color.fromARGB(
+                                                      255, 95, 220, 216)
+                                                ],
+                                              ),
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft: Radius.circular(20),
+                                                bottomRight:
+                                                    Radius.circular(20),
+                                              ),
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                'Selengkapnya',
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Padding(padding: EdgeInsets.only(top: 24.0)),
+                            Container(
+                              padding: EdgeInsets.all(3),
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Container(
+                                    width: 240,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(24),
+                                      color: Colors.orange,
+                                    ),
+                                  ),
+                                  Container(
+                                    width: double.infinity,
+                                    height: 2,
+                                    margin: EdgeInsets.symmetric(horizontal: 8),
+                                    color: Colors.orange,
+                                  ),
+                                  Container(
+                                    width: 230,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(24),
+                                      color: const Color.fromARGB(
+                                          255, 2, 124, 204),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        'Tim Internalisasi Budaya',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(padding: EdgeInsets.only(top: 54.0)),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      Transform.scale(
+                                        scale:
+                                            2.5, // Faktor skala untuk memperbesar gambar
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(40),
+                                          child: Image.asset(
+                                            'assets/image/Konsultasi.png', // Ganti dengan path gambar Anda
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.only(top: 28.0)),
+                                      Container(
+                                        width: 140,
+                                        height: 25,
+                                        decoration: BoxDecoration(
+                                          color: const Color.fromARGB(
+                                              255, 26, 73, 128),
+                                          borderRadius:
+                                              BorderRadius.circular(12.5),
+                                          border: Border.all(
+                                            color:
+                                                Colors.orange, // Warna outline
+                                            width: 2, // Lebar outline
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Orang',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(padding: EdgeInsets.all(1.0)),
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      Transform.scale(
+                                        scale:
+                                            2.5, // Faktor skala untuk memperbesar gambar
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(40),
+                                          child: Image.asset(
+                                            'assets/image/Pelatihan.png',
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.only(top: 28.0)),
+                                      Container(
+                                        width: 140,
+                                        height: 25,
+                                        decoration: BoxDecoration(
+                                          color: const Color.fromARGB(
+                                              255, 26, 73, 128),
+                                          borderRadius:
+                                              BorderRadius.circular(12.5),
+                                          border: Border.all(
+                                            color:
+                                                Colors.orange, // Warna outline
+                                            width: 2, // Lebar outline
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Orang',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Padding(padding: EdgeInsets.only(top: 64.0)),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      Transform.scale(
+                                        scale:
+                                            2.5, // Faktor skala untuk memperbesar gambar
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(40),
+                                          child: Image.asset(
+                                            'assets/image/Konsultasi.png', // Ganti dengan path gambar Anda
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.only(top: 28.0)),
+                                      Container(
+                                        width: 140,
+                                        height: 25,
+                                        decoration: BoxDecoration(
+                                          color: const Color.fromARGB(
+                                              255, 26, 73, 128),
+                                          borderRadius:
+                                              BorderRadius.circular(12.5),
+                                          border: Border.all(
+                                            color:
+                                                Colors.orange, // Warna outline
+                                            width: 2, // Lebar outline
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Orang',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(padding: EdgeInsets.all(1.0)),
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      Transform.scale(
+                                        scale:
+                                            2.5, // Faktor skala untuk memperbesar gambar
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(40),
+                                          child: Image.asset(
+                                            'assets/image/Pelatihan.png',
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.only(top: 28.0)),
+                                      Container(
+                                        width: 140,
+                                        height: 25,
+                                        decoration: BoxDecoration(
+                                          color: const Color.fromARGB(
+                                              255, 26, 73, 128),
+                                          borderRadius:
+                                              BorderRadius.circular(12.5),
+                                          border: Border.all(
+                                            color:
+                                                Colors.orange, // Warna outline
+                                            width: 2, // Lebar outline
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Orang',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Padding(padding: EdgeInsets.only(top: 64.0)),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      Transform.scale(
+                                        scale:
+                                            2.5, // Faktor skala untuk memperbesar gambar
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(40),
+                                          child: Image.asset(
+                                            'assets/image/Konsultasi.png', // Ganti dengan path gambar Anda
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.only(top: 28.0)),
+                                      Container(
+                                        width: 140,
+                                        height: 25,
+                                        decoration: BoxDecoration(
+                                          color: const Color.fromARGB(
+                                              255, 26, 73, 128),
+                                          borderRadius:
+                                              BorderRadius.circular(12.5),
+                                          border: Border.all(
+                                            color:
+                                                Colors.orange, // Warna outline
+                                            width: 2, // Lebar outline
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Orang',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(padding: EdgeInsets.all(1.0)),
+                                Expanded(
+                                  child: Column(
+                                    children: [
+                                      Transform.scale(
+                                        scale:
+                                            2.5, // Faktor skala untuk memperbesar gambar
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(40),
+                                          child: Image.asset(
+                                            'assets/image/Pelatihan.png',
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.only(top: 28.0)),
+                                      Container(
+                                        width: 140,
+                                        height: 25,
+                                        decoration: BoxDecoration(
+                                          color: const Color.fromARGB(
+                                              255, 26, 73, 128),
+                                          borderRadius:
+                                              BorderRadius.circular(12.5),
+                                          border: Border.all(
+                                            color:
+                                                Colors.orange, // Warna outline
+                                            width: 2, // Lebar outline
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Orang',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Padding(padding: EdgeInsets.only(top: 24.0)),
+                            Container(
+                              padding: EdgeInsets.all(3),
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Container(
+                                    width: 240,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(24),
+                                      color: Colors.orange,
+                                    ),
+                                  ),
+                                  Container(
+                                    width: double.infinity,
+                                    height: 2,
+                                    margin: EdgeInsets.symmetric(horizontal: 8),
+                                    color: Colors.orange,
+                                  ),
+                                  Container(
+                                    width: 230,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(24),
+                                      color: const Color.fromARGB(
+                                          255, 2, 124, 204),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        'Reward',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(padding: const EdgeInsets.only(top: 32.0)),
+                            Container(
+                              width: 300,
+                              height: 290,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                border: Border.all(
+                                  color: Colors.orange,
+                                  width: 2,
+                                ),
+                                color: const Color.fromARGB(255, 6, 52, 83),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(32.0),
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Stack(
+                                        alignment: Alignment.topCenter,
+                                        children: [
+                                          Container(
+                                            width: 120,
+                                            height: 120,
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: Colors.grey,
+                                            ),
+                                          ),
+                                          Positioned(
+                                            top: 0,
+                                            child: Image.asset(
+                                              'assets/image/Pelatihan.png',
+                                              width: 120,
+                                              height: 120,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.only(top: 18.0)),
+                                      Text(
+                                        'Nama Panjang Lengkap',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      SizedBox(height: 16),
+                                      Text(
+                                        'karena sangat rajin mencuci muka jadi diberikan penghargaan padahal biasa aja',
+                                        style: TextStyle(
+                                          color: Colors.orange,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Stack(
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(top: 10),
+                                  height: 1220,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage(
+                                          "assets/image/Feedback.png"),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  top: 245,
+                                  left: 0,
+                                  right: 0,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.all(32.0),
+                                        child: Column(
+                                          children: [
+                                            Text(
+                                              "Dapatkan Update Terkini",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 28,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            Text(
+                                              "Program Budaya Sucofindo",
+                                              style: TextStyle(
+                                                color: Colors.orange,
+                                                fontSize: 28,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            Text(
+                                              "Untuk mendapatkan reminder silakan masukan email anda pada kolom dibawah ini",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 12,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                            ),
+                                            Padding(
+                                                padding:
+                                                    EdgeInsets.only(top: 18.0)),
+                                            Container(
+                                              margin:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 4),
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(35),
+                                                color: Colors.white,
+                                              ),
+                                              child: TextField(
+                                                decoration: InputDecoration(
+                                                  labelText:
+                                                      'Your Email Address',
+                                                  border: OutlineInputBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            35),
+                                                  ),
+                                                  contentPadding:
+                                                      const EdgeInsets
+                                                              .symmetric(
+                                                          horizontal: 10),
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                                padding:
+                                                    EdgeInsets.only(top: 18.0)),
+                                            Container(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 3),
+                                              child: ElevatedButton(
+                                                style: ElevatedButton.styleFrom(
+                                                  minimumSize: Size(180, 40),
+                                                  backgroundColor:
+                                                      const Color.fromARGB(
+                                                          255, 250, 131, 15),
+                                                  foregroundColor: Colors.black,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                  ),
+                                                ),
+                                                child: Text(
+                                                  'Subscribe Us',
+                                                  style: TextStyle(
+                                                      fontSize: 18,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                                onPressed: () {},
+                                              ),
+                                            ),
+                                            Padding(
+                                                padding: EdgeInsets.only(
+                                                    top: 170.0)),
+                                            Container(
+                                              width: 350,
+                                              height: 450,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(24),
+                                                color: const Color.fromARGB(
+                                                    255, 26, 73, 128),
+                                                border: Border.all(
+                                                  color: Colors.white,
+                                                  width: 4,
+                                                ),
+                                              ),
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(32.0),
+                                                child: Column(
+                                                  children: [
+                                                    Container(
+                                                      margin: const EdgeInsets
+                                                              .symmetric(
+                                                          vertical: 4),
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(35),
+                                                        color: Colors.white,
+                                                      ),
+                                                      child: TextField(
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              'Your Email Address',
+                                                          border:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        35),
+                                                          ),
+                                                          contentPadding:
+                                                              const EdgeInsets
+                                                                      .symmetric(
+                                                                  horizontal:
+                                                                      10),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                        padding:
+                                                            EdgeInsets.only(
+                                                                top: 18.0)),
+                                                    Container(
+                                                      margin: const EdgeInsets
+                                                              .symmetric(
+                                                          vertical: 4),
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(35),
+                                                        color: Colors.white,
+                                                      ),
+                                                      child: TextField(
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              'Your Email Address',
+                                                          border:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        35),
+                                                          ),
+                                                          contentPadding:
+                                                              const EdgeInsets
+                                                                      .symmetric(
+                                                                  horizontal:
+                                                                      10),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                        padding:
+                                                            EdgeInsets.only(
+                                                                top: 18.0)),
+                                                    Container(
+                                                      margin: const EdgeInsets
+                                                              .symmetric(
+                                                          vertical: 4),
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(35),
+                                                        color: Colors.white,
+                                                      ),
+                                                      child: TextField(
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              'Your Email Address',
+                                                          border:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        35),
+                                                          ),
+                                                          contentPadding:
+                                                              const EdgeInsets
+                                                                      .symmetric(
+                                                                  horizontal:
+                                                                      10),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                        padding:
+                                                            EdgeInsets.only(
+                                                                top: 18.0)),
+                                                    Container(
+                                                      margin: const EdgeInsets
+                                                              .symmetric(
+                                                          vertical: 4),
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(35),
+                                                        color: Colors.white,
+                                                      ),
+                                                      child: TextField(
+                                                        decoration:
+                                                            InputDecoration(
+                                                          labelText:
+                                                              'Your Email Address',
+                                                          border:
+                                                              OutlineInputBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        35),
+                                                          ),
+                                                          contentPadding:
+                                                              const EdgeInsets
+                                                                      .symmetric(
+                                                                  horizontal:
+                                                                      10),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                        padding:
+                                                            EdgeInsets.only(
+                                                                top: 14.0)),
+                                                    Container(
+                                                      alignment:
+                                                          Alignment.bottomRight,
+                                                      margin: const EdgeInsets
+                                                              .symmetric(
+                                                          vertical: 10),
+                                                      child: ElevatedButton(
+                                                        onPressed: () {},
+                                                        style: ElevatedButton
+                                                            .styleFrom(
+                                                          minimumSize:
+                                                              Size(180, 40),
+                                                          backgroundColor:
+                                                              const Color
+                                                                      .fromARGB(
+                                                                  255,
+                                                                  250,
+                                                                  131,
+                                                                  15),
+                                                          foregroundColor:
+                                                              Colors.black,
+                                                          shape:
+                                                              RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        20),
+                                                          ),
+                                                        ),
+                                                        child: const Text(
+                                                          'KIRIM',
+                                                          style: TextStyle(
+                                                            fontSize: 20,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            color: Colors.white,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
                           ],
                         ),
                       ),
