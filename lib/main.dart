@@ -1,13 +1,17 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/register.dart';
 import 'package:inovasi_budaya/view/splash_view.dart';
 import 'package:inovasi_budaya/view/HomePage.dart';
+import 'package:inovasi_budaya/view/Aktivitas.dart';
+import 'package:inovasi_budaya/view/Kinerja.dart';
+import 'package:inovasi_budaya/view/Materi.dart';
+import 'package:inovasi_budaya/view/Profil.dart';
+import 'package:inovasi_budaya/view/SafetyMoment.dart';
+import 'package:inovasi_budaya/view/Settings.dart';
 
-import 'package:inovasi_budaya/local_notification_helper.dart';
 import 'package:workmanager/workmanager.dart';
 
 String? token;
@@ -93,7 +97,13 @@ void main() async {
       routes: {
         '/splashView': (context) => const LoginPage(),
         '/home': (context) => HomePage(),
-        '/register': (context) => const Register()
+        '/register': (context) => const Register(),
+        '/aktivitas': (context) => const Aktivitas(),
+        '/kinerja': (context) => Kinerja(),
+        '/materi': (context) => Materi(),
+        '/profil': (context) => Profile(),
+        '/safety': (context) => Safety_Moment(),
+        '/setting': (context) => Settings(),
       },
     ),
   );

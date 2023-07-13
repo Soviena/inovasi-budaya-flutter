@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:inovasi_budaya/view/Burger_Menu.dart';
+import 'package:inovasi_budaya/view/burger_menu.dart';
 
-class Materi_Share extends StatelessWidget {
+class Materi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

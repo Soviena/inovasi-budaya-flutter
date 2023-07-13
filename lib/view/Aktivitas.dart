@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:inovasi_budaya/view/Burger_Menu.dart';
+import 'package:inovasi_budaya/view/burger_menu.dart';
 
-class Budaya extends StatelessWidget {
+class Aktivitas extends StatelessWidget {
+  const Aktivitas({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:inovasi_budaya/view/Burger_Menu.dart';
+import 'package:inovasi_budaya/view/burger_menu.dart';
 
 class Safety_Moment extends StatelessWidget {
   @override

@@ -1,77 +1,75 @@
 import 'package:flutter/material.dart';
-import 'package:inovasi_budaya/view/Burger_Menu.dart';
+import 'package:inovasi_budaya/view/burger_menu.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        leading: Builder(builder: (context) {
+          return IconButton(
+            icon: const Icon(
+              Icons.menu,
+              color: Colors.orange,
+            ),
+            iconSize: 36,
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          );
+        }),
         backgroundColor: const Color.fromARGB(255, 6, 51, 83),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton(
-              icon: Icon(
-                Icons.menu,
-                color: Colors.orange,
-              ),
-              iconSize: 36,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => BurgerList()),
-                );
-              },
-            ),
-            Text(
-              'Homepage',
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-                color: Colors.orange,
-              ),
-            ),
-            SizedBox(width: 20),
-          ],
+        title: const Text(
+          'Homepage',
+          style: TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+            color: Colors.orange,
+          ),
         ),
       ),
+      drawer: const BurgerList(),
       body: ListView(
         children: [
           Container(
-            padding: EdgeInsets.all(24.0),
+            padding: const EdgeInsets.all(24.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Sucofindo',
                   style: TextStyle(
                     fontSize: 46,
                     fontWeight: FontWeight.bold,
-                    color: const Color.fromARGB(255, 26, 73, 128),
+                    color: Color.fromARGB(255, 26, 73, 128),
                   ),
                 ),
-                Text(
+                const Text(
                   'Ber-AKHLAK',
                   style: TextStyle(
                     fontSize: 42,
                     fontWeight: FontWeight.bold,
-                    color: const Color.fromARGB(255, 2, 124, 204),
+                    color: Color.fromARGB(255, 2, 124, 204),
                   ),
                 ),
-                SizedBox(height: 16.0),
+                const SizedBox(height: 16.0),
                 Image.asset(
                   'assets/image/Akhlak.png',
                   fit: BoxFit.cover,
                 ),
-                SizedBox(height: 16.0),
+                const SizedBox(height: 16.0),
                 Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       colors: [
-                        const Color.fromARGB(255, 2, 33, 204),
-                        const Color.fromARGB(255, 95, 220, 216)
+                        Color.fromARGB(255, 2, 33, 204),
+                        Color.fromARGB(255, 95, 220, 216)
                       ],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
@@ -85,12 +83,12 @@ class HomePage extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       primary: Colors.transparent,
                       elevation: 0,
-                      padding: EdgeInsets.symmetric(vertical: 16),
+                      padding: const EdgeInsets.symmetric(vertical: 16),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Tata Nilai Akhlak',
                       style: TextStyle(
                         fontSize: 18,
@@ -106,9 +104,9 @@ class HomePage extends StatelessWidget {
           Stack(
             children: [
               Container(
-                margin: EdgeInsets.only(top: 10, bottom: 20),
+                margin: const EdgeInsets.only(top: 10, bottom: 20),
                 height: 1220,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage("assets/image/Visi_Misi_Image.png"),
                     fit: BoxFit.cover,
@@ -122,7 +120,7 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    DecoratedBox(
+                    const DecoratedBox(
                       decoration: BoxDecoration(
                         border: Border(
                           bottom: BorderSide(
@@ -137,7 +135,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.all(42.0),
+                      margin: const EdgeInsets.all(42.0),
                       child: Column(
                         children: [
                           Align(
@@ -145,15 +143,15 @@ class HomePage extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-                                Text(
+                                const Text(
                                   'Visi',
                                   style: TextStyle(
                                     fontSize: 36,
                                     color: Colors.white,
                                   ),
                                 ),
-                                SizedBox(height: 10),
-                                DecoratedBox(
+                                const SizedBox(height: 10),
+                                const DecoratedBox(
                                   decoration: BoxDecoration(
                                     border: Border(
                                       bottom: BorderSide(
@@ -174,22 +172,22 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 30),
+                                const SizedBox(height: 30),
                                 Align(
                                   alignment: Alignment.centerLeft,
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
+                                      const Text(
                                         'Misi',
                                         style: TextStyle(
                                           fontSize: 36,
                                           color: Colors.white,
                                         ),
                                       ),
-                                      SizedBox(height: 10),
-                                      DecoratedBox(
+                                      const SizedBox(height: 10),
+                                      const DecoratedBox(
                                         decoration: BoxDecoration(
                                           border: Border(
                                             bottom: BorderSide(
@@ -210,8 +208,8 @@ class HomePage extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      SizedBox(height: 50),
-                                      Align(
+                                      const SizedBox(height: 50),
+                                      const Align(
                                         alignment: Alignment.center,
                                         child: DecoratedBox(
                                           decoration: BoxDecoration(
@@ -236,7 +234,7 @@ class HomePage extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      Padding(
+                                      const Padding(
                                           padding: EdgeInsets.only(top: 48.0)),
                                       Row(
                                         mainAxisAlignment:
@@ -253,7 +251,7 @@ class HomePage extends StatelessWidget {
                                                     fit: BoxFit.cover,
                                                   ),
                                                 ),
-                                                SizedBox(height: 8),
+                                                const SizedBox(height: 8),
                                                 Container(
                                                   width: 80,
                                                   height: 25,
@@ -269,7 +267,7 @@ class HomePage extends StatelessWidget {
                                                       width: 2, // Lebar outline
                                                     ),
                                                   ),
-                                                  child: Center(
+                                                  child: const Center(
                                                     child: Text(
                                                       'Inspeksi',
                                                       style: TextStyle(
@@ -282,7 +280,7 @@ class HomePage extends StatelessWidget {
                                               ],
                                             ),
                                           ),
-                                          SizedBox(width: 40),
+                                          const SizedBox(width: 40),
                                           Expanded(
                                             child: Column(
                                               children: [
@@ -294,7 +292,7 @@ class HomePage extends StatelessWidget {
                                                     fit: BoxFit.cover,
                                                   ),
                                                 ),
-                                                SizedBox(height: 8),
+                                                const SizedBox(height: 8),
                                                 Container(
                                                   width: 80,
                                                   height: 25,
@@ -310,7 +308,7 @@ class HomePage extends StatelessWidget {
                                                       width: 2, // Lebar outline
                                                     ),
                                                   ),
-                                                  child: Center(
+                                                  child: const Center(
                                                     child: Text(
                                                       'Pengujian',
                                                       style: TextStyle(
@@ -323,7 +321,7 @@ class HomePage extends StatelessWidget {
                                               ],
                                             ),
                                           ),
-                                          SizedBox(width: 40),
+                                          const SizedBox(width: 40),
                                           Expanded(
                                             child: Column(
                                               children: [
@@ -335,7 +333,7 @@ class HomePage extends StatelessWidget {
                                                     fit: BoxFit.cover,
                                                   ),
                                                 ),
-                                                SizedBox(height: 8),
+                                                const SizedBox(height: 8),
                                                 Container(
                                                   width: 80,
                                                   height: 25,
@@ -351,7 +349,7 @@ class HomePage extends StatelessWidget {
                                                       width: 2, // Lebar outline
                                                     ),
                                                   ),
-                                                  child: Center(
+                                                  child: const Center(
                                                     child: Text(
                                                       'Sertifikasi',
                                                       style: TextStyle(
@@ -366,7 +364,7 @@ class HomePage extends StatelessWidget {
                                           ),
                                         ],
                                       ),
-                                      Padding(
+                                      const Padding(
                                           padding: EdgeInsets.only(top: 36.0)),
                                       Row(
                                         mainAxisAlignment:
@@ -383,7 +381,7 @@ class HomePage extends StatelessWidget {
                                                     fit: BoxFit.cover,
                                                   ),
                                                 ),
-                                                SizedBox(height: 8),
+                                                const SizedBox(height: 8),
                                                 Container(
                                                   width: 80,
                                                   height: 25,
@@ -399,7 +397,7 @@ class HomePage extends StatelessWidget {
                                                       width: 2, // Lebar outline
                                                     ),
                                                   ),
-                                                  child: Center(
+                                                  child: const Center(
                                                     child: Text(
                                                       'Konsultasi',
                                                       style: TextStyle(
@@ -412,7 +410,7 @@ class HomePage extends StatelessWidget {
                                               ],
                                             ),
                                           ),
-                                          SizedBox(width: 40),
+                                          const SizedBox(width: 40),
                                           Expanded(
                                             child: Column(
                                               children: [
@@ -424,7 +422,7 @@ class HomePage extends StatelessWidget {
                                                     fit: BoxFit.cover,
                                                   ),
                                                 ),
-                                                SizedBox(height: 8),
+                                                const SizedBox(height: 8),
                                                 Container(
                                                   width: 80,
                                                   height: 25,
@@ -440,7 +438,7 @@ class HomePage extends StatelessWidget {
                                                       width: 2, // Lebar outline
                                                     ),
                                                   ),
-                                                  child: Center(
+                                                  child: const Center(
                                                     child: Text(
                                                       'Pelatihan',
                                                       style: TextStyle(
@@ -455,12 +453,12 @@ class HomePage extends StatelessWidget {
                                           ),
                                         ],
                                       ),
-                                      Padding(
+                                      const Padding(
                                           padding: EdgeInsets.only(top: 84.0)),
                                       Center(
                                         child: ElevatedButton(
                                           onPressed: () {},
-                                          child: Text(
+                                          child: const Text(
                                             'WEB SUCOFINDO',
                                             style: TextStyle(
                                               fontSize: 16,
@@ -472,11 +470,12 @@ class HomePage extends StatelessWidget {
                                             backgroundColor:
                                                 MaterialStateProperty.all<
                                                     Color>(
-                                              Color.fromARGB(255, 2, 124, 204),
+                                              const Color.fromARGB(
+                                                  255, 2, 124, 204),
                                             ),
                                             fixedSize:
                                                 MaterialStateProperty.all<Size>(
-                                              Size(200, 50),
+                                              const Size(200, 50),
                                             ),
                                             shape: MaterialStateProperty.all<
                                                 OutlinedBorder>(
@@ -511,7 +510,7 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        padding: EdgeInsets.all(3),
+                        padding: const EdgeInsets.all(3),
                         child: Stack(
                           alignment: Alignment.center,
                           children: [
@@ -526,7 +525,7 @@ class HomePage extends StatelessWidget {
                             Container(
                               width: double.infinity,
                               height: 2,
-                              margin: EdgeInsets.symmetric(horizontal: 8),
+                              margin: const EdgeInsets.symmetric(horizontal: 8),
                               color: Colors.orange,
                             ),
                             Container(
@@ -536,7 +535,7 @@ class HomePage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(24),
                                 color: const Color.fromARGB(255, 2, 124, 204),
                               ),
-                              child: Center(
+                              child: const Center(
                                 child: Text(
                                   'Juni',
                                   style: TextStyle(
@@ -550,7 +549,7 @@ class HomePage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Padding(padding: EdgeInsets.only(top: 18.0)),
+                      const Padding(padding: EdgeInsets.only(top: 18.0)),
                       Container(
                         width: 320,
                         height: 240,
@@ -563,11 +562,11 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(14.0),
+                          padding: const EdgeInsets.all(14.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 'Kegiatan',
                                 style: TextStyle(
                                   color: Colors.white,
@@ -575,20 +574,22 @@ class HomePage extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              Padding(padding: EdgeInsets.only(top: 12.0)),
+                              const Padding(
+                                  padding: EdgeInsets.only(top: 12.0)),
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Container(
                                     width: 8,
                                     height: 8,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       color: Colors.white,
                                       shape: BoxShape.circle,
                                     ),
-                                    margin: EdgeInsets.only(top: 8, right: 8),
+                                    margin:
+                                        const EdgeInsets.only(top: 8, right: 8),
                                   ),
-                                  Text(
+                                  const Text(
                                     'Lorem ipsum',
                                     style: TextStyle(
                                       color: Colors.white,
@@ -601,7 +602,7 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Padding(padding: EdgeInsets.only(top: 32.0)),
+                      const Padding(padding: EdgeInsets.only(top: 32.0)),
                       Container(
                         child: Column(
                           children: [
@@ -619,7 +620,8 @@ class HomePage extends StatelessWidget {
                                 Container(
                                   width: double.infinity,
                                   height: 2,
-                                  margin: EdgeInsets.symmetric(horizontal: 8),
+                                  margin:
+                                      const EdgeInsets.symmetric(horizontal: 8),
                                   color: Colors.orange,
                                 ),
                                 Container(
@@ -630,7 +632,7 @@ class HomePage extends StatelessWidget {
                                     color:
                                         const Color.fromARGB(255, 2, 124, 204),
                                   ),
-                                  child: Center(
+                                  child: const Center(
                                     child: Text(
                                       'Jadwal Program Budaya',
                                       style: TextStyle(
@@ -643,14 +645,14 @@ class HomePage extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            Padding(padding: EdgeInsets.only(top: 24.0)),
+                            const Padding(padding: EdgeInsets.only(top: 24.0)),
                             SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: Row(
                                 children: List.generate(5, (index) {
                                   return Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 16.0),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 16.0),
                                     child: Container(
                                       width: 250,
                                       height: 210,
@@ -664,11 +666,12 @@ class HomePage extends StatelessWidget {
                                               color: Colors.grey.withOpacity(1),
                                               spreadRadius: 1,
                                               blurRadius: 5,
-                                              offset: Offset(0, 5),
+                                              offset: const Offset(0, 5),
                                             ),
                                           ],
                                         ),
-                                        padding: EdgeInsets.only(top: 24.0),
+                                        padding:
+                                            const EdgeInsets.only(top: 24.0),
                                         child: Column(
                                           children: [
                                             Stack(
@@ -676,10 +679,11 @@ class HomePage extends StatelessWidget {
                                                 Container(
                                                   width: double.infinity,
                                                   height: 50,
-                                                  decoration: BoxDecoration(
+                                                  decoration:
+                                                      const BoxDecoration(
                                                     color: Colors.blue,
                                                   ),
-                                                  child: Center(
+                                                  child: const Center(
                                                     child: Text(
                                                       'Januari',
                                                       style: TextStyle(
@@ -693,14 +697,15 @@ class HomePage extends StatelessWidget {
                                                 ),
                                               ],
                                             ),
-                                            SizedBox(height: 8.0),
+                                            const SizedBox(height: 8.0),
                                             Expanded(
                                               child: SingleChildScrollView(
                                                 child: Container(
                                                   alignment: Alignment.topLeft,
-                                                  padding: EdgeInsets.symmetric(
+                                                  padding: const EdgeInsets
+                                                          .symmetric(
                                                       horizontal: 16.0),
-                                                  child: Text(
+                                                  child: const Text(
                                                     'lorem ipsum',
                                                     style: TextStyle(
                                                       color: Colors.black,
