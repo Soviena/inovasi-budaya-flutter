@@ -40,20 +40,22 @@ void callbackDispatcher() {
         FlutterLocalNotificationsPlugin();
     switch (task) {
       case "pengingatPeregangan":
-        notif.show(
-            1,
-            "Pengingat peregangan",
-            "Jangan lupa meregangkan badan agar badan tetap sehat",
-            const NotificationDetails(
-              android: AndroidNotificationDetails(
-                  "high_importance_channel", "High Importance Notifications",
-                  channelDescription:
-                      "This channel is used for important notifications.",
-                  importance: Importance.high,
-                  color: Colors.blue,
-                  playSound: true,
-                  icon: '@mipmap/ic_launcher'),
-            ));
+        if (TimeOfDay.now().hour >= 8 && TimeOfDay.now().hour >= 17) {
+          notif.show(
+              1,
+              "Pengingat peregangan",
+              "Jangan lupa meregangkan badan agar badan tetap sehat",
+              const NotificationDetails(
+                android: AndroidNotificationDetails(
+                    "high_importance_channel", "High Importance Notifications",
+                    channelDescription:
+                        "This channel is used for important notifications.",
+                    importance: Importance.high,
+                    color: Colors.blue,
+                    playSound: true,
+                    icon: '@mipmap/ic_launcher'),
+              ));
+        }
     }
 
     return Future.value(true);
