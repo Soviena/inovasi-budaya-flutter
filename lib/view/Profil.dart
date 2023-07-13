@@ -34,8 +34,8 @@ class Profile extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/image/profil.png"),
-            fit: BoxFit.cover,
+            image: AssetImage("assets/image/Profil.png"),
+            fit: BoxFit.fill,
           ),
         ),
         child: Align(
