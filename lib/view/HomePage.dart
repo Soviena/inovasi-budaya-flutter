@@ -8,23 +8,45 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var arr = [
+    'assets/image/Siapkeakhlak.jpg',
+    'assets/image/PosterAkhlak.jpg',
+    'assets/image/PosterPerilakuAkhlak.jpg',
+    'assets/image/Posterlandscape1.jpg',
+    'assets/image/Posterlandscape2.jpg'
+  ];
+
+  void posterAkhlak(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+          backgroundColor: const Color.fromARGB(255, 6, 51, 83),
+          content: GestureDetector(
+            onPanUpdate: (details) {
+              // Swiping in right direction.
+              if (details.delta.dx > 0) {
+                Container(
+                  alignment: Alignment.center,
+                  height: MediaQuery.of(context).size.height * 0.4,
+                  child: Image.asset('assets/image/PosterPerilakuAkhlak.jpg'),
+                );
+              }
+
+              // Swiping in left direction.
+              if (details.delta.dx < 0) {}
+            },
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    void posterAkhlak(BuildContext context) {
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
-            ),
-            backgroundColor: const Color.fromARGB(255, 6, 51, 83),
-            title: const Center(),
-          );
-        },
-      );
-    }
-
     return Scaffold(
       appBar: AppBar(
         leading: Builder(builder: (context) {
