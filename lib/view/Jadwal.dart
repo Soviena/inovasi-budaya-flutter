@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inovasi_budaya/view/Aktivitas.dart';
 import 'package:inovasi_budaya/view/burger_menu.dart';
 import 'package:accordion/accordion.dart';
 
@@ -64,7 +65,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -96,7 +99,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -126,7 +131,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -156,7 +163,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -186,7 +195,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -216,7 +227,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -246,7 +259,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -276,7 +291,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -306,7 +323,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -336,7 +355,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -366,7 +387,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -396,7 +419,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
