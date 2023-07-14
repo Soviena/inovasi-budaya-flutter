@@ -247,249 +247,364 @@ class _HomePageState extends State<HomePage> {
                                         ),
                                       ),
                                       const SizedBox(height: 50),
-                                      const Align(
-                                        alignment: Alignment.center,
-                                        child: DecoratedBox(
-                                          decoration: BoxDecoration(
-                                            border: Border(
-                                              bottom: BorderSide(
-                                                color: Colors.orange,
-                                                width: 2.0,
+                                      Padding(
+                                        padding: EdgeInsets.all(8.0),
+                                        child: Column(
+                                          children: [
+                                            Align(
+                                              alignment: Alignment.center,
+                                              child: DecoratedBox(
+                                                decoration: BoxDecoration(
+                                                  border: Border(
+                                                    bottom: BorderSide(
+                                                      color: Colors.orange,
+                                                      width: 2.0,
+                                                    ),
+                                                  ),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsets.only(
+                                                      bottom: 1.0),
+                                                  child: Text(
+                                                    'Jasa Kami',
+                                                    style: TextStyle(
+                                                      fontSize: 36,
+                                                      color: Colors.white,
+                                                    ),
+                                                    textAlign: TextAlign.start,
+                                                  ),
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsets.only(bottom: 1.0),
-                                            child: Text(
-                                              'Jasa Kami',
-                                              style: TextStyle(
-                                                fontSize: 36,
-                                                color: Colors.white,
+                                            Padding(
+                                              padding:
+                                                  EdgeInsets.only(top: 48.0),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Expanded(
+                                                    child: Column(
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  8.0),
+                                                          child:
+                                                              Transform.scale(
+                                                            scale:
+                                                                1.8, // Faktor skala untuk memperbesar gambar
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          40),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/image/Inspeksi.png',
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(height: 8),
+                                                        Container(
+                                                          width: 80,
+                                                          height: 25,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: const Color
+                                                                    .fromARGB(
+                                                                255,
+                                                                26,
+                                                                73,
+                                                                128),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.5),
+                                                            border: Border.all(
+                                                              color:
+                                                                  Colors.orange,
+                                                              width: 2,
+                                                            ),
+                                                          ),
+                                                          child: const Center(
+                                                            child: Text(
+                                                              'Inspeksi',
+                                                              style: TextStyle(
+                                                                color: Colors
+                                                                    .white,
+                                                                fontSize: 14,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  SizedBox(width: 40),
+                                                  Expanded(
+                                                    child: Column(
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  8.0),
+                                                          child:
+                                                              Transform.scale(
+                                                            scale:
+                                                                1.8, // Faktor skala untuk memperbesar gambar
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          40),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/image/Pengujian.png',
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(height: 8),
+                                                        Container(
+                                                          width: 80,
+                                                          height: 25,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: const Color
+                                                                    .fromARGB(
+                                                                255,
+                                                                26,
+                                                                73,
+                                                                128),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.5),
+                                                            border: Border.all(
+                                                              color:
+                                                                  Colors.orange,
+                                                              width: 2,
+                                                            ),
+                                                          ),
+                                                          child: const Center(
+                                                            child: Text(
+                                                              'Pengujian',
+                                                              style: TextStyle(
+                                                                color: Colors
+                                                                    .white,
+                                                                fontSize: 14,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  SizedBox(width: 40),
+                                                  Expanded(
+                                                    child: Column(
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  8.0),
+                                                          child:
+                                                              Transform.scale(
+                                                            scale:
+                                                                1.8, // Faktor skala untuk memperbesar gambar
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          40),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/image/Sertifikasi.png',
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(height: 8),
+                                                        Container(
+                                                          width: 80,
+                                                          height: 25,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: const Color
+                                                                    .fromARGB(
+                                                                255,
+                                                                26,
+                                                                73,
+                                                                128),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.5),
+                                                            border: Border.all(
+                                                              color:
+                                                                  Colors.orange,
+                                                              width: 2,
+                                                            ),
+                                                          ),
+                                                          child: const Center(
+                                                            child: Text(
+                                                              'Sertifikasi',
+                                                              style: TextStyle(
+                                                                color: Colors
+                                                                    .white,
+                                                                fontSize: 14,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
-                                              textAlign: TextAlign.start,
                                             ),
-                                          ),
+                                            Padding(
+                                              padding:
+                                                  EdgeInsets.only(top: 48.0),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Expanded(
+                                                    child: Column(
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  8.0),
+                                                          child:
+                                                              Transform.scale(
+                                                            scale:
+                                                                1.8, // Faktor skala untuk memperbesar gambar
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          40),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/image/Konsultasi.png',
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(height: 8),
+                                                        Container(
+                                                          width: 80,
+                                                          height: 25,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: const Color
+                                                                    .fromARGB(
+                                                                255,
+                                                                26,
+                                                                73,
+                                                                128),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.5),
+                                                            border: Border.all(
+                                                              color:
+                                                                  Colors.orange,
+                                                              width: 2,
+                                                            ),
+                                                          ),
+                                                          child: const Center(
+                                                            child: Text(
+                                                              'Konsultasi',
+                                                              style: TextStyle(
+                                                                color: Colors
+                                                                    .white,
+                                                                fontSize: 14,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Column(
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  8.0),
+                                                          child:
+                                                              Transform.scale(
+                                                            scale:
+                                                                1.8, // Faktor skala untuk memperbesar gambar
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          40),
+                                                              child:
+                                                                  Image.asset(
+                                                                'assets/image/Pelatihan.png',
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(height: 8),
+                                                        Container(
+                                                          width: 80,
+                                                          height: 25,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: const Color
+                                                                    .fromARGB(
+                                                                255,
+                                                                26,
+                                                                73,
+                                                                128),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        12.5),
+                                                            border: Border.all(
+                                                              color:
+                                                                  Colors.orange,
+                                                              width: 2,
+                                                            ),
+                                                          ),
+                                                          child: const Center(
+                                                            child: Text(
+                                                              'Pelatihan',
+                                                              style: TextStyle(
+                                                                color: Colors
+                                                                    .white,
+                                                                fontSize: 14,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
                                         ),
-                                      ),
-                                      const Padding(
-                                          padding: EdgeInsets.only(top: 48.0)),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Expanded(
-                                            child: Column(
-                                              children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(40),
-                                                  child: Image.asset(
-                                                    'assets/image/Inspeksi.png', // Ganti dengan path gambar Anda
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                ),
-                                                const SizedBox(height: 8),
-                                                Container(
-                                                  width: 80,
-                                                  height: 25,
-                                                  decoration: BoxDecoration(
-                                                    color: const Color.fromARGB(
-                                                        255, 26, 73, 128),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            12.5),
-                                                    border: Border.all(
-                                                      color: Colors
-                                                          .orange, // Warna outline
-                                                      width: 2, // Lebar outline
-                                                    ),
-                                                  ),
-                                                  child: const Center(
-                                                    child: Text(
-                                                      'Inspeksi',
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontSize: 14,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          const SizedBox(width: 40),
-                                          Expanded(
-                                            child: Column(
-                                              children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(40),
-                                                  child: Image.asset(
-                                                    'assets/image/Pengujian.png',
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                ),
-                                                const SizedBox(height: 8),
-                                                Container(
-                                                  width: 80,
-                                                  height: 25,
-                                                  decoration: BoxDecoration(
-                                                    color: const Color.fromARGB(
-                                                        255, 26, 73, 128),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            12.5),
-                                                    border: Border.all(
-                                                      color: Colors
-                                                          .orange, // Warna outline
-                                                      width: 2, // Lebar outline
-                                                    ),
-                                                  ),
-                                                  child: const Center(
-                                                    child: Text(
-                                                      'Pengujian',
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontSize: 14,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          const SizedBox(width: 40),
-                                          Expanded(
-                                            child: Column(
-                                              children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(40),
-                                                  child: Image.asset(
-                                                    'assets/image/Sertifikasi.png', // Ganti dengan path gambar Anda
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                ),
-                                                const SizedBox(height: 8),
-                                                Container(
-                                                  width: 80,
-                                                  height: 25,
-                                                  decoration: BoxDecoration(
-                                                    color: const Color.fromARGB(
-                                                        255, 26, 73, 128),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            12.5),
-                                                    border: Border.all(
-                                                      color: Colors
-                                                          .orange, // Warna outline
-                                                      width: 2, // Lebar outline
-                                                    ),
-                                                  ),
-                                                  child: const Center(
-                                                    child: Text(
-                                                      'Sertifikasi',
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontSize: 14,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      const Padding(
-                                          padding: EdgeInsets.only(top: 36.0)),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Expanded(
-                                            child: Column(
-                                              children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(40),
-                                                  child: Image.asset(
-                                                    'assets/image/Konsultasi.png', // Ganti dengan path gambar Anda
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                ),
-                                                const SizedBox(height: 8),
-                                                Container(
-                                                  width: 80,
-                                                  height: 25,
-                                                  decoration: BoxDecoration(
-                                                    color: const Color.fromARGB(
-                                                        255, 26, 73, 128),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            12.5),
-                                                    border: Border.all(
-                                                      color: Colors
-                                                          .orange, // Warna outline
-                                                      width: 2, // Lebar outline
-                                                    ),
-                                                  ),
-                                                  child: const Center(
-                                                    child: Text(
-                                                      'Konsultasi',
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontSize: 14,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          const SizedBox(width: 40),
-                                          Expanded(
-                                            child: Column(
-                                              children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(40),
-                                                  child: Image.asset(
-                                                    'assets/image/Pelatihan.png',
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                ),
-                                                const SizedBox(height: 8),
-                                                Container(
-                                                  width: 80,
-                                                  height: 25,
-                                                  decoration: BoxDecoration(
-                                                    color: const Color.fromARGB(
-                                                        255, 26, 73, 128),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            12.5),
-                                                    border: Border.all(
-                                                      color: Colors
-                                                          .orange, // Warna outline
-                                                      width: 2, // Lebar outline
-                                                    ),
-                                                  ),
-                                                  child: const Center(
-                                                    child: Text(
-                                                      'Pelatihan',
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontSize: 14,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
                                       ),
                                       const Padding(
                                           padding: EdgeInsets.only(top: 84.0)),
@@ -890,7 +1005,7 @@ class _HomePageState extends State<HomePage> {
                                               child: Text(
                                                 'Selengkapnya',
                                                 style: TextStyle(
-                                                  fontSize: 12,
+                                                  fontSize: 16,
                                                   fontWeight: FontWeight.bold,
                                                   color: Colors.white,
                                                 ),
@@ -927,9 +1042,11 @@ class _HomePageState extends State<HomePage> {
                                         child: Padding(
                                           padding: const EdgeInsets.all(24.0),
                                           child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.end,
                                             children: [
                                               Text(
-                                                '          Kinerja',
+                                                'Kinerja',
                                                 style: TextStyle(
                                                   color: Colors.black,
                                                   fontSize: 18,
@@ -984,7 +1101,7 @@ class _HomePageState extends State<HomePage> {
                                               child: Text(
                                                 'Selengkapnya',
                                                 style: TextStyle(
-                                                  fontSize: 12,
+                                                  fontSize: 16,
                                                   fontWeight: FontWeight.bold,
                                                   color: Colors.white,
                                                 ),
@@ -1024,9 +1141,11 @@ class _HomePageState extends State<HomePage> {
                                         child: Padding(
                                           padding: const EdgeInsets.all(24.0),
                                           child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                'Aktivitas         ',
+                                                'Aktivitas',
                                                 style: TextStyle(
                                                   color: Colors.black,
                                                   fontSize: 18,
@@ -1081,7 +1200,7 @@ class _HomePageState extends State<HomePage> {
                                               child: Text(
                                                 'Selengkapnya',
                                                 style: TextStyle(
-                                                  fontSize: 12,
+                                                  fontSize: 16,
                                                   fontWeight: FontWeight.bold,
                                                   color: Colors.white,
                                                 ),
@@ -1118,6 +1237,8 @@ class _HomePageState extends State<HomePage> {
                                         child: Padding(
                                           padding: const EdgeInsets.all(24.0),
                                           child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.end,
                                             children: [
                                               Text(
                                                 'Safety Moment',
@@ -1175,7 +1296,7 @@ class _HomePageState extends State<HomePage> {
                                               child: Text(
                                                 'Selengkapnya',
                                                 style: TextStyle(
-                                                  fontSize: 12,
+                                                  fontSize: 16,
                                                   fontWeight: FontWeight.bold,
                                                   color: Colors.white,
                                                 ),
@@ -1735,7 +1856,7 @@ class _HomePageState extends State<HomePage> {
                                                     top: 170.0)),
                                             Container(
                                               width: 350,
-                                              height: 450,
+                                              height: 520,
                                               decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(24),
@@ -1752,6 +1873,30 @@ class _HomePageState extends State<HomePage> {
                                                 child: Column(
                                                   children: [
                                                     Container(
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(35),
+                                                        color: const Color
+                                                                .fromARGB(
+                                                            255, 250, 131, 15),
+                                                      ),
+                                                      padding: const EdgeInsets
+                                                              .symmetric(
+                                                          vertical: 8,
+                                                          horizontal: 54),
+                                                      child: Text(
+                                                        'Saran',
+                                                        style: TextStyle(
+                                                          fontSize: 24,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          color: Colors.white,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    SizedBox(height: 32),
+                                                    Container(
                                                       margin: const EdgeInsets
                                                               .symmetric(
                                                           vertical: 4),
@@ -1764,8 +1909,7 @@ class _HomePageState extends State<HomePage> {
                                                       child: TextField(
                                                         decoration:
                                                             InputDecoration(
-                                                          labelText:
-                                                              'Your Email Address',
+                                                          labelText: 'Name',
                                                           border:
                                                               OutlineInputBorder(
                                                             borderRadius:
@@ -1799,7 +1943,7 @@ class _HomePageState extends State<HomePage> {
                                                         decoration:
                                                             InputDecoration(
                                                           labelText:
-                                                              'Your Email Address',
+                                                              'Email Address',
                                                           border:
                                                               OutlineInputBorder(
                                                             borderRadius:
@@ -1832,8 +1976,7 @@ class _HomePageState extends State<HomePage> {
                                                       child: TextField(
                                                         decoration:
                                                             InputDecoration(
-                                                          labelText:
-                                                              'Your Email Address',
+                                                          labelText: 'Phone',
                                                           border:
                                                               OutlineInputBorder(
                                                             borderRadius:
@@ -1866,8 +2009,7 @@ class _HomePageState extends State<HomePage> {
                                                       child: TextField(
                                                         decoration:
                                                             InputDecoration(
-                                                          labelText:
-                                                              'Your Email Address',
+                                                          labelText: 'Subject',
                                                           border:
                                                               OutlineInputBorder(
                                                             borderRadius:
@@ -1898,7 +2040,7 @@ class _HomePageState extends State<HomePage> {
                                                         style: ElevatedButton
                                                             .styleFrom(
                                                           minimumSize:
-                                                              Size(180, 40),
+                                                              Size(140, 35),
                                                           backgroundColor:
                                                               const Color
                                                                       .fromARGB(
@@ -1930,7 +2072,7 @@ class _HomePageState extends State<HomePage> {
                                                   ],
                                                 ),
                                               ),
-                                            ),
+                                            )
                                           ],
                                         ),
                                       ),
