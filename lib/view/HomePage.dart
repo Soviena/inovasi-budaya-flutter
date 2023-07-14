@@ -113,6 +113,14 @@ class _HomePageState extends State<HomePage> {
                       end: Alignment.centerRight,
                     ),
                     borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 3,
+                        offset: const Offset(2, 4),
+                      ),
+                    ],
                   ),
                   child: ElevatedButton(
                     onPressed: () {
@@ -710,11 +718,19 @@ class _HomePageState extends State<HomePage> {
                         width: 320,
                         height: 240,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(24),
                           color: const Color.fromARGB(255, 26, 73, 128),
+                          borderRadius: BorderRadius.circular(16),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 1,
+                              blurRadius: 3,
+                              offset: const Offset(2, 2),
+                            ),
+                          ],
                           border: Border.all(
                             color: Colors.orange,
-                            width: 4,
+                            width: 5,
                           ),
                         ),
                         child: Padding(
@@ -819,12 +835,17 @@ class _HomePageState extends State<HomePage> {
                                               BorderRadius.circular(16),
                                           boxShadow: [
                                             BoxShadow(
-                                              color: Colors.grey.withOpacity(1),
+                                              color:
+                                                  Colors.grey.withOpacity(0.5),
                                               spreadRadius: 1,
-                                              blurRadius: 5,
-                                              offset: const Offset(0, 5),
+                                              blurRadius: 3,
+                                              offset: const Offset(2, 1),
                                             ),
                                           ],
+                                          border: Border.all(
+                                            color: Colors.grey.withOpacity(0.4),
+                                            width: 2,
+                                          ),
                                         ),
                                         padding:
                                             const EdgeInsets.only(top: 24.0),
@@ -1876,7 +1897,7 @@ class _HomePageState extends State<HomePage> {
                                                       decoration: BoxDecoration(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(35),
+                                                                .circular(20),
                                                         color: const Color
                                                                 .fromARGB(
                                                             255, 250, 131, 15),
@@ -1915,7 +1936,7 @@ class _HomePageState extends State<HomePage> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        35),
+                                                                        30),
                                                           ),
                                                           contentPadding:
                                                               const EdgeInsets
@@ -1949,7 +1970,7 @@ class _HomePageState extends State<HomePage> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        35),
+                                                                        30),
                                                           ),
                                                           contentPadding:
                                                               const EdgeInsets
@@ -1970,7 +1991,7 @@ class _HomePageState extends State<HomePage> {
                                                       decoration: BoxDecoration(
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(35),
+                                                                .circular(30),
                                                         color: Colors.white,
                                                       ),
                                                       child: TextField(
@@ -2015,7 +2036,7 @@ class _HomePageState extends State<HomePage> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        35),
+                                                                        30),
                                                           ),
                                                           contentPadding:
                                                               const EdgeInsets
@@ -2040,7 +2061,7 @@ class _HomePageState extends State<HomePage> {
                                                         style: ElevatedButton
                                                             .styleFrom(
                                                           minimumSize:
-                                                              Size(140, 35),
+                                                              Size(100, 35),
                                                           backgroundColor:
                                                               const Color
                                                                       .fromARGB(
@@ -2055,13 +2076,13 @@ class _HomePageState extends State<HomePage> {
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        20),
+                                                                        10),
                                                           ),
                                                         ),
                                                         child: const Text(
                                                           'KIRIM',
                                                           style: TextStyle(
-                                                            fontSize: 20,
+                                                            fontSize: 14,
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                             color: Colors.white,
