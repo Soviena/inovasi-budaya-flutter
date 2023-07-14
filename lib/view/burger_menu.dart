@@ -95,6 +95,17 @@ class _BurgerListState extends State<BurgerList> {
             ),
             ListTile(
               onTap: () {
+                Navigator.popAndPushNamed(context, "/reward");
+              },
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+              title: const Text(
+                "Reward",
+                style: TextStyle(fontSize: 30, color: Colors.white),
+              ),
+            ),
+            ListTile(
+              onTap: () {
                 Navigator.popAndPushNamed(context, "/safety");
               },
               contentPadding:
