@@ -2,6 +2,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter/material.dart';
+import 'package:inovasi_budaya/view/Aktivitas.dart';
 import 'package:inovasi_budaya/view/register.dart';
 import 'package:inovasi_budaya/view/reward.dart';
 import 'package:inovasi_budaya/view/splash_view.dart';
@@ -102,6 +103,7 @@ void main() async {
         '/profil': (context) => Profile(),
         '/safety': (context) => Safety_Moment(),
         '/setting': (context) => Settings(),
+        '/aktivitas': (context) => Aktivitas(),
       },
     ),
   );
