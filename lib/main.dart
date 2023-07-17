@@ -42,7 +42,7 @@ void callbackDispatcher() {
         FlutterLocalNotificationsPlugin();
     switch (task) {
       case "pengingatPeregangan":
-        if (TimeOfDay.now().hour >= 8 && TimeOfDay.now().hour >= 17) {
+        if (TimeOfDay.now().hour >= 8 && TimeOfDay.now().hour <= 17) {
           notif.show(
               1,
               "Pengingat peregangan",
