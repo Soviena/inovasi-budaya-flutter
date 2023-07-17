@@ -502,7 +502,7 @@ class _HomePageState extends State<HomePage> {
                                                           child:
                                                               Transform.scale(
                                                             scale:
-                                                                1.8, // Faktor skala untuk memperbesar gambar
+                                                                0.8, // Faktor skala untuk memperbesar gambar
                                                             child: ClipRRect(
                                                               borderRadius:
                                                                   BorderRadius
@@ -554,16 +554,13 @@ class _HomePageState extends State<HomePage> {
                                                     ),
                                                   ),
                                                   Expanded(
-                                                    child: Column(
+                                                    child: Stack(
                                                       children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  8.0),
+                                                        Container(
                                                           child:
                                                               Transform.scale(
                                                             scale:
-                                                                1.8, // Faktor skala untuk memperbesar gambar
+                                                                0.5, // Faktor skala untuk memperbesar gambar
                                                             child: ClipRRect(
                                                               borderRadius:
                                                                   BorderRadius
@@ -578,8 +575,8 @@ class _HomePageState extends State<HomePage> {
                                                             ),
                                                           ),
                                                         ),
-                                                        SizedBox(height: 8),
-                                                        Container(
+                                                        Positioned(
+                                                          child:                                                         Container(
                                                           width: 80,
                                                           height: 25,
                                                           decoration:
@@ -610,6 +607,7 @@ class _HomePageState extends State<HomePage> {
                                                               ),
                                                             ),
                                                           ),
+                                                        ),
                                                         ),
                                                       ],
                                                     ),

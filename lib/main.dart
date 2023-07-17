@@ -6,7 +6,7 @@ import 'package:inovasi_budaya/view/Aktivitas.dart';
 import 'package:inovasi_budaya/view/register.dart';
 import 'package:inovasi_budaya/view/reward.dart';
 import 'package:inovasi_budaya/view/splash_view.dart';
-import 'package:inovasi_budaya/view/HomePage.dart';
+import 'package:inovasi_budaya/view/homePage.dart';
 import 'package:inovasi_budaya/view/Jadwal.dart';
 import 'package:inovasi_budaya/view/Kinerja.dart';
 import 'package:inovasi_budaya/view/Materi.dart';
