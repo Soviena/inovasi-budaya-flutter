@@ -81,11 +81,11 @@ flutter:
   - assets/image/Konsultasi.png
   - assets/image/Pelatihan.png
   - assets/image/Profil.png
-  - assets/image/PosterAkhlak.png
-  - assets/image/Posterlandscape1.png
-  - assets/image/Posterlandscape2.png
-  - assets/image/PosterPerilakuAkhlak.png
-  - assets/image/Siapkeakhlak.png
+  - assets/image/PosterAkhlak.jpg
+  - assets/image/Posterlandscape1.jpg
+  - assets/image/Posterlandscape2.jpg
+  - assets/image/PosterPerilakuAkhlak.jpg
+  - assets/image/Siapkeakhlak.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
