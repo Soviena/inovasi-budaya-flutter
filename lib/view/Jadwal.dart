@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:inovasi_budaya/view/Aktivitas.dart';
 import 'package:inovasi_budaya/view/burger_menu.dart';
 import 'package:accordion/accordion.dart';
 

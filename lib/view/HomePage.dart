@@ -37,7 +37,13 @@ class _HomePageState extends State<HomePage> {
               }
 
               // Swiping in left direction.
-              if (details.delta.dx < 0) {}
+              if (details.delta.dx < 0) {
+                Container(
+                  alignment: Alignment.center,
+                  height: MediaQuery.of(context).size.height * 0.4,
+                  child: Image.asset('assets/image/PosterPerilakuAkhlak.jpg'),
+                );
+              }
             },
           ),
         );
@@ -979,10 +985,8 @@ class _HomePageState extends State<HomePage> {
                                         bottom: 0,
                                         child: InkWell(
                                           onTap: () {
-                                            // Tindakan yang ingin dilakukan saat tombol "Selengkapnya" diklik
-                                            print(
-                                                'Tombol "Selengkapnya" diklik!');
-                                            // Panggil fungsi atau lakukan tindakan yang diinginkan di sini
+                                            Navigator.popAndPushNamed(
+                                                context, "/materi");
                                           },
                                           child: Container(
                                             height: 40,
@@ -1075,10 +1079,8 @@ class _HomePageState extends State<HomePage> {
                                         bottom: 0,
                                         child: InkWell(
                                           onTap: () {
-                                            // Tindakan yang ingin dilakukan saat tombol "Selengkapnya" diklik
-                                            print(
-                                                'Tombol "Selengkapnya" diklik!');
-                                            // Panggil fungsi atau lakukan tindakan yang diinginkan di sini
+                                            Navigator.popAndPushNamed(
+                                                context, "/kinerja");
                                           },
                                           child: Container(
                                             height: 40,
@@ -1174,10 +1176,8 @@ class _HomePageState extends State<HomePage> {
                                         bottom: 0,
                                         child: InkWell(
                                           onTap: () {
-                                            // Tindakan yang ingin dilakukan saat tombol "Selengkapnya" diklik
-                                            print(
-                                                'Tombol "Selengkapnya" diklik!');
-                                            // Panggil fungsi atau lakukan tindakan yang diinginkan di sini
+                                            Navigator.popAndPushNamed(
+                                                context, "/aktivitas");
                                           },
                                           child: Container(
                                             height: 40,
@@ -1270,10 +1270,8 @@ class _HomePageState extends State<HomePage> {
                                         bottom: 0,
                                         child: InkWell(
                                           onTap: () {
-                                            // Tindakan yang ingin dilakukan saat tombol "Selengkapnya" diklik
-                                            print(
-                                                'Tombol "Selengkapnya" diklik!');
-                                            // Panggil fungsi atau lakukan tindakan yang diinginkan di sini
+                                            Navigator.popAndPushNamed(
+                                                context, "/safety");
                                           },
                                           child: Container(
                                             height: 40,
@@ -1363,13 +1361,11 @@ class _HomePageState extends State<HomePage> {
                                         scale:
                                             2.5, // Faktor skala untuk memperbesar gambar
                                         child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(40),
-                                          child: Image.asset(
-                                            'assets/image/Konsultasi.png', // Ganti dengan path gambar Anda
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
+                                            borderRadius:
+                                                BorderRadius.circular(40),
+                                            child: Icon(
+                                                Icons.person_outline_rounded,
+                                                size: 50)),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(top: 28.0)),
@@ -1408,13 +1404,11 @@ class _HomePageState extends State<HomePage> {
                                         scale:
                                             2.5, // Faktor skala untuk memperbesar gambar
                                         child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(40),
-                                          child: Image.asset(
-                                            'assets/image/Pelatihan.png',
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
+                                            borderRadius:
+                                                BorderRadius.circular(40),
+                                            child: Icon(
+                                                Icons.person_outline_rounded,
+                                                size: 50)),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(top: 28.0)),
@@ -1458,13 +1452,11 @@ class _HomePageState extends State<HomePage> {
                                         scale:
                                             2.5, // Faktor skala untuk memperbesar gambar
                                         child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(40),
-                                          child: Image.asset(
-                                            'assets/image/Konsultasi.png', // Ganti dengan path gambar Anda
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
+                                            borderRadius:
+                                                BorderRadius.circular(40),
+                                            child: Icon(
+                                                Icons.person_outline_rounded,
+                                                size: 50)),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(top: 28.0)),
@@ -1503,13 +1495,11 @@ class _HomePageState extends State<HomePage> {
                                         scale:
                                             2.5, // Faktor skala untuk memperbesar gambar
                                         child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(40),
-                                          child: Image.asset(
-                                            'assets/image/Pelatihan.png',
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
+                                            borderRadius:
+                                                BorderRadius.circular(40),
+                                            child: Icon(
+                                                Icons.person_outline_rounded,
+                                                size: 50)),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(top: 28.0)),
@@ -1553,13 +1543,11 @@ class _HomePageState extends State<HomePage> {
                                         scale:
                                             2.5, // Faktor skala untuk memperbesar gambar
                                         child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(40),
-                                          child: Image.asset(
-                                            'assets/image/Konsultasi.png', // Ganti dengan path gambar Anda
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
+                                            borderRadius:
+                                                BorderRadius.circular(40),
+                                            child: Icon(
+                                                Icons.person_outline_rounded,
+                                                size: 50)),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(top: 28.0)),
@@ -1598,13 +1586,11 @@ class _HomePageState extends State<HomePage> {
                                         scale:
                                             2.5, // Faktor skala untuk memperbesar gambar
                                         child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(40),
-                                          child: Image.asset(
-                                            'assets/image/Pelatihan.png',
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
+                                            borderRadius:
+                                                BorderRadius.circular(40),
+                                            child: Icon(
+                                                Icons.person_outline_rounded,
+                                                size: 50)),
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(top: 28.0)),
@@ -1710,14 +1696,9 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                           ),
                                           Positioned(
-                                            top: 0,
-                                            child: Image.asset(
-                                              'assets/image/Pelatihan.png',
-                                              width: 120,
-                                              height: 120,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
+                                              child: Icon(
+                                                  Icons.person_outline_rounded,
+                                                  size: 100)),
                                         ],
                                       ),
                                       Padding(
@@ -1807,7 +1788,7 @@ class _HomePageState extends State<HomePage> {
                                               ),
                                               child: TextField(
                                                 decoration: InputDecoration(
-                                                  labelText:
+                                                  hintText:
                                                       'Your Email Address',
                                                   border: OutlineInputBorder(
                                                     borderRadius:
@@ -1909,7 +1890,7 @@ class _HomePageState extends State<HomePage> {
                                                       child: TextField(
                                                         decoration:
                                                             InputDecoration(
-                                                          labelText: 'Name',
+                                                          hintText: 'Name',
                                                           border:
                                                               OutlineInputBorder(
                                                             borderRadius:
@@ -1942,7 +1923,7 @@ class _HomePageState extends State<HomePage> {
                                                       child: TextField(
                                                         decoration:
                                                             InputDecoration(
-                                                          labelText:
+                                                          hintText:
                                                               'Email Address',
                                                           border:
                                                               OutlineInputBorder(
@@ -1976,7 +1957,7 @@ class _HomePageState extends State<HomePage> {
                                                       child: TextField(
                                                         decoration:
                                                             InputDecoration(
-                                                          labelText: 'Phone',
+                                                          hintText: 'Phone',
                                                           border:
                                                               OutlineInputBorder(
                                                             borderRadius:
@@ -2009,7 +1990,7 @@ class _HomePageState extends State<HomePage> {
                                                       child: TextField(
                                                         decoration:
                                                             InputDecoration(
-                                                          labelText: 'Subject',
+                                                          hintText: 'Subject',
                                                           border:
                                                               OutlineInputBorder(
                                                             borderRadius:
