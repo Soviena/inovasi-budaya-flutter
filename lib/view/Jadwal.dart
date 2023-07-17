@@ -64,7 +64,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -96,7 +98,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -126,7 +130,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -156,7 +162,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -186,7 +194,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -216,7 +226,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -246,7 +258,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -276,7 +290,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -306,7 +322,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -336,7 +354,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -366,7 +386,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(
@@ -396,7 +418,9 @@ class _JadwalState extends State<Jadwal> {
                     alignment: Alignment.centerRight,
                     margin: EdgeInsets.only(top: 10),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(context, "/aktivitas");
+                      },
                       child: Text(
                         'Aktivitas',
                         style: TextStyle(

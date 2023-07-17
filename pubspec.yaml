@@ -44,6 +44,7 @@ dependencies:
   workmanager: ^0.5.1
   accordion: ^2.5.1
   url_launcher: ^6.1.12
+  flutter_staggered_grid_view: ^0.6.2
 
 dev_dependencies:
   flutter_test:
@@ -80,6 +81,11 @@ flutter:
   - assets/image/Sertifikasi.png
   - assets/image/Konsultasi.png
   - assets/image/Pelatihan.png
+  - assets/image/Materi_Sharing.png
+  - assets/image/Kinerja.png
+  - assets/image/Aktivitas.png
+  - assets/image/Safety_Moment.png
+  - assets/image/Feedback.png
   - assets/image/Profil.png
   - assets/image/PosterAkhlak.jpg
   - assets/image/Posterlandscape1.jpg

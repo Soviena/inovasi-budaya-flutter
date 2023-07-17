@@ -1,25 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:inovasi_budaya/view/HomePage.dart';
 import 'package:accordion/accordion.dart';
+import 'package:inovasi_budaya/view/burger_menu.dart';
 
-class Jadwal extends StatefulWidget {
-  const Jadwal({super.key});
+class Reward extends StatefulWidget {
+  const Reward({super.key});
 
   @override
-  State<Jadwal> createState() => _JadwalState();
+  State<Reward> createState() => _RewardState();
 }
 
-class _JadwalState extends State<Jadwal> {
+class _RewardState extends State<Reward> {
   final _headerStyle = const TextStyle(
-      color: Color.fromARGB(255, 136, 136, 136),
+      color: Color.fromARGB(255, 0, 0, 0),
       fontSize: 24,
       fontWeight: FontWeight.bold);
-
-  final _contentStyle = const TextStyle(
-      color: Colors.black, fontSize: 14, fontWeight: FontWeight.w900);
-
-  final _loremIpsum =
-      '''Lorem ipsum is typically a corrupted version of 'De finibus bonorum et malorum', a 1st century BC text by the Roman statesman and philosopher Cicero, with words altered, added, and removed to make it nonsensical and improper Latin.''';
 
   @override
   Widget build(BuildContext context) {
@@ -47,11 +41,10 @@ class _JadwalState extends State<Jadwal> {
           ),
         ),
       ),
-      drawer: HomePage(),
+      drawer: const BurgerList(),
       body: Accordion(
           headerBackgroundColorOpened: Colors.black54,
-          scaleWhenAnimating: true,
-          openAndCloseAnimation: true,
+          scaleWhenAnimating: false,
           headerPadding:
               const EdgeInsets.symmetric(vertical: 13, horizontal: 15),
           children: [
@@ -61,23 +54,71 @@ class _JadwalState extends State<Jadwal> {
               headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
               headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
               header: Text('Januari', style: _headerStyle),
-              content: Column(
+              content: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(_loremIpsum, style: _contentStyle),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Aktivitas',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
-                    ),
+                      Container(
+                        child: Text(
+                          'User1',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User2',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User3',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -93,23 +134,71 @@ class _JadwalState extends State<Jadwal> {
               headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
               headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
               header: Text('Februari', style: _headerStyle),
-              content: Column(
+              content: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(_loremIpsum, style: _contentStyle),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Aktivitas',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
-                    ),
+                      Container(
+                        child: Text(
+                          'User1',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User2',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User3',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -123,23 +212,71 @@ class _JadwalState extends State<Jadwal> {
               headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
               headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
               header: Text('Maret', style: _headerStyle),
-              content: Column(
+              content: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(_loremIpsum, style: _contentStyle),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Aktivitas',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
-                    ),
+                      Container(
+                        child: Text(
+                          'User1',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User2',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User3',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -153,23 +290,71 @@ class _JadwalState extends State<Jadwal> {
               headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
               headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
               header: Text('April', style: _headerStyle),
-              content: Column(
+              content: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(_loremIpsum, style: _contentStyle),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Aktivitas',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
-                    ),
+                      Container(
+                        child: Text(
+                          'User1',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User2',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User3',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -183,23 +368,71 @@ class _JadwalState extends State<Jadwal> {
               headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
               headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
               header: Text('Mei', style: _headerStyle),
-              content: Column(
+              content: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(_loremIpsum, style: _contentStyle),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Aktivitas',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
-                    ),
+                      Container(
+                        child: Text(
+                          'User1',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User2',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User3',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -213,23 +446,71 @@ class _JadwalState extends State<Jadwal> {
               headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
               headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
               header: Text('Juni', style: _headerStyle),
-              content: Column(
+              content: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(_loremIpsum, style: _contentStyle),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Aktivitas',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
-                    ),
+                      Container(
+                        child: Text(
+                          'User1',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User2',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User3',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -243,23 +524,71 @@ class _JadwalState extends State<Jadwal> {
               headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
               headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
               header: Text('Juli', style: _headerStyle),
-              content: Column(
+              content: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(_loremIpsum, style: _contentStyle),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Aktivitas',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
-                    ),
+                      Container(
+                        child: Text(
+                          'User1',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User2',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User3',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -273,53 +602,71 @@ class _JadwalState extends State<Jadwal> {
               headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
               headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
               header: Text('Agustus', style: _headerStyle),
-              content: Column(
+              content: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(_loremIpsum, style: _contentStyle),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Aktivitas',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
-                    ),
+                      Container(
+                        child: Text(
+                          'User1',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              contentHorizontalPadding: 10,
-              contentBorderWidth: 1,
-              contentBackgroundColor: Color.fromRGBO(252, 178, 106, 0.21),
-              contentBorderColor: Color.fromRGBO(252, 178, 106, 0.21),
-            ),
-            AccordionSection(
-              isOpen: false,
-              headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
-              headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
-              header: Text('September', style: _headerStyle),
-              content: Column(
-                children: [
-                  Text(_loremIpsum, style: _contentStyle),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Aktivitas',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
-                    ),
+                      Container(
+                        child: Text(
+                          'User2',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User3',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -333,23 +680,149 @@ class _JadwalState extends State<Jadwal> {
               headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
               headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
               header: Text('Oktober', style: _headerStyle),
-              content: Column(
+              content: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(_loremIpsum, style: _contentStyle),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Aktivitas',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
-                    ),
+                      Container(
+                        child: Text(
+                          'User1',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User2',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User3',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              contentHorizontalPadding: 10,
+              contentBorderWidth: 1,
+              contentBackgroundColor: Color.fromRGBO(252, 178, 106, 0.21),
+              contentBorderColor: Color.fromRGBO(252, 178, 106, 0.21),
+            ),
+            AccordionSection(
+              isOpen: false,
+              headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
+              headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
+              header: Text('September', style: _headerStyle),
+              content: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User1',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User2',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User3',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -363,23 +836,71 @@ class _JadwalState extends State<Jadwal> {
               headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
               headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
               header: Text('November', style: _headerStyle),
-              content: Column(
+              content: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(_loremIpsum, style: _contentStyle),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Aktivitas',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
-                    ),
+                      Container(
+                        child: Text(
+                          'User1',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User2',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User3',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -393,23 +914,71 @@ class _JadwalState extends State<Jadwal> {
               headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
               headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
               header: Text('Desember', style: _headerStyle),
-              content: Column(
+              content: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(_loremIpsum, style: _contentStyle),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Aktivitas',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
-                    ),
+                      Container(
+                        child: Text(
+                          'User1',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User2',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        child: Icon(Icons.person_outline_rounded, size: 50),
+                      ),
+                      Container(
+                        child: Text(
+                          'User3',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Reward',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

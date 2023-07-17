@@ -1,128 +1,181 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:inovasi_budaya/view/burger_menu.dart';
 
 class Safety_Moment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Builder(builder: (context) {
-          return IconButton(
-            icon: const Icon(
-              Icons.menu,
+        appBar: AppBar(
+          leading: Builder(builder: (context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.menu,
+                color: Colors.orange,
+              ),
+              iconSize: 36,
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          }),
+          backgroundColor: const Color.fromARGB(255, 6, 51, 83),
+          title: const Text(
+            'Safety Moments',
+            style: TextStyle(
+              fontSize: 32,
+              fontWeight: FontWeight.bold,
               color: Colors.orange,
             ),
-            iconSize: 36,
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-          );
-        }),
-        backgroundColor: const Color.fromARGB(255, 6, 51, 83),
-        title: const Text(
-          'Safety Moments',
-          style: TextStyle(
-            fontSize: 32,
-            fontWeight: FontWeight.bold,
-            color: Colors.orange,
           ),
         ),
-      ),
-      drawer: const BurgerList(),
-      body: ListView(
-        padding: EdgeInsets.all(24.0),
-        children: [
-          Align(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(height: 20),
+        drawer: const BurgerList(),
+        body: Container(
+          alignment: Alignment.topCenter,
+          child: SingleChildScrollView(
+              child: Wrap(
+            direction: Axis.horizontal,
+            children: [
+              Stack(children: [
                 Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 26, 73, 128),
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(20),
-                          topLeft: Radius.circular(20))),
+                  margin: EdgeInsets.all(30),
                   alignment: Alignment.center,
-                  child: Text(
-                    'Judul Flyer',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.orange,
-                    ),
-                  ),
-                ),
-                Image.asset('assets/image/Poster1.png'),
-                Container(
-                  height: 20,
+                  height: 450,
+                  width: 400,
                   decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 26, 73, 128),
+                      color: const Color.fromARGB(255, 26, 73, 128),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20)),
+                      image: DecorationImage(
+                          image: AssetImage('assets/image/Poster1.png'),
+                          fit: BoxFit.fill)),
+                ),
+                Container(
+                  margin: const EdgeInsets.fromLTRB(30, 480, 30, 30),
+                  alignment: Alignment.center,
+                  height: 120,
+                  width: 400,
+                  decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 26, 73, 128),
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20),
                           bottomRight: Radius.circular(20))),
-                ),
-                SizedBox(height: 35),
-                Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 26, 73, 128),
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(20),
-                          topLeft: Radius.circular(20))),
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Judul Flyer',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.orange,
-                    ),
+                  padding: EdgeInsets.only(left: 10, top: 10),
+                  child: const Column(
+                    children: [
+                      Text(
+                        'Deskripsi',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      ),
+                      Padding(padding: EdgeInsets.only(top: 10)),
+                      Text(
+                        'Foto ini adalah sebuah foto yang diabadikan sebagai foto oleh fotografer',
+                        style: TextStyle(
+                            color: Colors.orange,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20),
+                      )
+                    ],
                   ),
-                ),
-                Image.asset('assets/image/Poster2.png'),
+                )
+              ]),
+              Stack(children: [
                 Container(
-                  height: 20,
+                  margin: EdgeInsets.all(30),
+                  alignment: Alignment.center,
+                  height: 450,
+                  width: 400,
                   decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 26, 73, 128),
+                      color: const Color.fromARGB(255, 26, 73, 128),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20)),
+                      image: DecorationImage(
+                          image: AssetImage('assets/image/Poster2.png'),
+                          fit: BoxFit.fill)),
+                ),
+                Container(
+                  margin: const EdgeInsets.fromLTRB(30, 480, 30, 30),
+                  alignment: Alignment.center,
+                  height: 120,
+                  width: 400,
+                  decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 26, 73, 128),
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20),
                           bottomRight: Radius.circular(20))),
-                ),
-                SizedBox(height: 35),
-                Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 26, 73, 128),
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(20),
-                          topLeft: Radius.circular(20))),
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Judul Flyer',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.orange,
-                    ),
+                  child: const Column(
+                    children: [
+                      Text(
+                        'Deskripsi',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      ),
+                      Padding(padding: EdgeInsets.only(top: 10)),
+                      Text(
+                        'Foto ini adalah sebuah foto yang diabadikan sebagai foto oleh fotografer',
+                        style: TextStyle(
+                            color: Colors.orange,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20),
+                      )
+                    ],
                   ),
-                ),
-                Image.asset('assets/image/Poster3.png'),
+                )
+              ]),
+              Stack(children: [
                 Container(
-                  height: 20,
+                  margin: EdgeInsets.all(30),
+                  alignment: Alignment.center,
+                  height: 450,
+                  width: 400,
                   decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 26, 73, 128),
+                      color: const Color.fromARGB(255, 26, 73, 128),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          topRight: Radius.circular(20)),
+                      image: DecorationImage(
+                          image: AssetImage('assets/image/Poster3.png'),
+                          fit: BoxFit.fill)),
+                ),
+                Container(
+                  margin: const EdgeInsets.fromLTRB(30, 480, 30, 30),
+                  alignment: Alignment.center,
+                  height: 120,
+                  width: 400,
+                  decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 26, 73, 128),
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20),
                           bottomRight: Radius.circular(20))),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+                  child: const Column(
+                    children: [
+                      Text(
+                        'Deskripsi',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      ),
+                      Padding(padding: EdgeInsets.only(top: 10)),
+                      Text(
+                        'Foto ini adalah sebuah foto yang diabadikan sebagai foto oleh fotografer',
+                        style: TextStyle(
+                            color: Colors.orange,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20),
+                      )
+                    ],
+                  ),
+                )
+              ]),
+            ],
+          )),
+        ));
   }
 }
