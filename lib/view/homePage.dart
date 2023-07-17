@@ -4,6 +4,9 @@ import 'package:inovasi_budaya/view/homepage/tataNilaiAkhlak.dart';
 import 'package:inovasi_budaya/view/homepage/visiMisi.dart';
 import 'package:inovasi_budaya/view/homepage/budaya.dart';
 import 'package:inovasi_budaya/view/homepage/sekilasInformasi.dart';
+import 'package:inovasi_budaya/view/homepage/timInternalisasi.dart';
+import 'package:inovasi_budaya/view/homepage/reward.dart';
+import 'package:inovasi_budaya/view/homepage/feedbackUser.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -52,6 +55,9 @@ class _HomePageState extends State<HomePage> {
           VisiMisi(),
           InformasiBudaya(),
           SekilasInformasi(),
+          TimInternalisasi(),
+          Rewards(),
+          FeedbackUser(),
         ],
       ),
     );
