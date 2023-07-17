@@ -5,10 +5,12 @@ class IconContainerButton extends StatelessWidget {
       {super.key,
       required this.titleText,
       required this.iconAsset,
-      required this.isLeft});
+      required this.isLeft,
+      required this.route});
   final String titleText;
   final String iconAsset;
   final bool isLeft;
+  final String route;
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +68,7 @@ class IconContainerButton extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: GestureDetector(
               onTap: () {
-                Navigator.popAndPushNamed(context, "/materi");
+                Navigator.popAndPushNamed(context, route);
               },
               child: Container(
                 alignment: Alignment.center,
