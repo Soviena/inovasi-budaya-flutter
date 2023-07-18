@@ -25,51 +25,51 @@ class IconContainerButton extends StatelessWidget {
       margin = const EdgeInsets.only(left: 10, top: 20);
     }
 
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10),
-      width: 160,
-      height: 240,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-            topLeft: radiusLeft,
-            topRight: radiusRight,
-            bottomLeft: const Radius.circular(24),
-            bottomRight: const Radius.circular(24)),
-        border: Border.all(
-          color: const Color.fromARGB(255, 2, 124, 204),
-          width: 2,
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, route);
+      },
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 10),
+        width: 160,
+        height: 240,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+              topLeft: radiusLeft,
+              topRight: radiusRight,
+              bottomLeft: const Radius.circular(24),
+              bottomRight: const Radius.circular(24)),
+          border: Border.all(
+            color: const Color.fromARGB(255, 2, 124, 204),
+            width: 2,
+          ),
+          color: Colors.white,
         ),
-        color: Colors.white,
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            alignment: align,
-            margin: margin,
-            child: Text(
-              titleText,
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              alignment: align,
+              margin: margin,
+              child: Text(
+                titleText,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-          Container(
-            alignment: Alignment.center,
-            margin: const EdgeInsets.symmetric(vertical: 20),
-            child: Image.asset(
-              iconAsset,
-              fit: BoxFit.contain,
+            Container(
+              alignment: Alignment.center,
+              margin: const EdgeInsets.symmetric(vertical: 20),
+              child: Image.asset(
+                iconAsset,
+                fit: BoxFit.contain,
+              ),
             ),
-          ),
-          Container(
-            alignment: Alignment.bottomCenter,
-            child: GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, route);
-              },
+            Container(
+              alignment: Alignment.bottomCenter,
               child: Container(
                 alignment: Alignment.center,
                 height: 40,
@@ -95,8 +95,8 @@ class IconContainerButton extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
