@@ -38,7 +38,7 @@ class VisiMisi extends StatelessWidget {
           Container(
             alignment: Alignment.topRight,
             width: MediaQuery.of(context).size.width * 0.85,
-            margin: const EdgeInsets.only(top: 80),
+            margin: const EdgeInsets.only(top: 70),
             child: Column(
               children: [
                 Container(
@@ -121,7 +121,7 @@ class VisiMisi extends StatelessWidget {
           ),
           Container(
             margin: const EdgeInsets.only(top: 60),
-            width: 150,
+            width: MediaQuery.of(context).size.width * 0.5,
             alignment: Alignment.center,
             decoration: const BoxDecoration(
               border: Border(

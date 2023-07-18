@@ -92,6 +92,7 @@ flutter:
   - assets/image/Posterlandscape2.jpg
   - assets/image/PosterPerilakuAkhlak.jpg
   - assets/image/Siapkeakhlak.jpg
+  - assets/image/Gambar_Kinerja_Kecil.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
