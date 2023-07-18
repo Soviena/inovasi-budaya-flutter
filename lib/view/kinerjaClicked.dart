@@ -1,32 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:inovasi_budaya/view/Kinerja.dart';
 
-class Kinerja_Clicked extends StatefulWidget {
-  const Kinerja_Clicked({Key? key}) : super(key: key);
+class KinerjaClicked extends StatefulWidget {
+  const KinerjaClicked({Key? key}) : super(key: key);
 
   @override
-  State<Kinerja_Clicked> createState() => _Kinerja_ClickedState();
+  State<KinerjaClicked> createState() => _KinerjaClickedState();
 }
 
-class _Kinerja_ClickedState extends State<Kinerja_Clicked> {
+class _KinerjaClickedState extends State<KinerjaClicked> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Kinerja Usaha Cabang Bandung'),
+        leading: Builder(builder: (context) {
+          return IconButton(
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.orange,
+            ),
+            iconSize: 36,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          );
+        }),
+        backgroundColor: const Color.fromARGB(255, 6, 51, 83),
+        title: const Text(
+          'Kinerja Bulan ...',
+          style: TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+            color: Colors.orange,
+          ),
+        ),
       ),
       body: InteractiveViewer(
         maxScale: 5.0,
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: DataTable(
-            columns: <DataColumn>[
+            columns: const <DataColumn>[
               DataColumn(label: Text("Uraian")),
               DataColumn(label: Text("Anggaran")),
               DataColumn(label: Text("Realisasi")),
               DataColumn(label: Text("%-Real thd ANG")),
             ],
-            rows: <DataRow>[
+            rows: const <DataRow>[
               DataRow(
                 cells: <DataCell>[
                   DataCell(Text("Pendapatan Operasi")),

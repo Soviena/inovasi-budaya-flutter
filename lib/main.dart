@@ -3,7 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/Aktivitas.dart';
-import 'package:inovasi_budaya/view/Kinerja_Clicked.dart';
+import 'package:inovasi_budaya/view/kinerjaClicked.dart';
 import 'package:inovasi_budaya/view/register.dart';
 import 'package:inovasi_budaya/view/reward.dart';
 import 'package:inovasi_budaya/view/splash_view.dart';
@@ -105,7 +105,7 @@ void main() async {
         '/safety': (context) => Safety_Moment(),
         '/setting': (context) => Settings(),
         '/aktivitas': (context) => Aktivitas(),
-        '/kinerja_Clicked': (context) => Kinerja_Clicked(),
+        '/kinerja_Clicked': (context) => KinerjaClicked(),
       },
     ),
   );

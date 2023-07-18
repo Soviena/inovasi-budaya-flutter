@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/burger_menu.dart';
+import 'package:inovasi_budaya/view/homepage/component/fileContainer.dart';
 
 class Kinerja extends StatelessWidget {
   const Kinerja({super.key});
@@ -34,27 +35,13 @@ class Kinerja extends StatelessWidget {
         body: ListView.builder(
           itemCount: 4, // Ganti dengan jumlah item yang sesuai
           itemBuilder: (BuildContext context, int index) {
-            return Column(
+            return const Column(
               children: <Widget>[
-                ListTile(
-                  leading: Image.asset(
-                    'assets/image/Gambar_Kinerja_Kecil.png', // Path dan nama file gambar Anda
-                    width: 40,
-                    height: 40,
-                  ),
-                  title: Row(
-                    children: <Widget>[
-                      Text('File Materi'),
-                      Spacer(),
-                      GestureDetector(
-                        onTap: () {},
-                        child: Icon(Icons.download),
-                      ),
-                    ],
-                  ),
-                  onTap: () {
-                    Navigator.popAndPushNamed(context, "/kinerja_Clicked");
-                  },
+                FileContainer(
+                  titleText: 'Materi',
+                  fileUrl: "testUrl",
+                  iconImage: "assets/image/Gambar_Kinerja_Kecil.png",
+                  route: "/kinerja_Clicked",
                 ),
                 Divider(
                   color: Colors.black,
