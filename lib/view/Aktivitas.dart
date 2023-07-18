@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:inovasi_budaya/view/burger_menu.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:inovasi_budaya/view/homepage/component/imageContainer.dart';
 
 class Aktivitas extends StatefulWidget {
   const Aktivitas({super.key});
@@ -8,7 +9,51 @@ class Aktivitas extends StatefulWidget {
   _AktivitasState createState() => _AktivitasState();
 }
 
+List<String> arr = [
+  'assets/image/Siapkeakhlak.jpg',
+  'assets/image/Posterlandscape1.jpg',
+  'assets/image/PosterAkhlak.jpg',
+  'assets/image/Posterlandscape1.jpg',
+  'assets/image/Posterlandscape1.jpg',
+  'assets/image/PosterAkhlak.jpg',
+  'assets/image/PosterPerilakuAkhlak.jpg',
+  'assets/image/PosterAkhlak.jpg',
+  'assets/image/PosterAkhlak.jpg',
+  'assets/image/Posterlandscape2.jpg'
+];
+
 class _AktivitasState extends State<Aktivitas> {
+  Future<void> viewImage(BuildContext context, String image) async {
+    return await showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+          backgroundColor: const Color.fromARGB(255, 6, 51, 83),
+          titlePadding: EdgeInsets.zero,
+          contentPadding: EdgeInsets.zero,
+          title: Container(
+            alignment: Alignment.center,
+            child: const Text(
+              "<< Zoom >>",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          content: InteractiveViewer(
+            maxScale: 10,
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height * 0.8,
+              width: MediaQuery.of(context).size.width * 0.9,
+              child: Image.asset(image),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,12 +61,12 @@ class _AktivitasState extends State<Aktivitas> {
         leading: Builder(builder: (context) {
           return IconButton(
             icon: const Icon(
-              Icons.menu,
+              Icons.arrow_back,
               color: Colors.orange,
             ),
             iconSize: 36,
             onPressed: () {
-              Scaffold.of(context).openDrawer();
+              Navigator.pop(context);
             },
           );
         }),
@@ -35,205 +80,21 @@ class _AktivitasState extends State<Aktivitas> {
           ),
         ),
       ),
-      drawer: const BurgerList(),
-      body: Container(
-        alignment: Alignment.topCenter,
-        child: SingleChildScrollView(
-          child: Wrap(
-            direction: Axis.horizontal,
-            children: [
-              Stack(children: [
-                Container(
-                  margin: const EdgeInsets.all(15),
-                  alignment: Alignment.center,
-                  height: 290,
-                  width: 170,
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 26, 73, 128),
-                      borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                          image:
-                              AssetImage('assets/image/Posterlandscape1.jpg'))),
-                ),
-                Positioned(
-                  left: 15,
-                  bottom: 40,
-                  child: Container(
-                    alignment: Alignment.topLeft,
-                    width: 170,
-                    height: 30,
-                    color: const Color.fromARGB(150, 6, 51, 83),
-                    child: const Text(
-                      ' Deskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi Foto',
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.orange),
-                    ),
-                  ),
-                ),
-              ]),
-              Stack(children: [
-                Container(
-                  margin: const EdgeInsets.all(15),
-                  alignment: Alignment.center,
-                  height: 290,
-                  width: 170,
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 26, 73, 128),
-                      borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                          image: AssetImage('assets/image/Siapkeakhlak.jpg'))),
-                ),
-                Positioned(
-                  left: 15,
-                  bottom: 40,
-                  child: Container(
-                    alignment: Alignment.topLeft,
-                    width: 170,
-                    height: 30,
-                    color: const Color.fromARGB(150, 6, 51, 83),
-                    child: const Text(
-                      ' Deskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi Foto',
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.orange),
-                    ),
-                  ),
-                ),
-              ]),
-              Stack(children: [
-                Container(
-                  margin: const EdgeInsets.all(15),
-                  alignment: Alignment.center,
-                  height: 290,
-                  width: 170,
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 26, 73, 128),
-                      borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                          image: AssetImage('assets/image/Poster1.png'))),
-                ),
-                Positioned(
-                  left: 15,
-                  bottom: 40,
-                  child: Container(
-                    alignment: Alignment.topLeft,
-                    width: 170,
-                    height: 30,
-                    color: const Color.fromARGB(150, 6, 51, 83),
-                    child: const Text(
-                      ' Deskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi Foto',
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.orange),
-                    ),
-                  ),
-                ),
-              ]),
-              Stack(children: [
-                Container(
-                  margin: const EdgeInsets.all(15),
-                  alignment: Alignment.center,
-                  height: 290,
-                  width: 170,
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 26, 73, 128),
-                      borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                          image: AssetImage(
-                              'assets/image/PosterPerilakuAkhlak.jpg'))),
-                ),
-                Positioned(
-                  left: 15,
-                  bottom: 40,
-                  child: Container(
-                    alignment: Alignment.topLeft,
-                    width: 170,
-                    height: 30,
-                    color: const Color.fromARGB(150, 6, 51, 83),
-                    child: const Text(
-                      ' Deskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi Foto',
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.orange),
-                    ),
-                  ),
-                ),
-              ]),
-              Stack(children: [
-                Container(
-                  margin: const EdgeInsets.all(15),
-                  alignment: Alignment.center,
-                  height: 290,
-                  width: 170,
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 26, 73, 128),
-                      borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                          image:
-                              AssetImage('assets/image/Posterlandscape2.jpg'))),
-                ),
-                Positioned(
-                  left: 15,
-                  bottom: 40,
-                  child: Container(
-                    alignment: Alignment.topLeft,
-                    width: 170,
-                    height: 30,
-                    color: const Color.fromARGB(150, 6, 51, 83),
-                    child: const Text(
-                      ' Deskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi Foto',
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.orange),
-                    ),
-                  ),
-                ),
-              ]),
-              Stack(children: [
-                Container(
-                  margin: const EdgeInsets.all(15),
-                  alignment: Alignment.center,
-                  height: 290,
-                  width: 170,
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 26, 73, 128),
-                      borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                          image: AssetImage('assets/image/PosterAkhlak.jpg'))),
-                ),
-                Positioned(
-                  left: 15,
-                  bottom: 40,
-                  child: Container(
-                    alignment: Alignment.topLeft,
-                    width: 170,
-                    height: 30,
-                    color: const Color.fromARGB(150, 6, 51, 83),
-                    child: const Text(
-                      ' Deskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi Foto',
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.orange),
-                    ),
-                  ),
-                ),
-              ]),
-            ],
-          ),
-        ),
+      body: MasonryGridView.count(
+        padding: const EdgeInsets.all(10),
+        itemCount: 10,
+        crossAxisCount: 3,
+        mainAxisSpacing: 4,
+        crossAxisSpacing: 4,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () {
+              viewImage(context, arr[index]);
+            },
+            child: ImageContainer(
+                image: arr[index], deskripsi: "Deskripsi poster"),
+          );
+        },
       ),
     );
   }

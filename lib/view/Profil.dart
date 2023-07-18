@@ -98,7 +98,7 @@ class _ProfileState extends State<Profile> {
                   Container(
                     height: 30,
                     width: double.infinity,
-                    padding: EdgeInsets.symmetric(horizontal: 5),
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
                       border: Border.all(color: Colors.orange, width: 1),

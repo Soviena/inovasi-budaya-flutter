@@ -34,10 +34,15 @@ class _KinerjaClickedState extends State<KinerjaClicked> {
           ),
         ),
       ),
-      body: InteractiveViewer(
-        maxScale: 5.0,
-        child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
+      body: SizedBox(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: InteractiveViewer(
+          constrained: false,
+          maxScale: 5.0,
+          minScale: 0.1,
+          boundaryMargin:
+              EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.6),
           child: DataTable(
             columns: const <DataColumn>[
               DataColumn(label: Text("Uraian")),

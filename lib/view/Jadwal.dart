@@ -66,7 +66,7 @@ class _JadwalState extends State<Jadwal> {
                     margin: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.popAndPushNamed(context, "/aktivitas");
+                        Navigator.pushNamed(context, "/aktivitas");
                       },
                       style: const ButtonStyle(
                           backgroundColor: MaterialStatePropertyAll(

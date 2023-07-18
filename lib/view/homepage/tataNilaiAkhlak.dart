@@ -1,10 +1,27 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
-class Akhlak extends StatelessWidget {
+class Akhlak extends StatefulWidget {
   const Akhlak({super.key});
 
-  void posterAkhlak(BuildContext context) {
-    showDialog(
+  @override
+  State<Akhlak> createState() => _AkhlakState();
+}
+
+class _AkhlakState extends State<Akhlak> {
+  List<String> image = [
+    "assets/image/PosterPerilakuAkhlak.jpg",
+    "assets/image/PosterAkhlak.jpg",
+    "assets/image/Siapkeakhlak.jpg",
+    "assets/image/PosterAkhlak.jpg",
+    "assets/image/Posterlandscape1.jpg",
+    "assets/image/Posterlandscape2.jpg"
+  ];
+  int akhlakImage = 0;
+
+  Future<void> posterAkhlak(BuildContext context) async {
+    return await showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
@@ -12,26 +29,50 @@ class Akhlak extends StatelessWidget {
             borderRadius: BorderRadius.circular(30),
           ),
           backgroundColor: const Color.fromARGB(255, 6, 51, 83),
-          content: GestureDetector(
-            onPanUpdate: (details) {
-              // Swiping in right direction.
-              if (details.delta.dx > 0) {
-                Container(
-                  alignment: Alignment.center,
-                  height: MediaQuery.of(context).size.height * 0.4,
-                  child: Image.asset('assets/image/PosterPerilakuAkhlak.jpg'),
-                );
-              }
-
-              // Swiping in left direction.
-              if (details.delta.dx < 0) {
-                Container(
-                  alignment: Alignment.center,
-                  height: MediaQuery.of(context).size.height * 0.4,
-                  child: Image.asset('assets/image/PosterPerilakuAkhlak.jpg'),
-                );
-              }
-            },
+          titlePadding: EdgeInsets.zero,
+          contentPadding: EdgeInsets.zero,
+          title: Container(
+            alignment: Alignment.center,
+            child: const Text(
+              "<< Swipe >>",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          content: InteractiveViewer(
+            maxScale: 10,
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height * 0.8,
+              width: MediaQuery.of(context).size.width * 0.9,
+              child: GestureDetector(
+                onHorizontalDragEnd: (details) {
+                  // Swiping in right direction.
+                  if (details.primaryVelocity! > 0) {
+                    akhlakImage++;
+                    if (akhlakImage >= image.length) {
+                      akhlakImage -= image.length;
+                    }
+                    setState(() {
+                      akhlakImage;
+                      Navigator.pop(context);
+                      posterAkhlak(context);
+                    });
+                  }
+                  // Swiping in left direction.
+                  if (details.primaryVelocity! < 0) {
+                    akhlakImage--;
+                    if (akhlakImage < 0) {
+                      akhlakImage += image.length;
+                    }
+                    setState(() {
+                      akhlakImage;
+                      Navigator.pop(context);
+                      posterAkhlak(context);
+                    });
+                  }
+                },
+                child: Image.asset(image[akhlakImage]),
+              ),
+            ),
           ),
         );
       },

@@ -1,183 +1,96 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:inovasi_budaya/view/burger_menu.dart';
 
-class Safety_Moment extends StatelessWidget {
+import 'homepage/component/imageContainer.dart';
+
+class Safety_Moment extends StatefulWidget {
   const Safety_Moment({super.key});
+
+  @override
+  State<Safety_Moment> createState() => _Safety_MomentState();
+}
+
+class _Safety_MomentState extends State<Safety_Moment> {
+  List<String> arr = [
+    "assets/image/Poster1.png",
+    "assets/image/Poster2.png",
+    "assets/image/Poster3.png",
+  ];
+  Future<void> viewImage(BuildContext context, String image) async {
+    return await showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+          backgroundColor: const Color.fromARGB(255, 6, 51, 83),
+          titlePadding: EdgeInsets.zero,
+          contentPadding: EdgeInsets.zero,
+          title: Container(
+            alignment: Alignment.center,
+            child: const Text(
+              "Zoom",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          content: InteractiveViewer(
+            maxScale: 10,
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height * 0.8,
+              width: MediaQuery.of(context).size.width * 0.9,
+              child: Image.asset(image),
+            ),
+          ),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: Builder(builder: (context) {
-            return IconButton(
-              icon: const Icon(
-                Icons.menu,
-                color: Colors.orange,
-              ),
-              iconSize: 36,
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-            );
-          }),
-          backgroundColor: const Color.fromARGB(255, 6, 51, 83),
-          title: const Text(
-            'Safety Moments',
-            style: TextStyle(
-              fontSize: 32,
-              fontWeight: FontWeight.bold,
+      appBar: AppBar(
+        leading: Builder(builder: (context) {
+          return IconButton(
+            icon: const Icon(
+              Icons.menu,
               color: Colors.orange,
             ),
+            iconSize: 36,
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          );
+        }),
+        backgroundColor: const Color.fromARGB(255, 6, 51, 83),
+        title: const Text(
+          'Safety Moments',
+          style: TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+            color: Colors.orange,
           ),
         ),
-        drawer: const BurgerList(),
-        body: Container(
-          alignment: Alignment.topCenter,
-          child: SingleChildScrollView(
-              child: Wrap(
-            direction: Axis.horizontal,
-            children: [
-              Stack(children: [
-                Container(
-                  margin: const EdgeInsets.all(30),
-                  alignment: Alignment.center,
-                  height: 450,
-                  width: 400,
-                  decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 26, 73, 128),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20)),
-                      image: DecorationImage(
-                          image: AssetImage('assets/image/Poster1.png'),
-                          fit: BoxFit.fill)),
-                ),
-                Container(
-                  margin: const EdgeInsets.fromLTRB(30, 480, 30, 30),
-                  alignment: Alignment.center,
-                  height: 120,
-                  width: 400,
-                  decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 26, 73, 128),
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(20),
-                          bottomRight: Radius.circular(20))),
-                  padding: const EdgeInsets.only(left: 10, top: 10),
-                  child: const Column(
-                    children: [
-                      Text(
-                        'Deskripsi',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20),
-                      ),
-                      Padding(padding: EdgeInsets.only(top: 10)),
-                      Text(
-                        'Foto ini adalah sebuah foto yang diabadikan sebagai foto oleh fotografer',
-                        style: TextStyle(
-                            color: Colors.orange,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 20),
-                      )
-                    ],
-                  ),
-                )
-              ]),
-              Stack(children: [
-                Container(
-                  margin: const EdgeInsets.all(30),
-                  alignment: Alignment.center,
-                  height: 450,
-                  width: 400,
-                  decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 26, 73, 128),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20)),
-                      image: DecorationImage(
-                          image: AssetImage('assets/image/Poster2.png'),
-                          fit: BoxFit.fill)),
-                ),
-                Container(
-                  margin: const EdgeInsets.fromLTRB(30, 480, 30, 30),
-                  alignment: Alignment.center,
-                  height: 120,
-                  width: 400,
-                  decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 26, 73, 128),
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(20),
-                          bottomRight: Radius.circular(20))),
-                  child: const Column(
-                    children: [
-                      Text(
-                        'Deskripsi',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20),
-                      ),
-                      Padding(padding: EdgeInsets.only(top: 10)),
-                      Text(
-                        'Foto ini adalah sebuah foto yang diabadikan sebagai foto oleh fotografer',
-                        style: TextStyle(
-                            color: Colors.orange,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 20),
-                      )
-                    ],
-                  ),
-                )
-              ]),
-              Stack(children: [
-                Container(
-                  margin: const EdgeInsets.all(30),
-                  alignment: Alignment.center,
-                  height: 450,
-                  width: 400,
-                  decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 26, 73, 128),
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20)),
-                      image: DecorationImage(
-                          image: AssetImage('assets/image/Poster3.png'),
-                          fit: BoxFit.fill)),
-                ),
-                Container(
-                  margin: const EdgeInsets.fromLTRB(30, 480, 30, 30),
-                  alignment: Alignment.center,
-                  height: 120,
-                  width: 400,
-                  decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 26, 73, 128),
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(20),
-                          bottomRight: Radius.circular(20))),
-                  child: const Column(
-                    children: [
-                      Text(
-                        'Deskripsi',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20),
-                      ),
-                      Padding(padding: EdgeInsets.only(top: 10)),
-                      Text(
-                        'Foto ini adalah sebuah foto yang diabadikan sebagai foto oleh fotografer',
-                        style: TextStyle(
-                            color: Colors.orange,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 20),
-                      )
-                    ],
-                  ),
-                )
-              ]),
-            ],
-          )),
-        ));
+      ),
+      drawer: const BurgerList(),
+      body: MasonryGridView.count(
+        padding: const EdgeInsets.all(10),
+        itemCount: arr.length,
+        crossAxisCount: 2,
+        mainAxisSpacing: 4,
+        crossAxisSpacing: 4,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () {
+              viewImage(context, arr[index]);
+            },
+            child: ImageContainer(
+                image: arr[index], deskripsi: "Deskripsi poster"),
+          );
+        },
+      ),
+    );
   }
 }

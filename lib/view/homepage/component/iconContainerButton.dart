@@ -68,7 +68,7 @@ class IconContainerButton extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: GestureDetector(
               onTap: () {
-                Navigator.popAndPushNamed(context, route);
+                Navigator.pushNamed(context, route);
               },
               child: Container(
                 alignment: Alignment.center,

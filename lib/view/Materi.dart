@@ -9,18 +9,21 @@ class Materi extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Builder(builder: (context) {
-          return IconButton(
-            icon: const Icon(
-              Icons.menu,
-              color: Colors.orange,
-            ),
-            iconSize: 36,
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-          );
-        }),
+        automaticallyImplyLeading: true,
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.menu,
+                color: Colors.orange,
+              ),
+              iconSize: 36,
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          },
+        ),
         backgroundColor: const Color.fromARGB(255, 6, 51, 83),
         title: const Text(
           'Daftar Materi',

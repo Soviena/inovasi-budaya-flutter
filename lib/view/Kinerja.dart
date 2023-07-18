@@ -38,7 +38,7 @@ class Kinerja extends StatelessWidget {
             return const Column(
               children: <Widget>[
                 FileContainer(
-                  titleText: 'Materi',
+                  titleText: 'Kinerja',
                   fileUrl: "testUrl",
                   iconImage: "assets/image/Gambar_Kinerja_Kecil.png",
                   route: "/kinerja_Clicked",
