@@ -32,7 +32,7 @@ const AndroidNotificationChannel channel = AndroidNotificationChannel(
 getToken() async {
   token = await FirebaseMessaging.instance.getToken();
   FirebaseMessaging.instance.subscribeToTopic('budaya');
-  print("Token : " + token.toString());
+  print("Token : $token");
 }
 
 void callbackDispatcher() {
@@ -94,16 +94,16 @@ void main() async {
       initialRoute: '/splashView',
       routes: {
         '/splashView': (context) => const LoginPage(),
-        '/home': (context) => HomePage(),
+        '/home': (context) => const HomePage(),
         '/register': (context) => const Register(),
         '/jadwal': (context) => const Jadwal(),
-        '/kinerja': (context) => Kinerja(),
-        '/reward': (context) => Reward(),
-        '/materi': (context) => Materi(),
-        '/profil': (context) => Profile(),
-        '/safety': (context) => Safety_Moment(),
-        '/setting': (context) => Settings(),
-        '/aktivitas': (context) => Aktivitas(),
+        '/kinerja': (context) => const Kinerja(),
+        '/reward': (context) => const Reward(),
+        '/materi': (context) => const Materi(),
+        '/profil': (context) => const Profile(),
+        '/safety': (context) => const Safety_Moment(),
+        '/setting': (context) => const Settings(),
+        '/aktivitas': (context) => const Aktivitas(),
       },
     ),
   );

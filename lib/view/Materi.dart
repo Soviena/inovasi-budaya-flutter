@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/burger_menu.dart';
 
 class Materi extends StatelessWidget {
+  const Materi({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

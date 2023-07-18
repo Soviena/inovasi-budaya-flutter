@@ -54,389 +54,389 @@ class _JadwalState extends State<Jadwal> {
               const EdgeInsets.symmetric(vertical: 13, horizontal: 15),
           children: [
             AccordionSection(
-              headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
-              headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
+              headerBackgroundColor: const Color.fromARGB(100, 136, 136, 136),
+              headerBackgroundColorOpened: const Color.fromARGB(255, 250, 131, 15),
               header: Text('Januari', style: _headerStyle),
               content: Column(
                 children: [
                   Text(_loremIpsum, style: _contentStyle),
                   Container(
                     alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.popAndPushNamed(context, "/aktivitas");
                       },
-                      child: Text(
+                      style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              Color.fromRGBO(252, 178, 106, 1))),
+                      child: const Text(
                         'Aktivitas',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
                     ),
                   ),
                 ],
               ),
               contentHorizontalPadding: 10,
               contentBorderWidth: 1,
-              contentBackgroundColor: Color.fromRGBO(252, 178, 106, 0.21),
-              contentBorderColor: Color.fromRGBO(252, 178, 106, 0.21),
+              contentBackgroundColor: const Color.fromRGBO(252, 178, 106, 0.21),
+              contentBorderColor: const Color.fromRGBO(252, 178, 106, 0.21),
               // onOpenSection: () => print('onOpenSection ...'),
               // onCloseSection: () => print('onCloseSection ...'),
             ),
             AccordionSection(
               isOpen: false,
-              headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
-              headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
+              headerBackgroundColor: const Color.fromARGB(100, 136, 136, 136),
+              headerBackgroundColorOpened: const Color.fromARGB(255, 250, 131, 15),
               header: Text('Februari', style: _headerStyle),
               content: Column(
                 children: [
                   Text(_loremIpsum, style: _contentStyle),
                   Container(
                     alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.popAndPushNamed(context, "/aktivitas");
                       },
-                      child: Text(
+                      style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              Color.fromRGBO(252, 178, 106, 1))),
+                      child: const Text(
                         'Aktivitas',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
                     ),
                   ),
                 ],
               ),
               contentHorizontalPadding: 10,
               contentBorderWidth: 1,
-              contentBackgroundColor: Color.fromRGBO(252, 178, 106, 0.21),
-              contentBorderColor: Color.fromRGBO(252, 178, 106, 0.21),
+              contentBackgroundColor: const Color.fromRGBO(252, 178, 106, 0.21),
+              contentBorderColor: const Color.fromRGBO(252, 178, 106, 0.21),
             ),
             AccordionSection(
               isOpen: false,
-              headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
-              headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
+              headerBackgroundColor: const Color.fromARGB(100, 136, 136, 136),
+              headerBackgroundColorOpened: const Color.fromARGB(255, 250, 131, 15),
               header: Text('Maret', style: _headerStyle),
               content: Column(
                 children: [
                   Text(_loremIpsum, style: _contentStyle),
                   Container(
                     alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.popAndPushNamed(context, "/aktivitas");
                       },
-                      child: Text(
+                      style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              Color.fromRGBO(252, 178, 106, 1))),
+                      child: const Text(
                         'Aktivitas',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
                     ),
                   ),
                 ],
               ),
               contentHorizontalPadding: 10,
               contentBorderWidth: 1,
-              contentBackgroundColor: Color.fromRGBO(252, 178, 106, 0.21),
-              contentBorderColor: Color.fromRGBO(252, 178, 106, 0.21),
+              contentBackgroundColor: const Color.fromRGBO(252, 178, 106, 0.21),
+              contentBorderColor: const Color.fromRGBO(252, 178, 106, 0.21),
             ),
             AccordionSection(
               isOpen: false,
-              headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
-              headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
+              headerBackgroundColor: const Color.fromARGB(100, 136, 136, 136),
+              headerBackgroundColorOpened: const Color.fromARGB(255, 250, 131, 15),
               header: Text('April', style: _headerStyle),
               content: Column(
                 children: [
                   Text(_loremIpsum, style: _contentStyle),
                   Container(
                     alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.popAndPushNamed(context, "/aktivitas");
                       },
-                      child: Text(
+                      style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              Color.fromRGBO(252, 178, 106, 1))),
+                      child: const Text(
                         'Aktivitas',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
                     ),
                   ),
                 ],
               ),
               contentHorizontalPadding: 10,
               contentBorderWidth: 1,
-              contentBackgroundColor: Color.fromRGBO(252, 178, 106, 0.21),
-              contentBorderColor: Color.fromRGBO(252, 178, 106, 0.21),
+              contentBackgroundColor: const Color.fromRGBO(252, 178, 106, 0.21),
+              contentBorderColor: const Color.fromRGBO(252, 178, 106, 0.21),
             ),
             AccordionSection(
               isOpen: false,
-              headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
-              headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
+              headerBackgroundColor: const Color.fromARGB(100, 136, 136, 136),
+              headerBackgroundColorOpened: const Color.fromARGB(255, 250, 131, 15),
               header: Text('Mei', style: _headerStyle),
               content: Column(
                 children: [
                   Text(_loremIpsum, style: _contentStyle),
                   Container(
                     alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.popAndPushNamed(context, "/aktivitas");
                       },
-                      child: Text(
+                      style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              Color.fromRGBO(252, 178, 106, 1))),
+                      child: const Text(
                         'Aktivitas',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
                     ),
                   ),
                 ],
               ),
               contentHorizontalPadding: 10,
               contentBorderWidth: 1,
-              contentBackgroundColor: Color.fromRGBO(252, 178, 106, 0.21),
-              contentBorderColor: Color.fromRGBO(252, 178, 106, 0.21),
+              contentBackgroundColor: const Color.fromRGBO(252, 178, 106, 0.21),
+              contentBorderColor: const Color.fromRGBO(252, 178, 106, 0.21),
             ),
             AccordionSection(
               isOpen: false,
-              headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
-              headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
+              headerBackgroundColor: const Color.fromARGB(100, 136, 136, 136),
+              headerBackgroundColorOpened: const Color.fromARGB(255, 250, 131, 15),
               header: Text('Juni', style: _headerStyle),
               content: Column(
                 children: [
                   Text(_loremIpsum, style: _contentStyle),
                   Container(
                     alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.popAndPushNamed(context, "/aktivitas");
                       },
-                      child: Text(
+                      style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              Color.fromRGBO(252, 178, 106, 1))),
+                      child: const Text(
                         'Aktivitas',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
                     ),
                   ),
                 ],
               ),
               contentHorizontalPadding: 10,
               contentBorderWidth: 1,
-              contentBackgroundColor: Color.fromRGBO(252, 178, 106, 0.21),
-              contentBorderColor: Color.fromRGBO(252, 178, 106, 0.21),
+              contentBackgroundColor: const Color.fromRGBO(252, 178, 106, 0.21),
+              contentBorderColor: const Color.fromRGBO(252, 178, 106, 0.21),
             ),
             AccordionSection(
               isOpen: false,
-              headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
-              headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
+              headerBackgroundColor: const Color.fromARGB(100, 136, 136, 136),
+              headerBackgroundColorOpened: const Color.fromARGB(255, 250, 131, 15),
               header: Text('Juli', style: _headerStyle),
               content: Column(
                 children: [
                   Text(_loremIpsum, style: _contentStyle),
                   Container(
                     alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.popAndPushNamed(context, "/aktivitas");
                       },
-                      child: Text(
+                      style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              Color.fromRGBO(252, 178, 106, 1))),
+                      child: const Text(
                         'Aktivitas',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
                     ),
                   ),
                 ],
               ),
               contentHorizontalPadding: 10,
               contentBorderWidth: 1,
-              contentBackgroundColor: Color.fromRGBO(252, 178, 106, 0.21),
-              contentBorderColor: Color.fromRGBO(252, 178, 106, 0.21),
+              contentBackgroundColor: const Color.fromRGBO(252, 178, 106, 0.21),
+              contentBorderColor: const Color.fromRGBO(252, 178, 106, 0.21),
             ),
             AccordionSection(
               isOpen: false,
-              headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
-              headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
+              headerBackgroundColor: const Color.fromARGB(100, 136, 136, 136),
+              headerBackgroundColorOpened: const Color.fromARGB(255, 250, 131, 15),
               header: Text('Agustus', style: _headerStyle),
               content: Column(
                 children: [
                   Text(_loremIpsum, style: _contentStyle),
                   Container(
                     alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.popAndPushNamed(context, "/aktivitas");
                       },
-                      child: Text(
+                      style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              Color.fromRGBO(252, 178, 106, 1))),
+                      child: const Text(
                         'Aktivitas',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
                     ),
                   ),
                 ],
               ),
               contentHorizontalPadding: 10,
               contentBorderWidth: 1,
-              contentBackgroundColor: Color.fromRGBO(252, 178, 106, 0.21),
-              contentBorderColor: Color.fromRGBO(252, 178, 106, 0.21),
+              contentBackgroundColor: const Color.fromRGBO(252, 178, 106, 0.21),
+              contentBorderColor: const Color.fromRGBO(252, 178, 106, 0.21),
             ),
             AccordionSection(
               isOpen: false,
-              headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
-              headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
+              headerBackgroundColor: const Color.fromARGB(100, 136, 136, 136),
+              headerBackgroundColorOpened: const Color.fromARGB(255, 250, 131, 15),
               header: Text('September', style: _headerStyle),
               content: Column(
                 children: [
                   Text(_loremIpsum, style: _contentStyle),
                   Container(
                     alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.popAndPushNamed(context, "/aktivitas");
                       },
-                      child: Text(
+                      style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              Color.fromRGBO(252, 178, 106, 1))),
+                      child: const Text(
                         'Aktivitas',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
                     ),
                   ),
                 ],
               ),
               contentHorizontalPadding: 10,
               contentBorderWidth: 1,
-              contentBackgroundColor: Color.fromRGBO(252, 178, 106, 0.21),
-              contentBorderColor: Color.fromRGBO(252, 178, 106, 0.21),
+              contentBackgroundColor: const Color.fromRGBO(252, 178, 106, 0.21),
+              contentBorderColor: const Color.fromRGBO(252, 178, 106, 0.21),
             ),
             AccordionSection(
               isOpen: false,
-              headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
-              headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
+              headerBackgroundColor: const Color.fromARGB(100, 136, 136, 136),
+              headerBackgroundColorOpened: const Color.fromARGB(255, 250, 131, 15),
               header: Text('Oktober', style: _headerStyle),
               content: Column(
                 children: [
                   Text(_loremIpsum, style: _contentStyle),
                   Container(
                     alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.popAndPushNamed(context, "/aktivitas");
                       },
-                      child: Text(
+                      style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              Color.fromRGBO(252, 178, 106, 1))),
+                      child: const Text(
                         'Aktivitas',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
                     ),
                   ),
                 ],
               ),
               contentHorizontalPadding: 10,
               contentBorderWidth: 1,
-              contentBackgroundColor: Color.fromRGBO(252, 178, 106, 0.21),
-              contentBorderColor: Color.fromRGBO(252, 178, 106, 0.21),
+              contentBackgroundColor: const Color.fromRGBO(252, 178, 106, 0.21),
+              contentBorderColor: const Color.fromRGBO(252, 178, 106, 0.21),
             ),
             AccordionSection(
               isOpen: false,
-              headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
-              headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
+              headerBackgroundColor: const Color.fromARGB(100, 136, 136, 136),
+              headerBackgroundColorOpened: const Color.fromARGB(255, 250, 131, 15),
               header: Text('November', style: _headerStyle),
               content: Column(
                 children: [
                   Text(_loremIpsum, style: _contentStyle),
                   Container(
                     alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.popAndPushNamed(context, "/aktivitas");
                       },
-                      child: Text(
+                      style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              Color.fromRGBO(252, 178, 106, 1))),
+                      child: const Text(
                         'Aktivitas',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
                     ),
                   ),
                 ],
               ),
               contentHorizontalPadding: 10,
               contentBorderWidth: 1,
-              contentBackgroundColor: Color.fromRGBO(252, 178, 106, 0.21),
-              contentBorderColor: Color.fromRGBO(252, 178, 106, 0.21),
+              contentBackgroundColor: const Color.fromRGBO(252, 178, 106, 0.21),
+              contentBorderColor: const Color.fromRGBO(252, 178, 106, 0.21),
             ),
             AccordionSection(
               isOpen: false,
-              headerBackgroundColor: Color.fromARGB(100, 136, 136, 136),
-              headerBackgroundColorOpened: Color.fromARGB(255, 250, 131, 15),
+              headerBackgroundColor: const Color.fromARGB(100, 136, 136, 136),
+              headerBackgroundColorOpened: const Color.fromARGB(255, 250, 131, 15),
               header: Text('Desember', style: _headerStyle),
               content: Column(
                 children: [
                   Text(_loremIpsum, style: _contentStyle),
                   Container(
                     alignment: Alignment.centerRight,
-                    margin: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.popAndPushNamed(context, "/aktivitas");
                       },
-                      child: Text(
+                      style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(
+                              Color.fromRGBO(252, 178, 106, 1))),
+                      child: const Text(
                         'Aktivitas',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(
-                              Color.fromRGBO(252, 178, 106, 1))),
                     ),
                   ),
                 ],
               ),
               contentHorizontalPadding: 10,
               contentBorderWidth: 1,
-              contentBackgroundColor: Color.fromRGBO(252, 178, 106, 0.21),
-              contentBorderColor: Color.fromRGBO(252, 178, 106, 0.21),
+              contentBackgroundColor: const Color.fromRGBO(252, 178, 106, 0.21),
+              contentBorderColor: const Color.fromRGBO(252, 178, 106, 0.21),
             ),
           ]),
     );

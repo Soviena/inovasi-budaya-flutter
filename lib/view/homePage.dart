@@ -9,6 +9,8 @@ import 'package:inovasi_budaya/view/homepage/reward.dart';
 import 'package:inovasi_budaya/view/homepage/feedbackUser.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   State<HomePage> createState() => _HomePageState();
 }

@@ -102,7 +102,7 @@ class LoginPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                      child: Text('Masuk'),
+                      child: const Text('Masuk'),
                       onPressed: () {
                         String email = emailController.text;
                         String password = passController.text;
@@ -144,9 +144,9 @@ class LoginPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(40),
                   color: const Color.fromARGB(255, 6, 52, 83),
                 ),
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
                       'APLIKASI',
                       style: TextStyle(

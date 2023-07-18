@@ -176,14 +176,6 @@ class VisiMisi extends StatelessWidget {
               onPressed: () {
                 launchUrl(Uri.parse('https://www.sucofindo.co.id/'));
               },
-              child: const Text(
-                'WEB SUCOFINDO',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(
                   const Color.fromARGB(255, 2, 124, 204),
@@ -195,6 +187,14 @@ class VisiMisi extends StatelessWidget {
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
+                ),
+              ),
+              child: const Text(
+                'WEB SUCOFINDO',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
               ),
             ),

@@ -68,7 +68,7 @@ class FeedbackUser extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 3),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        minimumSize: Size(180, 40),
+                        minimumSize: const Size(180, 40),
                         backgroundColor:
                             const Color.fromARGB(255, 250, 131, 15),
                         foregroundColor: Colors.black,
@@ -193,7 +193,7 @@ class FeedbackUser extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        minimumSize: Size(100, 35),
+                        minimumSize: const Size(100, 35),
                         backgroundColor:
                             const Color.fromARGB(255, 250, 131, 15),
                         foregroundColor: Colors.black,

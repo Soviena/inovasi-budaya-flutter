@@ -3,6 +3,8 @@ import 'package:inovasi_budaya/view/burger_menu.dart';
 import 'package:workmanager/workmanager.dart';
 
 class Settings extends StatefulWidget {
+  const Settings({super.key});
+
   @override
   State<Settings> createState() => _SettingsState();
 }
@@ -76,7 +78,7 @@ class _SettingsState extends State<Settings> {
                     alignment: Alignment.center,
                     child: Text(
                       placeholderTime.toString(),
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ),
                 ),
@@ -238,7 +240,7 @@ class _SettingsState extends State<Settings> {
                     futureTime.minute,
                   );
                   if (isTimeOfDayPassed(futureDateTime)) {
-                    futureDateTime.add(Duration(days: 1));
+                    futureDateTime.add(const Duration(days: 1));
                   }
                   final duration = futureDateTime.difference(currentDateTime);
                   final remainingDuration = Duration(
@@ -251,7 +253,7 @@ class _SettingsState extends State<Settings> {
                   Workmanager().cancelByUniqueName("peregangan");
                   Workmanager().registerPeriodicTask(
                       "peregangan", "pengingatPeregangan",
-                      frequency: Duration(days: 1),
+                      frequency: const Duration(days: 1),
                       initialDelay: remainingDuration);
                 } else if (type == "interval") {
                   print("interval");
@@ -299,7 +301,7 @@ class _SettingsState extends State<Settings> {
         value: item,
         child: Text(
           item,
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
         ),
       );
 }

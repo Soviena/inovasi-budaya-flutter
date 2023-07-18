@@ -59,7 +59,7 @@ class Profile extends StatelessWidget {
                   children: [
                     Align(
                       alignment: Alignment.center,
-                      child: Container(
+                      child: SizedBox(
                         width: 120,
                         height: 120,
                         child: Center(

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/burger_menu.dart';
 
 class Kinerja extends StatelessWidget {
+  const Kinerja({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

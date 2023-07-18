@@ -44,14 +44,14 @@ class _AktivitasState extends State<Aktivitas> {
             children: [
               Stack(children: [
                 Container(
-                  margin: EdgeInsets.all(15),
+                  margin: const EdgeInsets.all(15),
                   alignment: Alignment.center,
                   height: 290,
                   width: 170,
                   decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 26, 73, 128),
                       borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           image:
                               AssetImage('assets/image/Posterlandscape1.jpg'))),
                 ),
@@ -63,7 +63,7 @@ class _AktivitasState extends State<Aktivitas> {
                     width: 170,
                     height: 30,
                     color: const Color.fromARGB(150, 6, 51, 83),
-                    child: Text(
+                    child: const Text(
                       ' Deskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi Foto',
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
@@ -76,14 +76,14 @@ class _AktivitasState extends State<Aktivitas> {
               ]),
               Stack(children: [
                 Container(
-                  margin: EdgeInsets.all(15),
+                  margin: const EdgeInsets.all(15),
                   alignment: Alignment.center,
                   height: 290,
                   width: 170,
                   decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 26, 73, 128),
                       borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           image: AssetImage('assets/image/Siapkeakhlak.jpg'))),
                 ),
                 Positioned(
@@ -94,7 +94,7 @@ class _AktivitasState extends State<Aktivitas> {
                     width: 170,
                     height: 30,
                     color: const Color.fromARGB(150, 6, 51, 83),
-                    child: Text(
+                    child: const Text(
                       ' Deskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi Foto',
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
@@ -107,14 +107,14 @@ class _AktivitasState extends State<Aktivitas> {
               ]),
               Stack(children: [
                 Container(
-                  margin: EdgeInsets.all(15),
+                  margin: const EdgeInsets.all(15),
                   alignment: Alignment.center,
                   height: 290,
                   width: 170,
                   decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 26, 73, 128),
                       borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           image: AssetImage('assets/image/Poster1.png'))),
                 ),
                 Positioned(
@@ -125,7 +125,7 @@ class _AktivitasState extends State<Aktivitas> {
                     width: 170,
                     height: 30,
                     color: const Color.fromARGB(150, 6, 51, 83),
-                    child: Text(
+                    child: const Text(
                       ' Deskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi Foto',
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
@@ -138,14 +138,14 @@ class _AktivitasState extends State<Aktivitas> {
               ]),
               Stack(children: [
                 Container(
-                  margin: EdgeInsets.all(15),
+                  margin: const EdgeInsets.all(15),
                   alignment: Alignment.center,
                   height: 290,
                   width: 170,
                   decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 26, 73, 128),
                       borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           image: AssetImage(
                               'assets/image/PosterPerilakuAkhlak.jpg'))),
                 ),
@@ -157,7 +157,7 @@ class _AktivitasState extends State<Aktivitas> {
                     width: 170,
                     height: 30,
                     color: const Color.fromARGB(150, 6, 51, 83),
-                    child: Text(
+                    child: const Text(
                       ' Deskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi Foto',
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
@@ -170,14 +170,14 @@ class _AktivitasState extends State<Aktivitas> {
               ]),
               Stack(children: [
                 Container(
-                  margin: EdgeInsets.all(15),
+                  margin: const EdgeInsets.all(15),
                   alignment: Alignment.center,
                   height: 290,
                   width: 170,
                   decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 26, 73, 128),
                       borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           image:
                               AssetImage('assets/image/Posterlandscape2.jpg'))),
                 ),
@@ -189,7 +189,7 @@ class _AktivitasState extends State<Aktivitas> {
                     width: 170,
                     height: 30,
                     color: const Color.fromARGB(150, 6, 51, 83),
-                    child: Text(
+                    child: const Text(
                       ' Deskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi Foto',
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
@@ -202,14 +202,14 @@ class _AktivitasState extends State<Aktivitas> {
               ]),
               Stack(children: [
                 Container(
-                  margin: EdgeInsets.all(15),
+                  margin: const EdgeInsets.all(15),
                   alignment: Alignment.center,
                   height: 290,
                   width: 170,
                   decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 26, 73, 128),
                       borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           image: AssetImage('assets/image/PosterAkhlak.jpg'))),
                 ),
                 Positioned(
@@ -220,7 +220,7 @@ class _AktivitasState extends State<Aktivitas> {
                     width: 170,
                     height: 30,
                     color: const Color.fromARGB(150, 6, 51, 83),
-                    child: Text(
+                    child: const Text(
                       ' Deskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi FotoDeskripsi Foto',
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(

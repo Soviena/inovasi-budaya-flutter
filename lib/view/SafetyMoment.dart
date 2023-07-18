@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/burger_menu.dart';
 
 class Safety_Moment extends StatelessWidget {
+  const Safety_Moment({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,12 +39,12 @@ class Safety_Moment extends StatelessWidget {
             children: [
               Stack(children: [
                 Container(
-                  margin: EdgeInsets.all(30),
+                  margin: const EdgeInsets.all(30),
                   alignment: Alignment.center,
                   height: 450,
                   width: 400,
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 26, 73, 128),
+                  decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 26, 73, 128),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(20),
                           topRight: Radius.circular(20)),
@@ -55,12 +57,12 @@ class Safety_Moment extends StatelessWidget {
                   alignment: Alignment.center,
                   height: 120,
                   width: 400,
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 26, 73, 128),
+                  decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 26, 73, 128),
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20),
                           bottomRight: Radius.circular(20))),
-                  padding: EdgeInsets.only(left: 10, top: 10),
+                  padding: const EdgeInsets.only(left: 10, top: 10),
                   child: const Column(
                     children: [
                       Text(
@@ -84,12 +86,12 @@ class Safety_Moment extends StatelessWidget {
               ]),
               Stack(children: [
                 Container(
-                  margin: EdgeInsets.all(30),
+                  margin: const EdgeInsets.all(30),
                   alignment: Alignment.center,
                   height: 450,
                   width: 400,
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 26, 73, 128),
+                  decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 26, 73, 128),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(20),
                           topRight: Radius.circular(20)),
@@ -102,8 +104,8 @@ class Safety_Moment extends StatelessWidget {
                   alignment: Alignment.center,
                   height: 120,
                   width: 400,
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 26, 73, 128),
+                  decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 26, 73, 128),
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20),
                           bottomRight: Radius.circular(20))),
@@ -130,12 +132,12 @@ class Safety_Moment extends StatelessWidget {
               ]),
               Stack(children: [
                 Container(
-                  margin: EdgeInsets.all(30),
+                  margin: const EdgeInsets.all(30),
                   alignment: Alignment.center,
                   height: 450,
                   width: 400,
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 26, 73, 128),
+                  decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 26, 73, 128),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(20),
                           topRight: Radius.circular(20)),
@@ -148,8 +150,8 @@ class Safety_Moment extends StatelessWidget {
                   alignment: Alignment.center,
                   height: 120,
                   width: 400,
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 26, 73, 128),
+                  decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 26, 73, 128),
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20),
                           bottomRight: Radius.circular(20))),
