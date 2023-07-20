@@ -46,16 +46,20 @@ class _SettingsState extends State<Settings> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text(
-              'Pada jam ?',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
+            Container(
+              constraints: BoxConstraints(
+                  maxWidth: MediaQuery.of(context).size.width * 0.4),
+              child: const Text(
+                'Pada jam ?',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
             Container(
-              width: 120,
+              constraints: const BoxConstraints(maxWidth: 120),
               // padding: EdgeInsetsDirectional.symmetric(horizontal: 20),
               alignment: Alignment.centerRight,
               decoration: BoxDecoration(
@@ -94,16 +98,20 @@ class _SettingsState extends State<Settings> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text(
-              'Tiap berapa jam ?',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
+            Container(
+              constraints: BoxConstraints(
+                  maxWidth: MediaQuery.of(context).size.width * 0.4),
+              child: const Text(
+                'Tiap berapa jam ?',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
             Container(
-              width: 120,
+              constraints: const BoxConstraints(maxWidth: 120),
               // padding: EdgeInsetsDirectional.symmetric(horizontal: 20),
               alignment: Alignment.centerRight,
               decoration: BoxDecoration(
@@ -181,16 +189,21 @@ class _SettingsState extends State<Settings> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          'Notifikasi Peregangan',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
+                        Container(
+                          constraints: BoxConstraints(
+                              maxWidth:
+                                  MediaQuery.of(context).size.width * 0.4),
+                          child: const Text(
+                            'Notifikasi Peregangan',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                         Container(
-                          width: 120,
+                          constraints: const BoxConstraints(minWidth: 120),
                           // padding: EdgeInsetsDirectional.symmetric(horizontal: 20),
                           alignment: Alignment.centerRight,
                           decoration: BoxDecoration(

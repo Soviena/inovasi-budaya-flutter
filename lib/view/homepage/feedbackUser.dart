@@ -7,7 +7,7 @@ class FeedbackUser extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 20),
-      height: 1220,
+      constraints: const BoxConstraints(minHeight: 1220),
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/image/Feedback.png"),
@@ -88,7 +88,7 @@ class FeedbackUser extends StatelessWidget {
               ),
             ),
             Container(
-              margin: const EdgeInsets.only(top: 140),
+              margin: const EdgeInsets.symmetric(vertical: 140),
               padding: const EdgeInsets.symmetric(horizontal: 25),
               width: 350,
               height: 520,

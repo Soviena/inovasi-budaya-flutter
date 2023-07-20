@@ -7,14 +7,19 @@ class Avatar extends StatelessWidget {
     required this.titleText,
     this.margin = const EdgeInsets.all(0),
     this.size = 0.2,
+    this.constraint = false,
   });
   final String image;
   final String titleText;
   final EdgeInsetsGeometry margin;
   final double size;
-
+  final bool constraint;
   @override
   Widget build(BuildContext context) {
+    double maxW = double.infinity;
+    if (constraint) {
+      maxW = size;
+    }
     return Container(
       margin: margin,
       child: Column(
@@ -31,8 +36,12 @@ class Avatar extends StatelessWidget {
             ),
           ),
           Container(
-            width: MediaQuery.of(context).size.width * size,
+            constraints: BoxConstraints(
+              minWidth: MediaQuery.of(context).size.width * size,
+              maxWidth: MediaQuery.of(context).size.width * maxW,
+            ),
             height: 25,
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             decoration: BoxDecoration(
               color: const Color.fromARGB(255, 26, 73, 128),
               borderRadius: BorderRadius.circular(12.5),

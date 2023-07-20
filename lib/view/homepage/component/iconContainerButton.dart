@@ -54,6 +54,7 @@ class IconContainerButton extends StatelessWidget {
               child: Text(
                 titleText,
                 style: const TextStyle(
+                  overflow: TextOverflow.ellipsis,
                   color: Colors.black,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,

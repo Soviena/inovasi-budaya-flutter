@@ -9,7 +9,8 @@ class VisiMisi extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 20, bottom: 20),
-      height: 1220,
+      padding: const EdgeInsets.only(bottom: 200),
+      constraints: const BoxConstraints(minHeight: 1220),
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/image/Visi_Misi_Image.png"),
@@ -120,8 +121,9 @@ class VisiMisi extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 60),
-            width: MediaQuery.of(context).size.width * 0.5,
+            margin: const EdgeInsets.only(top: 60, left: 20, right: 20),
+            constraints: BoxConstraints(
+                minWidth: MediaQuery.of(context).size.width * 0.5),
             alignment: Alignment.center,
             decoration: const BoxDecoration(
               border: Border(
@@ -157,7 +159,7 @@ class VisiMisi extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 35),
+            margin: const EdgeInsets.only(top: 35, bottom: 84),
             child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -170,17 +172,17 @@ class VisiMisi extends StatelessWidget {
               ],
             ),
           ),
-          const Padding(padding: EdgeInsets.only(top: 84.0)),
           Center(
             child: ElevatedButton(
               onPressed: () {
                 launchUrl(Uri.parse('https://www.sucofindo.co.id/'));
               },
               style: ButtonStyle(
+                padding: const MaterialStatePropertyAll(EdgeInsets.all(10)),
                 backgroundColor: MaterialStateProperty.all<Color>(
                   const Color.fromARGB(255, 2, 124, 204),
                 ),
-                fixedSize: MaterialStateProperty.all<Size>(
+                minimumSize: MaterialStateProperty.all<Size>(
                   const Size(200, 50),
                 ),
                 shape: MaterialStateProperty.all<OutlinedBorder>(

@@ -9,44 +9,84 @@ class Aktivitas extends StatefulWidget {
   _AktivitasState createState() => _AktivitasState();
 }
 
-List<String> arr = [
-  'assets/image/Siapkeakhlak.jpg',
-  'assets/image/Posterlandscape1.jpg',
-  'assets/image/PosterAkhlak.jpg',
-  'assets/image/Posterlandscape1.jpg',
-  'assets/image/Posterlandscape1.jpg',
-  'assets/image/PosterAkhlak.jpg',
-  'assets/image/PosterPerilakuAkhlak.jpg',
-  'assets/image/PosterAkhlak.jpg',
-  'assets/image/PosterAkhlak.jpg',
-  'assets/image/Posterlandscape2.jpg'
-];
-
 class _AktivitasState extends State<Aktivitas> {
-  Future<void> viewImage(BuildContext context, String image) async {
+  List<String> arr = [
+    'assets/image/Siapkeakhlak.jpg',
+    'assets/image/Posterlandscape1.jpg',
+    'assets/image/PosterAkhlak.jpg',
+    'assets/image/Posterlandscape1.jpg',
+    'assets/image/Posterlandscape1.jpg',
+    'assets/image/PosterAkhlak.jpg',
+    'assets/image/PosterPerilakuAkhlak.jpg',
+    'assets/image/PosterAkhlak.jpg',
+    'assets/image/PosterAkhlak.jpg',
+    'assets/image/Posterlandscape2.jpg'
+  ];
+  List<String> desc = [
+    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
+    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
+    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
+    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
+    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
+    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
+    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
+    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
+    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
+    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam'
+  ];
+  Future<void> viewImage(
+      BuildContext context, String image, String deskripsi) async {
     return await showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
-          ),
-          backgroundColor: const Color.fromARGB(255, 6, 51, 83),
+          backgroundColor: const Color.fromARGB(255, 3, 23, 38),
+          shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(30))),
           titlePadding: EdgeInsets.zero,
           contentPadding: EdgeInsets.zero,
           title: Container(
+            decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 6, 51, 83),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30))),
             alignment: Alignment.center,
             child: const Text(
               "<< Zoom >>",
               style: TextStyle(color: Colors.white),
             ),
           ),
-          content: InteractiveViewer(
-            maxScale: 10,
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height * 0.8,
-              width: MediaQuery.of(context).size.width * 0.9,
-              child: Image.asset(image),
+          content: Container(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.of(context).size.height * 0.8,
+            ),
+            width: MediaQuery.of(context).size.width * 0.9,
+            child: Column(
+              children: [
+                InteractiveViewer(
+                  maxScale: 10,
+                  child: Container(
+                    constraints: BoxConstraints(
+                        minHeight: MediaQuery.of(context).size.height * 0.6),
+                    child: Image.asset(image),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.all(20),
+                    decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 6, 51, 83),
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(30),
+                            bottomRight: Radius.circular(30))),
+                    child: Text(
+                      deskripsi,
+                      style: const TextStyle(color: Colors.orange),
+                    ),
+                  ),
+                )
+              ],
             ),
           ),
         );
@@ -89,7 +129,7 @@ class _AktivitasState extends State<Aktivitas> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              viewImage(context, arr[index]);
+              viewImage(context, arr[index], desc[index]);
             },
             child: ImageContainer(
                 image: arr[index], deskripsi: "Deskripsi poster"),
