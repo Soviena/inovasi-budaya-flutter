@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:quickalert/quickalert.dart';
+import 'package:http/http.dart' as http;
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -107,10 +111,7 @@ class LoginPage extends StatelessWidget {
                       onPressed: () {
                         String email = emailController.text;
                         String password = passController.text;
-                        print('Email: $email');
-                        print('Password: $password');
-
-                        Navigator.popAndPushNamed(context, "/home");
+                        postData(context, email, password);
                       },
                     ),
                   ),
@@ -120,6 +121,61 @@ class LoginPage extends StatelessWidget {
           ],
         );
       },
+    );
+  }
+
+  void postData(context, String email, String password) async {
+    QuickAlert.show(
+      context: context,
+      type: QuickAlertType.loading,
+      title: 'Loading',
+      text: 'Fetching your data',
+    );
+    String url = 'http://192.168.1.124:8000/api/login';
+    Map<String, String> headers = {'Content-Type': 'application/json'};
+    String jsonBody = '{"email": "$email", "password": "$password"}';
+    print(jsonBody);
+
+    try {
+      http.Response response =
+          await http.post(Uri.parse(url), headers: headers, body: jsonBody);
+
+      if (response.statusCode == 200) {
+        // Request successful
+        Map<String, dynamic> jsonResponse = jsonDecode(response.body);
+        print(jsonResponse);
+        if (jsonResponse.containsKey('loggedin')) {
+          Navigator.pop(context);
+          Navigator.pop(context);
+          Navigator.popAndPushNamed(context, '/home');
+        } else {
+          print("failed");
+          Navigator.pop(context);
+
+          failedAlert(context);
+          return;
+        }
+      } else {
+        print('Request failed with status code: ${response.statusCode}');
+        Navigator.pop(context);
+        failedAlert(context);
+
+        return;
+      }
+    } catch (error) {
+      print('Error: $error');
+      Navigator.pop(context);
+      failedAlert(context);
+    }
+    return; // Return an empty map as the default response
+  }
+
+  void failedAlert(context) {
+    QuickAlert.show(
+      context: context,
+      type: QuickAlertType.error,
+      title: 'Oops',
+      text: 'Pastikan data diri sudah benar dan lengkap',
     );
   }
 
@@ -217,7 +273,7 @@ class LoginPage extends StatelessWidget {
                         margin: const EdgeInsets.symmetric(vertical: 10),
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.popAndPushNamed(context, "/register");
+                            Navigator.pushNamed(context, "/register");
                           },
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(

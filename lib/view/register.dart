@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:quickalert/quickalert.dart';
+import 'package:http/http.dart' as http;
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -9,8 +12,13 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  // String api = "http://192.168.1.124/api/";
+  final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController passwordController2 = TextEditingController();
+
+  String dateText = "";
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +29,15 @@ class _RegisterState extends State<Register> {
         title: 'Yeay!',
         text: 'Akun berhasil dibuat',
         onConfirmBtnTap: () {
-          Navigator.popAndPushNamed(context, "/home");
+          Navigator.popUntil(context, (route) => false);
+          Navigator.pushNamed(context, '/home');
         },
       );
     }
 
     void failedAlert() {
+      Navigator.pop(context);
+
       QuickAlert.show(
         context: context,
         type: QuickAlertType.error,
@@ -81,8 +92,9 @@ class _RegisterState extends State<Register> {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
                                   color: Colors.white),
-                              child: const TextField(
-                                decoration: InputDecoration(
+                              child: TextField(
+                                controller: nameController,
+                                decoration: const InputDecoration(
                                   border: OutlineInputBorder(),
                                 ),
                               ),
@@ -104,14 +116,32 @@ class _RegisterState extends State<Register> {
                                     fontSize: 18),
                               ),
                             ),
-                            Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.white),
-                              child: const TextField(
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
-                                ),
+                            GestureDetector(
+                              onTap: () {
+                                showDatePicker(
+                                  context: context,
+                                  initialDate: DateTime.now(),
+                                  firstDate: DateTime.parse("1950-01-01"),
+                                  lastDate: DateTime.now(),
+                                ).then(
+                                  (date) => {
+                                    setState(() {
+                                      dateText =
+                                          "${date?.year}-${date?.month}-${date?.day}";
+                                    })
+                                  },
+                                );
+                              },
+                              child: Container(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 18),
+                                alignment: Alignment.centerLeft,
+                                height: 50,
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.white),
+                                child: Text(dateText),
                               ),
                             ),
                           ],
@@ -135,8 +165,9 @@ class _RegisterState extends State<Register> {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
                                   color: Colors.white),
-                              child: const TextField(
-                                decoration: InputDecoration(
+                              child: TextField(
+                                controller: emailController,
+                                decoration: const InputDecoration(
                                   border: OutlineInputBorder(),
                                 ),
                               ),
@@ -162,8 +193,9 @@ class _RegisterState extends State<Register> {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
                                   color: Colors.white),
-                              child: const TextField(
-                                decoration: InputDecoration(
+                              child: TextField(
+                                controller: passwordController,
+                                decoration: const InputDecoration(
                                   border: OutlineInputBorder(),
                                 ),
                               ),
@@ -189,8 +221,9 @@ class _RegisterState extends State<Register> {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
                                   color: Colors.white),
-                              child: const TextField(
-                                decoration: InputDecoration(
+                              child: TextField(
+                                controller: passwordController2,
+                                decoration: const InputDecoration(
                                   border: OutlineInputBorder(),
                                 ),
                               ),
@@ -213,7 +246,7 @@ class _RegisterState extends State<Register> {
                         child: Center(
                           child: ElevatedButton(
                             onPressed: () {
-                              failedAlert();
+                              Navigator.pop(context);
                             },
                             style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(
@@ -243,8 +276,50 @@ class _RegisterState extends State<Register> {
                         padding: const EdgeInsets.only(bottom: 40, left: 20),
                         child: Center(
                           child: ElevatedButton(
-                            onPressed: () {
-                              successAlert();
+                            onPressed: () async {
+                              QuickAlert.show(
+                                context: context,
+                                type: QuickAlertType.loading,
+                                title: 'Loading',
+                                text: 'Fetching your data',
+                              );
+                              var url = Uri.parse(
+                                  'http://192.168.1.124:8000/api/register'); // Replace with your API endpoint
+                              var headers = {
+                                'Content-Type': 'application/json'
+                              }; // Replace with the appropriate headers
+
+                              var data = {
+                                'email': emailController.text,
+                                'password': passwordController.text,
+                                'password2': passwordController2.text,
+                                'tanggal_lahir': dateText,
+                                'name': nameController.text
+                              }; // Replace with your data
+
+                              var response = await http.post(
+                                url,
+                                headers: headers,
+                                body: jsonEncode(data),
+                              );
+
+                              if (response.statusCode == 200) {
+                                // Successful request
+                                dynamic jsonData = jsonDecode(response.body);
+                                print(jsonData);
+                                // DatabaseHelper.instance.saveSession(
+                                //     emailController.text,
+                                //     jsonData['id'],
+                                //     "0",
+                                //     "default.png",
+                                //     userController.text);
+                                successAlert();
+                              } else {
+                                // Error occurred
+                                print(
+                                    'Request failed with status: ${response.statusCode}');
+                                failedAlert();
+                              }
                             },
                             style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(
