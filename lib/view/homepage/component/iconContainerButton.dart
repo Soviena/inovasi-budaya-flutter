@@ -6,13 +6,11 @@ class IconContainerButton extends StatelessWidget {
       required this.titleText,
       required this.iconAsset,
       required this.isLeft,
-      required this.route,
-      this.parameter = 0});
+      required this.route});
   final String titleText;
   final String iconAsset;
   final bool isLeft;
   final String route;
-  final int parameter;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +27,7 @@ class IconContainerButton extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, route, arguments: parameter);
+        Navigator.pushNamed(context, route);
       },
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 10),

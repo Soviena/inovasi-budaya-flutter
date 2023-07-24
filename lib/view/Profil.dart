@@ -15,6 +15,8 @@ class _ProfileState extends State<Profile> {
 
   bool editState = false;
 
+  dynamic user = {};
+
   Widget profileContainer() {
     if (editState) {
       return SingleChildScrollView(

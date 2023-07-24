@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:inovasi_budaya/dbHelper.dart';
 
 class BurgerList extends StatefulWidget {
   const BurgerList({Key? key}) : super(key: key);
@@ -8,6 +9,10 @@ class BurgerList extends StatefulWidget {
 }
 
 class _BurgerListState extends State<BurgerList> {
+  Future<void> logOut() async {
+    DatabaseHelper.instance.deleteSession();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -139,6 +144,7 @@ class _BurgerListState extends State<BurgerList> {
             ),
             ListTile(
               onTap: () {
+                logOut();
                 Navigator.popUntil(context, (route) => route.isFirst);
                 Navigator.popAndPushNamed(context, "/splashView");
               },

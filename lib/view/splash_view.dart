@@ -1,12 +1,18 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:inovasi_budaya/dbHelper.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:http/http.dart' as http;
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   void _showLoginPopup(BuildContext context) {
     showDialog(
       context: context,
@@ -145,6 +151,12 @@ class LoginPage extends StatelessWidget {
         Map<String, dynamic> jsonResponse = jsonDecode(response.body);
         print(jsonResponse);
         if (jsonResponse.containsKey('loggedin')) {
+          DatabaseHelper.instance.saveSession(
+              jsonResponse['email'],
+              jsonResponse['uid'],
+              jsonResponse['profilePic'],
+              jsonResponse['name'],
+              jsonResponse['dob'].toString());
           Navigator.pop(context);
           Navigator.pop(context);
           Navigator.popAndPushNamed(context, '/home');
@@ -163,7 +175,7 @@ class LoginPage extends StatelessWidget {
         return;
       }
     } catch (error) {
-      print('Error: $error');
+      print('****************Error: $error');
       Navigator.pop(context);
       failedAlert(context);
     }
@@ -177,6 +189,26 @@ class LoginPage extends StatelessWidget {
       title: 'Oops',
       text: 'Pastikan data diri sudah benar dan lengkap',
     );
+  }
+
+  bool loggedIn = false;
+
+  void getSession() async {
+    await DatabaseHelper.instance.getLogin().then((value) {
+      loggedIn = value;
+      if (loggedIn) {
+        Navigator.popAndPushNamed(context, "/home");
+      } else {
+        return;
+      }
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    getSession();
+    super.initState();
   }
 
   @override
