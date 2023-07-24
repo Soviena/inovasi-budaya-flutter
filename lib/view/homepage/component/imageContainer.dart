@@ -6,10 +6,24 @@ class ImageContainer extends StatelessWidget {
     required this.image,
     required this.deskripsi,
     this.margin = const EdgeInsets.all(0),
+    this.network = false,
   });
   final String image;
   final String deskripsi;
   final EdgeInsetsGeometry margin;
+  final bool network;
+
+  Widget imageContainer(network) {
+    if (network) {
+      return Container(
+          padding: const EdgeInsets.only(top: 10), child: Image.network(image));
+    } else {
+      return Container(
+        padding: const EdgeInsets.only(top: 10),
+        child: Image.asset(image),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +37,7 @@ class ImageContainer extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Container(
-              padding: const EdgeInsets.only(top: 10),
-              child: Image.asset(image),
-            ),
+            imageContainer(network),
             SizedBox(
               height: 20,
               child: Container(

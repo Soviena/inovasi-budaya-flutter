@@ -1,39 +1,52 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:inovasi_budaya/view/homepage/component/imageContainer.dart';
+import 'package:http/http.dart' as http;
 
 class Aktivitas extends StatefulWidget {
-  const Aktivitas({super.key});
+  const Aktivitas({super.key, required this.idBudaya});
+  final int idBudaya;
 
   @override
   _AktivitasState createState() => _AktivitasState();
 }
 
 class _AktivitasState extends State<Aktivitas> {
-  List<String> arr = [
-    'assets/image/Siapkeakhlak.jpg',
-    'assets/image/Posterlandscape1.jpg',
-    'assets/image/PosterAkhlak.jpg',
-    'assets/image/Posterlandscape1.jpg',
-    'assets/image/Posterlandscape1.jpg',
-    'assets/image/PosterAkhlak.jpg',
-    'assets/image/PosterPerilakuAkhlak.jpg',
-    'assets/image/PosterAkhlak.jpg',
-    'assets/image/PosterAkhlak.jpg',
-    'assets/image/Posterlandscape2.jpg'
-  ];
-  List<String> desc = [
-    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
-    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
-    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
-    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
-    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
-    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
-    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
-    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
-    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
-    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam'
-  ];
+  String url = "http://192.168.1.124:8000/";
+  dynamic Budaya = {
+    "id": 0,
+    "judul": "0",
+    "deskripsi": "0",
+    "tanggal": "2023-07",
+    "created_at": "2023-07-18T01:07:41.000000Z",
+    "updated_at": "2023-07-18T01:07:41.000000Z",
+    "aktivitas": [
+      {
+        "id": 0,
+        "budaya_id": 0,
+        "judul": "loading",
+        "deskripsi": "loading",
+        "fileName": "loading",
+        "created_at": "2023-07-24T01:35:03.000000Z",
+        "updated_at": "2023-07-24T01:35:03.000000Z"
+      }
+    ]
+  };
+  void getData() async {
+    await http.get(Uri.parse("${url}api/aktivitas/${widget.idBudaya}")).then(
+      (response) {
+        if (response.statusCode == 200) {
+          Budaya = jsonDecode(response.body);
+        }
+        setState(() {
+          Budaya;
+        });
+      },
+    );
+  }
+
   Future<void> viewImage(
       BuildContext context, String image, String deskripsi) async {
     return await showDialog(
@@ -69,12 +82,14 @@ class _AktivitasState extends State<Aktivitas> {
                   child: Container(
                     constraints: BoxConstraints(
                         minHeight: MediaQuery.of(context).size.height * 0.6),
-                    child: Image.asset(image),
+                    child: Image.network(image),
+                    // child: NetworkImage(image),
                   ),
                 ),
                 Expanded(
                   child: Container(
                     padding: const EdgeInsets.all(20),
+                    width: MediaQuery.of(context).size.width * 0.9,
                     decoration: const BoxDecoration(
                         color: Color.fromARGB(255, 6, 51, 83),
                         borderRadius: BorderRadius.only(
@@ -92,6 +107,13 @@ class _AktivitasState extends State<Aktivitas> {
         );
       },
     );
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    getData();
+    super.initState();
   }
 
   @override
@@ -122,17 +144,24 @@ class _AktivitasState extends State<Aktivitas> {
       ),
       body: MasonryGridView.count(
         padding: const EdgeInsets.all(10),
-        itemCount: 10,
+        itemCount: Budaya['aktivitas'].length,
         crossAxisCount: 3,
         mainAxisSpacing: 4,
         crossAxisSpacing: 4,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              viewImage(context, arr[index], desc[index]);
+              viewImage(
+                  context,
+                  "${url}storage/uploaded/aktivitas/${Budaya['aktivitas'][index]["fileName"]}",
+                  Budaya['aktivitas'][index]['deskripsi']);
             },
             child: ImageContainer(
-                image: arr[index], deskripsi: "Deskripsi poster"),
+              image:
+                  "${url}storage/uploaded/aktivitas/${Budaya['aktivitas'][index]["fileName"]}",
+              deskripsi: Budaya['aktivitas'][index]['judul'],
+              network: true,
+            ),
           );
         },
       ),

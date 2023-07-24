@@ -139,7 +139,8 @@ class _BurgerListState extends State<BurgerList> {
             ),
             ListTile(
               onTap: () {
-                Navigator.popUntil(context, ModalRoute.withName("/splashView"));
+                Navigator.popUntil(context, (route) => route.isFirst);
+                Navigator.popAndPushNamed(context, "/splashView");
               },
               contentPadding:
                   const EdgeInsets.symmetric(horizontal: 30, vertical: 5),

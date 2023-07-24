@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:inovasi_budaya/view/burger_menu.dart';
+import 'package:http/http.dart' as http;
 
 import 'homepage/component/imageContainer.dart';
 
@@ -12,16 +15,21 @@ class Safety_Moment extends StatefulWidget {
 }
 
 class _Safety_MomentState extends State<Safety_Moment> {
-  List<String> arr = [
-    "assets/image/Poster1.png",
-    "assets/image/Poster2.png",
-    "assets/image/Poster3.png",
-  ];
-  List<String> desc = [
-    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
-    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam',
-    'lorem ipsum dolor ipsum some sum sum la med medika ark en siel lam nam kam'
-  ];
+  dynamic safety = [];
+  String url = "http://192.168.1.124:8000/";
+  void getData() async {
+    await http.get(Uri.parse("${url}api/safety")).then(
+      (response) {
+        if (response.statusCode == 200) {
+          safety = jsonDecode(response.body);
+        }
+        setState(() {
+          safety;
+        });
+      },
+    );
+  }
+
   Future<void> viewImage(
       BuildContext context, String image, String deskripsi) async {
     return await showDialog(
@@ -57,12 +65,14 @@ class _Safety_MomentState extends State<Safety_Moment> {
                   child: Container(
                     constraints: BoxConstraints(
                         minHeight: MediaQuery.of(context).size.height * 0.6),
-                    child: Image.asset(image),
+                    child: Image.network(image),
+                    // child: NetworkImage(image),
                   ),
                 ),
                 Expanded(
                   child: Container(
                     padding: const EdgeInsets.all(20),
+                    width: MediaQuery.of(context).size.width * 0.9,
                     decoration: const BoxDecoration(
                         color: Color.fromARGB(255, 6, 51, 83),
                         borderRadius: BorderRadius.only(
@@ -80,6 +90,13 @@ class _Safety_MomentState extends State<Safety_Moment> {
         );
       },
     );
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    getData();
+    super.initState();
   }
 
   @override
@@ -111,17 +128,21 @@ class _Safety_MomentState extends State<Safety_Moment> {
       drawer: const BurgerList(),
       body: MasonryGridView.count(
         padding: const EdgeInsets.all(10),
-        itemCount: arr.length,
+        itemCount: safety.length,
         crossAxisCount: 2,
         mainAxisSpacing: 4,
         crossAxisSpacing: 4,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              viewImage(context, arr[index], desc[index]);
+              viewImage(context, "${url}storage/${safety[index]['fileName']}",
+                  safety[index]['deskripsi']);
             },
             child: ImageContainer(
-                image: arr[index], deskripsi: "Deskripsi poster"),
+              image: "${url}storage/${safety[index]['fileName']}",
+              deskripsi: safety[index]['judul'],
+              network: true,
+            ),
           );
         },
       ),

@@ -92,20 +92,30 @@ void main() async {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
+      home: const LoginPage(),
       initialRoute: '/splashView',
+      onGenerateRoute: (settings) {
+        if (settings.name == '/aktivitas') {
+          final int id = settings.arguments as int;
+          return MaterialPageRoute(
+            builder: (context) => Aktivitas(idBudaya: id),
+            settings: settings,
+          );
+        }
+        return null;
+      },
       routes: {
         '/splashView': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
         '/register': (context) => const Register(),
         '/jadwal': (context) => const Jadwal(),
-        '/kinerja': (context) => Kinerja(),
-        '/reward': (context) => Reward(),
-        '/materi': (context) => Materi(),
-        '/profil': (context) => Profile(),
-        '/safety': (context) => Safety_Moment(),
-        '/setting': (context) => Settings(),
-        '/aktivitas': (context) => Aktivitas(),
-        '/kinerja_Clicked': (context) => KinerjaClicked(),
+        '/kinerja': (context) => const Kinerja(),
+        '/reward': (context) => const Reward(),
+        '/materi': (context) => const Materi(),
+        '/profil': (context) => const Profile(),
+        '/safety': (context) => const Safety_Moment(),
+        '/setting': (context) => const Settings(),
+        '/kinerja_Clicked': (context) => const KinerjaClicked(),
       },
     ),
   );
