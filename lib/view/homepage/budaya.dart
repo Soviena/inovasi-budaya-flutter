@@ -1,14 +1,28 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/homepage/component/divider.dart';
+import 'package:intl/intl.dart';
 
-class InformasiBudaya extends StatelessWidget {
-  const InformasiBudaya({super.key});
+class InformasiBudaya extends StatefulWidget {
+  InformasiBudaya({super.key, required this.budaya, required this.budayaNow});
+  dynamic budaya;
+  dynamic budayaNow;
+
+  @override
+  State<InformasiBudaya> createState() => _InformasiBudayaState();
+}
+
+class _InformasiBudayaState extends State<InformasiBudaya> {
+  String url = "http://192.168.1.124:8000/";
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const TextDivider(titleText: 'NamaBulan'),
+        TextDivider(
+            titleText: DateFormat.MMMM()
+                .format(DateTime.parse(widget.budayaNow['tanggal'] + "-01"))),
         Container(
           width: 320,
           height: 240,
@@ -33,35 +47,21 @@ class InformasiBudaya extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Kegiatan',
-                  style: TextStyle(
+                Text(
+                  widget.budayaNow['judul'],
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 const Padding(padding: EdgeInsets.only(top: 12.0)),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: 8,
-                      height: 8,
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                      ),
-                      margin: const EdgeInsets.only(top: 8, right: 8),
-                    ),
-                    const Text(
-                      'Lorem ipsum',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ],
+                Text(
+                  widget.budayaNow['deskripsi'],
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
                 ),
               ],
             ),
@@ -71,7 +71,7 @@ class InformasiBudaya extends StatelessWidget {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            children: List.generate(5, (index) {
+            children: List.generate(widget.budaya.length, (index) {
               return Container(
                 padding: const EdgeInsets.only(top: 24.0),
                 margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -101,10 +101,11 @@ class InformasiBudaya extends StatelessWidget {
                       decoration: const BoxDecoration(
                         color: Colors.blue,
                       ),
-                      child: const Center(
+                      child: Center(
                         child: Text(
-                          'Januari',
-                          style: TextStyle(
+                          DateFormat.MMMM().format(DateTime.parse(
+                              widget.budaya[index]['tanggal'] + "-01")),
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
@@ -115,13 +116,27 @@ class InformasiBudaya extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(16.0),
                       alignment: Alignment.topLeft,
-                      child: const Text(
-                        'lorem ipsum',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                        ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            widget.budaya[index]['judul'],
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                          Text(
+                            widget.budaya[index]['deskripsi'],
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],

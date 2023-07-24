@@ -95,8 +95,9 @@ void main() async {
       home: const LoginPage(),
       initialRoute: '/splashView',
       onGenerateRoute: (settings) {
-        if (settings.name == '/aktivitas') {
-          final int id = settings.arguments as int;
+        final Uri uri = Uri.parse(settings.name!);
+        if (uri.path == '/aktivitas') {
+          final int id = int.parse(uri.queryParameters['id']!);
           return MaterialPageRoute(
             builder: (context) => Aktivitas(idBudaya: id),
             settings: settings,

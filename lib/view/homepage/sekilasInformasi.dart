@@ -2,16 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/homepage/component/divider.dart';
 import 'package:inovasi_budaya/view/homepage/component/iconContainerButton.dart';
 
-class SekilasInformasi extends StatelessWidget {
-  const SekilasInformasi({super.key});
+// ignore: must_be_immutable
+class SekilasInformasi extends StatefulWidget {
+  SekilasInformasi({super.key, required this.budayaNow});
+  dynamic budayaNow;
 
   @override
+  State<SekilasInformasi> createState() => _SekilasInformasiState();
+}
+
+class _SekilasInformasiState extends State<SekilasInformasi> {
+  @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        TextDivider(titleText: 'Sekilas Informasi'),
-        Row(
+        const TextDivider(titleText: 'Sekilas Informasi'),
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconContainerButton(
@@ -35,9 +42,9 @@ class SekilasInformasi extends StatelessWidget {
               titleText: "Aktivitas",
               iconAsset: 'assets/image/Aktivitas.png',
               isLeft: true,
-              route: "/aktivitas",
+              route: "/aktivitas?id=${widget.budayaNow['id']}",
             ),
-            IconContainerButton(
+            const IconContainerButton(
               titleText: "Safety Moment",
               iconAsset: 'assets/image/Safety_Moment.png',
               isLeft: false,

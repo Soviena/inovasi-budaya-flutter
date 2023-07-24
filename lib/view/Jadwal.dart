@@ -68,8 +68,7 @@ class _JadwalState extends State<Jadwal> {
               margin: const EdgeInsets.only(top: 10),
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, "/aktivitas",
-                      arguments: budaya['id']);
+                  Navigator.pushNamed(context, "/aktivitas?id=${budaya['id']}");
                 },
                 style: const ButtonStyle(
                     backgroundColor: MaterialStatePropertyAll(
