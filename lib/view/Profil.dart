@@ -1,10 +1,16 @@
+import 'dart:convert';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/dbHelper.dart';
 import 'package:inovasi_budaya/view/burger_menu.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
+import 'package:http/http.dart' as http;
 
 import 'dart:io';
+
+import 'package:quickalert/quickalert.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -22,7 +28,12 @@ class _ProfileState extends State<Profile> {
   late String tanggalLahir;
   bool editState = false;
 
-  dynamic user = {};
+  dynamic user = {
+    "id": 0,
+    "email": "-",
+    "dob": "0000-00-00",
+    "name": "loading"
+  };
 
   void getData() async {
     user = await DatabaseHelper.instance.getSession();
@@ -31,6 +42,8 @@ class _ProfileState extends State<Profile> {
       email.text = user['email'];
       tanggalLahir = user['dob'];
       user;
+      profilePic =
+          NetworkImage("${url}storage/uploaded/user/${user['profilePic']}");
     });
   }
 
@@ -45,7 +58,7 @@ class _ProfileState extends State<Profile> {
       uiSettings: [
         AndroidUiSettings(
           toolbarTitle: 'Crop Image',
-          toolbarColor: Colors.deepOrange,
+          toolbarColor: Colors.deepPurple,
           toolbarWidgetColor: Colors.white,
           initAspectRatio: CropAspectRatioPreset.square,
           lockAspectRatio: true,
@@ -62,12 +75,29 @@ class _ProfileState extends State<Profile> {
   Future<File?> _pickImage() async {
     final pickedImage = await picker.pickImage(source: ImageSource.gallery);
     if (pickedImage != null) {
-      await _cropImage(File(pickedImage.path));
-      return null;
+      CroppedFile? croppedPicture = await _cropImage(File(pickedImage.path));
+      File picture = File(croppedPicture!.path);
+      return picture;
     } else {
       return null;
     }
   }
+
+  void editProfilepic() async {
+    File? pic = await _pickImage();
+    if (pic != null) {
+      setState(() {
+        newProfilepic = pic;
+        profilePic = FileImage(pic);
+      });
+    } else {
+      return;
+    }
+  }
+
+  ImageProvider<Object> profilePic = const NetworkImage(
+      "http://192.168.1.124:8000/storage/uploaded/user/default.png");
+  dynamic newProfilepic = null;
 
   Widget profileContainer() {
     if (editState) {
@@ -78,7 +108,7 @@ class _ProfileState extends State<Profile> {
           children: [
             GestureDetector(
               onTap: () {
-                _pickImage();
+                editProfilepic();
               },
               child: Align(
                 alignment: Alignment.center,
@@ -88,10 +118,7 @@ class _ProfileState extends State<Profile> {
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.black38,
-                      image: DecorationImage(
-                          opacity: 100,
-                          image: NetworkImage(
-                              "${url}storage/uploaded/user/${user['profilePic']}"))),
+                      image: DecorationImage(opacity: 100, image: profilePic)),
                   child: const Icon(
                     Icons.edit,
                     color: Colors.white,
@@ -210,10 +237,71 @@ class _ProfileState extends State<Profile> {
               margin: const EdgeInsets.only(top: 10),
               alignment: Alignment.center,
               child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    editState = false;
-                  });
+                onPressed: () async {
+                  QuickAlert.show(
+                    context: context,
+                    type: QuickAlertType.loading,
+                    title: 'Loading',
+                    text: 'Mengupdate akun',
+                  );
+                  var request = http.MultipartRequest(
+                      'POST', Uri.parse("${url}api/user/${user['uid']}/edit"));
+                  if (newProfilepic != null) {
+                    var length = await newProfilepic.length();
+                    var fileStream = http.ByteStream(
+                        Stream.castFrom(newProfilepic.openRead()));
+                    var multipartFile = http.MultipartFile(
+                        'picture', fileStream, length,
+                        filename: newProfilepic.path.split('/').last);
+                    request.files.add(multipartFile);
+                  }
+                  request.fields['email'] = email.text;
+                  request.fields['tanggal_lahir'] = tanggalLahir;
+                  request.fields['name'] = name.text;
+
+                  try {
+                    var response = await request.send();
+                    Map<String, dynamic> jsonResponse =
+                        jsonDecode(await response.stream.bytesToString());
+                    if (response.statusCode == 200) {
+                      DatabaseHelper.instance.updateSession(
+                          jsonResponse['email'],
+                          jsonResponse['name'],
+                          jsonResponse['dob'],
+                          jsonResponse['profilePic'],
+                          jsonResponse['uid']);
+                      if (kDebugMode) {
+                        print('File uploaded successfully!');
+                      }
+                      // ignore: use_build_context_synchronously
+                      Navigator.pop(context);
+                      // ignore: use_build_context_synchronously
+                      QuickAlert.show(
+                        context: context,
+                        type: QuickAlertType.success,
+                        title: 'Yeay!',
+                        text: 'Akun berhasil diupdate',
+                      );
+                      setState(() {
+                        editState = false;
+                      });
+                    } else {
+                      throw 'File upload failed with status code: ${response.statusCode}';
+                    }
+                  } on Exception catch (e) {
+                    // ignore: use_build_context_synchronously
+                    Navigator.pop(context);
+                    // ignore: use_build_context_synchronously
+                    QuickAlert.show(
+                      context: context,
+                      type: QuickAlertType.error,
+                      title: 'Oops',
+                      text: 'Terjadi kesalahan pada server',
+                    );
+                    if (kDebugMode) {
+                      print(e);
+                    }
+                  }
                 },
                 style: ButtonStyle(
                   backgroundColor:
@@ -254,9 +342,7 @@ class _ProfileState extends State<Profile> {
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.grey,
-                    image: DecorationImage(
-                        image: NetworkImage(
-                            "${url}storage/uploaded/user/${user['profilePic']}"))),
+                    image: DecorationImage(image: profilePic)),
               ),
             ),
             Column(

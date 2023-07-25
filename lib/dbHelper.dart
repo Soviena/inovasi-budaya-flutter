@@ -70,4 +70,21 @@ class DatabaseHelper {
     }
     return null;
   }
+
+  Future<dynamic> updateSession(
+      String email, String name, String dob, String profilepic, int uid) async {
+    final db = await instance.database;
+    await db.update(
+        'sessions',
+        {
+          'email': email,
+          'uid': uid,
+          'loggedin': true,
+          'name': name,
+          'profilePic': profilepic,
+          'dob': dob
+        },
+        where: "uid = ?",
+        whereArgs: [uid]);
+  }
 }
