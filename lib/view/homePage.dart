@@ -19,7 +19,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String url = "http://192.168.1.124:8000/";
+  String url = "http://192.168.1.128:8000/";
 
   var arr = [
     'assets/image/Siapkeakhlak.jpg',
@@ -32,9 +32,10 @@ class _HomePageState extends State<HomePage> {
   dynamic budaya = [];
   dynamic budayaNow = {
     "id": 0,
-    "judul": "Loading",
-    "deskripsi": "Loading",
-    "tanggal": "2023-07",
+    "judul": "Tidak ada budaya",
+    "deskripsi": "Belum ada budaya yang di input untuk bulan ini",
+    "tanggal":
+        "${DateTime.now().year}-${DateTime.now().month.toString().padLeft(2, "0")}",
     "created_at": "2023-07-18 01:07:41",
     "updated_at": "2023-07-18 01:07:41"
   };
@@ -44,10 +45,10 @@ class _HomePageState extends State<HomePage> {
       (response) {
         if (response.statusCode == 200) {
           budaya = jsonDecode(response.body);
+          setState(() {
+            budaya;
+          });
         }
-        setState(() {
-          budaya;
-        });
       },
     );
   }
@@ -57,10 +58,10 @@ class _HomePageState extends State<HomePage> {
       (response) {
         if (response.statusCode == 200) {
           budayaNow = jsonDecode(response.body);
+          setState(() {
+            budayaNow;
+          });
         }
-        setState(() {
-          budayaNow;
-        });
       },
     );
   }
