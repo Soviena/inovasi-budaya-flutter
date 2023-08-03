@@ -13,6 +13,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String url = 'http://192.168.1.128:8000/api/';
+
   void _showLoginPopup(BuildContext context) {
     showDialog(
       context: context,
@@ -137,19 +139,16 @@ class _LoginPageState extends State<LoginPage> {
       title: 'Loading',
       text: 'Fetching your data',
     );
-    String url = 'http://192.168.1.124:8000/api/login';
     Map<String, String> headers = {'Content-Type': 'application/json'};
     String jsonBody = '{"email": "$email", "password": "$password"}';
-    print(jsonBody);
 
     try {
-      http.Response response =
-          await http.post(Uri.parse(url), headers: headers, body: jsonBody);
+      http.Response response = await http.post(Uri.parse("${url}login"),
+          headers: headers, body: jsonBody);
 
       if (response.statusCode == 200) {
         // Request successful
         Map<String, dynamic> jsonResponse = jsonDecode(response.body);
-        print(jsonResponse);
         if (jsonResponse.containsKey('loggedin')) {
           DatabaseHelper.instance.saveSession(
               jsonResponse['email'],
@@ -161,7 +160,6 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.pop(context);
           Navigator.popAndPushNamed(context, '/home');
         } else {
-          print("failed");
           Navigator.pop(context);
 
           failedAlert(context);
@@ -191,24 +189,29 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  bool loggedIn = false;
-
   void getSession() async {
-    await DatabaseHelper.instance.getLogin().then((value) {
-      loggedIn = value;
-      if (loggedIn) {
-        Navigator.popAndPushNamed(context, "/home");
-      } else {
-        return;
+    dynamic value = await DatabaseHelper.instance.getSession();
+    if (value != null && value['loggedin'] == '1') {
+      try {
+        http.Response response =
+            await http.get(Uri.parse("${url}user/get/${value['uid']}"));
+        dynamic jsonVal = jsonDecode(response.body);
+        DatabaseHelper.instance.updateSession(jsonVal['email'], jsonVal['name'],
+            jsonVal['tanggal_lahir'], jsonVal['profilepic'], jsonVal['id']);
+      } catch (e) {
+        print(e);
       }
-    });
+      // ignore: use_build_context_synchronously
+      Navigator.popAndPushNamed(context, "/home");
+    } else {
+      return;
+    }
   }
 
   @override
   void initState() {
-    // TODO: implement initState
-    getSession();
     super.initState();
+    getSession();
   }
 
   @override

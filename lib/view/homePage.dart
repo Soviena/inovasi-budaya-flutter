@@ -7,6 +7,7 @@ import 'package:inovasi_budaya/view/homepage/sekilasInformasi.dart';
 import 'package:inovasi_budaya/view/homepage/timInternalisasi.dart';
 import 'package:inovasi_budaya/view/homepage/reward.dart';
 import 'package:inovasi_budaya/view/homepage/feedbackUser.dart';
+import 'package:inovasi_budaya/view/homepage/component/circleImageTitle.dart';
 
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -30,6 +31,8 @@ class _HomePageState extends State<HomePage> {
   ];
 
   dynamic budaya = [];
+  List<Widget> timInternal = [];
+  dynamic reward = {};
   dynamic budayaNow = {
     "id": 0,
     "judul": "Tidak ada budaya",
@@ -54,16 +57,67 @@ class _HomePageState extends State<HomePage> {
   }
 
   void getBudayaNow() async {
-    await http.get(Uri.parse("${url}api/budaya/now")).then(
-      (response) {
-        if (response.statusCode == 200) {
-          budayaNow = jsonDecode(response.body);
+    try {
+      await http.get(Uri.parse("${url}api/budaya/now")).then(
+        (response) {
+          if (response.statusCode == 200) {
+            budayaNow = jsonDecode(response.body);
+            setState(() {
+              budayaNow;
+            });
+          }
+        },
+      );
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  void getTimInternal() async {
+    dynamic tim;
+    try {
+      await http.get(Uri.parse("${url}api/timInternalisasi")).then(
+        (response) {
+          if (response.statusCode == 200) {
+            tim = jsonDecode(response.body);
+          }
+          for (var t in tim) {
+            timInternal.add(
+              Avatar(
+                image: "${url}storage/uploaded/user/${t['profilepic']}",
+                titleText: t['name'],
+                margin: const EdgeInsets.all(10),
+                size: 0.3,
+                constraint: true,
+                network: true,
+              ),
+            );
+          }
           setState(() {
-            budayaNow;
+            timInternal;
           });
-        }
-      },
-    );
+        },
+      );
+    } catch (e) {
+      tim = [];
+    }
+  }
+
+  void getReward() async {
+    try {
+      await http.get(Uri.parse("${url}api/reward/latest")).then(
+        (response) {
+          if (response.statusCode == 200) {
+            reward = jsonDecode(response.body);
+            setState(() {
+              reward;
+            });
+          }
+        },
+      );
+    } catch (e) {
+      print(e);
+    }
   }
 
   @override
@@ -71,6 +125,8 @@ class _HomePageState extends State<HomePage> {
     // TODO: implement initState
     getBudayaNow();
     getBudaya();
+    getTimInternal();
+    getReward();
     super.initState();
   }
 
@@ -112,8 +168,8 @@ class _HomePageState extends State<HomePage> {
           SekilasInformasi(
             budayaNow: budayaNow,
           ),
-          const TimInternalisasi(),
-          const Rewards(),
+          TimInternalisasi(tim: timInternal),
+          Rewards(reward: reward),
           const FeedbackUser(),
         ],
       ),

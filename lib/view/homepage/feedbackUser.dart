@@ -1,7 +1,85 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
-class FeedbackUser extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:inovasi_budaya/dbHelper.dart';
+import 'package:quickalert/quickalert.dart';
+import 'package:http/http.dart' as http;
+
+class FeedbackUser extends StatefulWidget {
   const FeedbackUser({super.key});
+
+  @override
+  State<FeedbackUser> createState() => _FeedbackUserState();
+}
+
+class _FeedbackUserState extends State<FeedbackUser> {
+  final TextEditingController subjectTextController = TextEditingController();
+  final TextEditingController feedbackTextController = TextEditingController();
+
+  void successAlert() {
+    QuickAlert.show(
+      context: context,
+      type: QuickAlertType.success,
+      title: 'Yeay!',
+      text: 'Feedback berhasil dikirim',
+      onConfirmBtnTap: () {
+        subjectTextController.text = "";
+        feedbackTextController.text = "";
+        Navigator.pop(context);
+      },
+    );
+  }
+
+  void failedAlert() {
+    Navigator.pop(context);
+
+    QuickAlert.show(
+      context: context,
+      type: QuickAlertType.error,
+      title: 'Oops',
+      text: 'Kesalahan jaringan',
+    );
+  }
+
+  void postFeedback() async {
+    dynamic sessionData = await DatabaseHelper.instance.getSession();
+    // ignore: use_build_context_synchronously
+    QuickAlert.show(
+      context: context,
+      type: QuickAlertType.loading,
+      title: 'Loading',
+      text: 'Fetching your data',
+    );
+    var url = Uri.parse(
+        'http://192.168.1.128:8000/api/feedback/new'); // Replace with your API endpoint
+    var headers = {
+      'Content-Type': 'application/json'
+    }; // Replace with the appropriate headers
+
+    var data = {
+      'user_id': sessionData['uid'],
+      'judul': subjectTextController.text,
+      'deskripsi': feedbackTextController.text,
+    }; // Replace with your data
+
+    var response = await http.post(
+      url,
+      headers: headers,
+      body: jsonEncode(data),
+    );
+
+    if (response.statusCode == 200) {
+      // ignore: use_build_context_synchronously
+      Navigator.pop(context);
+      successAlert();
+    } else {
+      // Error occurred
+      print('Request failed with status: ${response.statusCode}');
+      // ignore: use_build_context_synchronously
+      Navigator.pop(context);
+      failedAlert();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -100,118 +178,92 @@ class FeedbackUser extends StatelessWidget {
                   width: 4,
                 ),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: const Color.fromARGB(255, 250, 131, 15),
-                    ),
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 8, horizontal: 54),
-                    child: const Text(
-                      'Saran',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: const Color.fromARGB(255, 250, 131, 15),
                       ),
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 4),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(35),
-                      color: Colors.white,
-                    ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Name',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        contentPadding:
-                            const EdgeInsets.symmetric(horizontal: 10),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 4),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(35),
-                      color: Colors.white,
-                    ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Email Address',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        contentPadding:
-                            const EdgeInsets.symmetric(horizontal: 10),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 4),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: Colors.white,
-                    ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Phone',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(35),
-                        ),
-                        contentPadding:
-                            const EdgeInsets.symmetric(horizontal: 10),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 4),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(35),
-                      color: Colors.white,
-                    ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Subject',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        contentPadding:
-                            const EdgeInsets.symmetric(horizontal: 10),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.bottomRight,
-                    margin: const EdgeInsets.symmetric(vertical: 10),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(100, 35),
-                        backgroundColor:
-                            const Color.fromARGB(255, 250, 131, 15),
-                        foregroundColor: Colors.black,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8, horizontal: 54),
                       child: const Text(
-                        'KIRIM',
+                        'Saran',
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 24,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
                       ),
                     ),
-                  ),
-                ],
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(35),
+                        color: Colors.white,
+                      ),
+                      child: TextField(
+                        controller: subjectTextController,
+                        decoration: InputDecoration(
+                          hintText: 'Subject',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          contentPadding:
+                              const EdgeInsets.symmetric(horizontal: 10),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(35),
+                        color: Colors.white,
+                      ),
+                      child: TextField(
+                        controller: feedbackTextController,
+                        minLines: 10,
+                        maxLines: null,
+                        decoration: InputDecoration(
+                          hintText: 'Isi Feedback',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 20),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      alignment: Alignment.bottomRight,
+                      margin: const EdgeInsets.symmetric(vertical: 20),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          postFeedback();
+                        },
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(100, 35),
+                          backgroundColor:
+                              const Color.fromARGB(255, 250, 131, 15),
+                          foregroundColor: Colors.black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                        child: const Text(
+                          'KIRIM',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             )
           ],

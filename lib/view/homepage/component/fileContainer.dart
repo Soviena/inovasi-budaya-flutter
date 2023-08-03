@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class FileContainer extends StatelessWidget {
+class FileContainer extends StatefulWidget {
   const FileContainer(
       {super.key,
       required this.titleText,
@@ -13,27 +14,41 @@ class FileContainer extends StatelessWidget {
   final String route;
 
   @override
+  State<FileContainer> createState() => _FileContainerState();
+}
+
+class _FileContainerState extends State<FileContainer> {
+  void _launchURL(String url) async {
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(Uri.parse(url));
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return ListTile(
       leading: Image.asset(
-        iconImage, // Path dan nama file gambar Anda
+        widget.iconImage, // Path dan nama file gambar Anda
         width: 40,
         height: 40,
       ),
       title: Row(
         children: <Widget>[
-          Text(titleText),
+          Text(widget.titleText),
           const Spacer(),
           GestureDetector(
             onTap: () {
-              print(fileUrl);
+              print(widget.fileUrl);
             },
             child: const Icon(Icons.download),
           ),
         ],
       ),
       onTap: () {
-        Navigator.pushNamed(context, route);
+        launchUrl(Uri.parse(widget.fileUrl),
+            mode: LaunchMode.externalApplication);
       },
     );
   }

@@ -4,9 +4,11 @@ class RewardContainer extends StatelessWidget {
   const RewardContainer(
       {super.key,
       required this.nama,
+      required this.judul,
       required this.deskripsi,
       required this.image});
   final String nama;
+  final String judul;
   final String deskripsi;
   final String image;
 
@@ -27,12 +29,24 @@ class RewardContainer extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
+          Text(
+            judul,
+            style: const TextStyle(
+              color: Colors.orange,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const Padding(padding: EdgeInsets.only(top: 18.0)),
+          Container(
             width: MediaQuery.of(context).size.width * 0.3,
             height: MediaQuery.of(context).size.width * 0.3,
-            child: Image.asset(
-              image,
-              fit: BoxFit.cover,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(100),
+              child: Image.network(
+                image,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           const Padding(padding: EdgeInsets.only(top: 18.0)),

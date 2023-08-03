@@ -3,26 +3,28 @@ import 'package:inovasi_budaya/view/homepage/component/divider.dart';
 import 'package:inovasi_budaya/view/homepage/component/rewardContainer.dart';
 
 class Rewards extends StatelessWidget {
-  const Rewards({super.key});
+  const Rewards({super.key, this.reward = const {}});
+  final dynamic reward;
+
+  List<Widget> makeListReward() {
+    List<Widget> containerArray = [const TextDivider(titleText: "Rewards")];
+    if (reward['users'] != null) {
+      for (var r in reward['users']) {
+        containerArray.add(RewardContainer(
+            nama: r['name'],
+            judul: r['pivot']['rewardsName'],
+            deskripsi: r['pivot']['deskripsi'],
+            image:
+                "http://192.168.1.128:8000/storage/uploaded/user/${r['profilepic']}"));
+      }
+    }
+    return containerArray;
+  }
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        TextDivider(titleText: "Rewards"),
-        RewardContainer(
-            nama: "Nama Pengguna",
-            deskripsi: "Deskripsi penghargaan",
-            image: "assets/image/Pengujian.png"),
-        RewardContainer(
-            nama: "Nama Pengguna",
-            deskripsi: "Deskripsi penghargaan",
-            image: "assets/image/Pengujian.png"),
-        RewardContainer(
-            nama: "Nama Pengguna",
-            deskripsi: "Deskripsi penghargaan",
-            image: "assets/image/Pengujian.png"),
-      ],
+    return Column(
+      children: makeListReward(),
     );
   }
 }

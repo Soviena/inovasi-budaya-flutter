@@ -8,12 +8,29 @@ class Avatar extends StatelessWidget {
     this.margin = const EdgeInsets.all(0),
     this.size = 0.2,
     this.constraint = false,
+    this.network = false,
   });
   final String image;
   final String titleText;
   final EdgeInsetsGeometry margin;
   final double size;
   final bool constraint;
+  final bool network;
+
+  Widget imageContainer(network) {
+    if (network) {
+      return Image.network(
+        image,
+        fit: BoxFit.cover,
+      );
+    } else {
+      return Image.asset(
+        image,
+        fit: BoxFit.cover,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double maxW = double.infinity;
@@ -24,16 +41,15 @@ class Avatar extends StatelessWidget {
       margin: margin,
       child: Column(
         children: [
-          SizedBox(
+          Container(
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.orange, width: 3),
+                borderRadius: BorderRadius.circular(100)),
             width: MediaQuery.of(context).size.width * size,
             height: MediaQuery.of(context).size.width * size,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(40),
-              child: Image.asset(
-                image,
-                fit: BoxFit.cover,
-              ),
-            ),
+                borderRadius: BorderRadius.circular(100),
+                child: imageContainer(network)),
           ),
           Container(
             constraints: BoxConstraints(

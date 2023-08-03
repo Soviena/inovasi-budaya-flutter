@@ -1,9 +1,40 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/burger_menu.dart';
 import 'package:inovasi_budaya/view/homepage/component/fileContainer.dart';
+import 'package:http/http.dart' as http;
 
-class Materi extends StatelessWidget {
+class Materi extends StatefulWidget {
   const Materi({super.key});
+
+  @override
+  State<Materi> createState() => _MateriState();
+}
+
+class _MateriState extends State<Materi> {
+  dynamic materi = [];
+  String url = "http://192.168.1.128:8000/";
+
+  void getData() async {
+    await http.get(Uri.parse("${url}api/materi")).then(
+      (response) {
+        if (response.statusCode == 200) {
+          materi = jsonDecode(response.body);
+          setState(() {
+            materi;
+          });
+        }
+      },
+    );
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    getData();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,17 +67,18 @@ class Materi extends StatelessWidget {
       ),
       drawer: const BurgerList(),
       body: ListView.builder(
-        itemCount: 4, // Ganti dengan jumlah item yang sesuai
+        itemCount: materi.length, // Ganti dengan jumlah item yang sesuai
         itemBuilder: (BuildContext context, int index) {
-          return const Column(
+          return Column(
             children: <Widget>[
               FileContainer(
-                titleText: 'Materi',
-                fileUrl: "testUrl",
+                titleText: materi[index]['title'],
+                fileUrl:
+                    "${url}storage/uploaded/materi/${materi[index]['fileName']}",
                 iconImage: "assets/image/Gambar_Kinerja_Kecil.png",
                 route: "",
               ),
-              Divider(
+              const Divider(
                 color: Colors.black,
                 height: 20,
               ),
