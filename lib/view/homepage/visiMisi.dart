@@ -175,7 +175,8 @@ class VisiMisi extends StatelessWidget {
           Center(
             child: ElevatedButton(
               onPressed: () {
-                launchUrl(Uri.parse('https://www.sucofindo.co.id/'));
+                launchUrl(Uri.parse('https://www.sucofindo.co.id/'),
+                    mode: LaunchMode.externalApplication);
               },
               style: ButtonStyle(
                 padding: const MaterialStatePropertyAll(EdgeInsets.all(10)),

@@ -16,7 +16,7 @@ class Safety_Moment extends StatefulWidget {
 
 class _Safety_MomentState extends State<Safety_Moment> {
   dynamic safety = [];
-  String url = "http://192.168.1.124:8000/";
+  String url = "http://192.168.1.128:8000/";
   void getData() async {
     await http.get(Uri.parse("${url}api/safety")).then(
       (response) {
@@ -135,11 +135,14 @@ class _Safety_MomentState extends State<Safety_Moment> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              viewImage(context, "${url}storage/${safety[index]['fileName']}",
+              viewImage(
+                  context,
+                  "${url}storage/uploaded/safety/${safety[index]['fileName']}",
                   safety[index]['deskripsi']);
             },
             child: ImageContainer(
-              image: "${url}storage/${safety[index]['fileName']}",
+              image:
+                  "${url}storage/uploaded/safety/${safety[index]['fileName']}",
               deskripsi: safety[index]['judul'],
               network: true,
             ),

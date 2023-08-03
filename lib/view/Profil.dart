@@ -20,7 +20,7 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  String url = "http://192.168.1.124:8000/";
+  String url = "http://192.168.1.128:8000/";
   final TextEditingController name = TextEditingController();
   final TextEditingController email = TextEditingController();
   final picker = ImagePicker();
@@ -96,7 +96,7 @@ class _ProfileState extends State<Profile> {
   }
 
   ImageProvider<Object> profilePic = const NetworkImage(
-      "http://192.168.1.124:8000/storage/uploaded/user/default.png");
+      "http://192.168.1.128:8000/storage/uploaded/user/default.png");
   dynamic newProfilepic = null;
 
   Widget profileContainer() {

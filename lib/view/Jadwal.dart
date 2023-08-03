@@ -27,7 +27,7 @@ class _JadwalState extends State<Jadwal> {
 
   Future<dynamic> getData() async {
     var response =
-        await http.get(Uri.parse("http://192.168.1.124:8000/api/budaya/all"));
+        await http.get(Uri.parse("http://192.168.1.128:8000/api/budaya/all"));
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
     } else {

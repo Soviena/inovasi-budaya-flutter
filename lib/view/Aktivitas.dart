@@ -14,7 +14,8 @@ class Aktivitas extends StatefulWidget {
 }
 
 class _AktivitasState extends State<Aktivitas> {
-  String url = "http://192.168.1.124:8000/";
+  String url = "http://192.168.1.128:8000/";
+  // ignore: non_constant_identifier_names
   dynamic Budaya = {
     "id": 0,
     "judul": "0",
@@ -159,7 +160,7 @@ class _AktivitasState extends State<Aktivitas> {
             child: ImageContainer(
               image:
                   "${url}storage/uploaded/aktivitas/${Budaya['aktivitas'][index]["fileName"]}",
-              deskripsi: Budaya['aktivitas'][index]['judul'],
+              deskripsi: Budaya['aktivitas'][index]['judul'] ?? "",
               network: true,
             ),
           );

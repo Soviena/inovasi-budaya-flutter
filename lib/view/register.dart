@@ -284,7 +284,7 @@ class _RegisterState extends State<Register> {
                                 text: 'Fetching your data',
                               );
                               var url = Uri.parse(
-                                  'http://192.168.1.124:8000/api/register'); // Replace with your API endpoint
+                                  'http://192.168.1.128:8000/api/register'); // Replace with your API endpoint
                               var headers = {
                                 'Content-Type': 'application/json'
                               }; // Replace with the appropriate headers
