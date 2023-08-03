@@ -46,7 +46,6 @@ class ImageContainer extends StatelessWidget {
                   deskripsi ?? "",
                   textAlign: TextAlign.start,
                   softWrap: true,
-                  overflow: TextOverflow.fade,
                   style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,

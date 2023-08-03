@@ -64,7 +64,8 @@ class _Safety_MomentState extends State<Safety_Moment> {
                   maxScale: 10,
                   child: Container(
                     constraints: BoxConstraints(
-                        minHeight: MediaQuery.of(context).size.height * 0.6),
+                        minHeight: MediaQuery.of(context).size.height * 0.6,
+                        maxHeight: MediaQuery.of(context).size.height * 0.6),
                     child: Image.network(image),
                     // child: NetworkImage(image),
                   ),
