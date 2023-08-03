@@ -17,6 +17,40 @@ class _RewardState extends State<Reward> {
   List<AccordionSection> periode = [];
   String url = "http://192.168.1.128:8000/";
 
+  void _showRewardDetailModal(String rewardsName, String deskripsi) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: const Color.fromARGB(255, 26, 73, 128),
+          title: Text(
+            rewardsName,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.orange,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          content: Text(
+            deskripsi,
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Tutup'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   void getData() async {
     dynamic json;
     await http.get(Uri.parse("${url}api/reward")).then(
@@ -33,22 +67,27 @@ class _RewardState extends State<Reward> {
                     titleText: user['name'],
                     network: true,
                   ),
-                  Container(
-                    constraints: BoxConstraints(
-                        maxWidth: MediaQuery.of(context).size.width * 0.25),
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-                    margin: const EdgeInsets.only(top: 5),
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 26, 73, 128),
-                      borderRadius: BorderRadius.circular(12.5),
-                      border: Border.all(
-                        color: Colors.orange,
-                        width: 2,
+                  GestureDetector(
+                    onTap: () {
+                      _showRewardDetailModal(user['pivot']['rewardsName'],
+                          user['pivot']['deskripsi']);
+                    },
+                    child: Container(
+                      constraints: BoxConstraints(
+                          maxWidth: MediaQuery.of(context).size.width * 0.25),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 3),
+                      margin: const EdgeInsets.only(top: 5),
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 26, 73, 128),
+                        borderRadius: BorderRadius.circular(12.5),
+                        border: Border.all(
+                          color: Colors.orange,
+                          width: 2,
+                        ),
                       ),
-                    ),
-                    child: Center(
-                      child: Column(
+                      child: Center(
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Container(
@@ -68,7 +107,9 @@ class _RewardState extends State<Reward> {
                                 fontSize: 11,
                               ),
                             ),
-                          ]),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ],
