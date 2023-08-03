@@ -17,9 +17,13 @@ import 'package:inovasi_budaya/view/Settings.dart';
 
 import 'package:workmanager/workmanager.dart';
 
+import 'firebase_options.dart';
+
 String? token;
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   print('Handling a background message ${message.messageId}');
 }
 
@@ -67,7 +71,9 @@ void callbackDispatcher() {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   await FlutterLocalNotificationsPlugin()
       .resolvePlatformSpecificImplementation<
