@@ -117,6 +117,7 @@ class _FeedbackUserState extends State<FeedbackUser> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  Padding(padding: EdgeInsets.only(top: 5)),
                   const Text(
                     "Untuk mendapatkan reminder silakan masukan email anda pada kolom dibawah ini",
                     style: TextStyle(
@@ -126,7 +127,7 @@ class _FeedbackUserState extends State<FeedbackUser> {
                     textAlign: TextAlign.center,
                   ),
                   Container(
-                    margin: const EdgeInsets.symmetric(vertical: 4),
+                    margin: const EdgeInsets.only(top: 15),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(35),
                       color: Colors.white,
@@ -143,6 +144,7 @@ class _FeedbackUserState extends State<FeedbackUser> {
                     ),
                   ),
                   Container(
+                    margin: const EdgeInsets.only(top: 15),
                     padding: const EdgeInsets.symmetric(horizontal: 3),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -201,7 +203,7 @@ class _FeedbackUserState extends State<FeedbackUser> {
                     Container(
                       margin: const EdgeInsets.symmetric(vertical: 20),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(10),
                         color: Colors.white,
                       ),
                       child: TextField(
@@ -209,7 +211,7 @@ class _FeedbackUserState extends State<FeedbackUser> {
                         decoration: InputDecoration(
                           hintText: 'Subject',
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(10),
                           ),
                           contentPadding:
                               const EdgeInsets.symmetric(horizontal: 10),
