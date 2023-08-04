@@ -155,7 +155,7 @@ class _AktivitasState extends State<Aktivitas> {
               viewImage(
                   context,
                   "${url}storage/uploaded/aktivitas/${Budaya['aktivitas'][index]["fileName"]}",
-                  Budaya['aktivitas'][index]['deskripsi']);
+                  Budaya['aktivitas'][index]['deskripsi'] ?? "");
             },
             child: ImageContainer(
               image:

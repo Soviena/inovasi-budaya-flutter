@@ -9,7 +9,7 @@ class ImageContainer extends StatelessWidget {
     this.network = false,
   });
   final String image;
-  final String deskripsi;
+  final String? deskripsi;
   final EdgeInsetsGeometry margin;
   final bool network;
 
@@ -43,10 +43,9 @@ class ImageContainer extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 child: Text(
-                  deskripsi,
+                  deskripsi ?? "",
                   textAlign: TextAlign.start,
                   softWrap: true,
-                  overflow: TextOverflow.fade,
                   style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
