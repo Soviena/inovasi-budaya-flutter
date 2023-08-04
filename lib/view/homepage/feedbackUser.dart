@@ -54,7 +54,7 @@ class _FeedbackUserState extends State<FeedbackUser> {
       text: 'Fetching your data',
     );
     var url = Uri.parse(
-        'http://192.168.1.128:8000/api/feedback/new'); // Replace with your API endpoint
+        'https://django.belajarpro.online/api/feedback/new'); // Replace with your API endpoint
     var headers = {
       'Content-Type': 'application/json'
     }; // Replace with the appropriate headers
@@ -123,29 +123,12 @@ class _FeedbackUserState extends State<FeedbackUser> {
                     ),
                   ),
                   const Text(
-                    "Untuk mendapatkan reminder silakan masukan email anda pada kolom dibawah ini",
+                    "Untuk mendapatkan reminder silakan tekan tombol dibawah ini",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 12,
                     ),
                     textAlign: TextAlign.center,
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 4),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(35),
-                      color: Colors.white,
-                    ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Your Email Address',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(35),
-                        ),
-                        contentPadding:
-                            const EdgeInsets.symmetric(horizontal: 10),
-                      ),
-                    ),
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 3),

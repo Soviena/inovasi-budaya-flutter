@@ -14,7 +14,7 @@ class InformasiBudaya extends StatefulWidget {
 }
 
 class _InformasiBudayaState extends State<InformasiBudaya> {
-  String url = "http://192.168.1.128:8000/";
+  String url = "https://django.belajarpro.online/";
 
   @override
   Widget build(BuildContext context) {

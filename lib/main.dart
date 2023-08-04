@@ -15,7 +15,6 @@ import 'package:inovasi_budaya/view/Materi.dart';
 import 'package:inovasi_budaya/view/Profil.dart';
 import 'package:inovasi_budaya/view/SafetyMoment.dart';
 import 'package:inovasi_budaya/view/Settings.dart';
-import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 import 'package:workmanager/workmanager.dart';
 
@@ -76,7 +75,6 @@ void callbackDispatcher() {
 }
 
 void main() async {
-  sqfliteFfiInit();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -100,7 +98,7 @@ void main() async {
 
       // If enabled it will post a notification whenever
       // the task is running. Handy for debugging tasks
-      isInDebugMode: true);
+      isInDebugMode: false);
   // Periodic task registration
   runApp(
     MaterialApp(

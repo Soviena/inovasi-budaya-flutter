@@ -15,7 +15,7 @@ class Reward extends StatefulWidget {
 
 class _RewardState extends State<Reward> {
   List<AccordionSection> periode = [];
-  String url = "http://192.168.1.128:8000/";
+  String url = "https://django.belajarpro.online/";
 
   void _showRewardDetailModal(String rewardsName, String deskripsi) {
     showDialog(

@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:inovasi_budaya/dbHelper.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:http/http.dart' as http;
 
@@ -285,7 +286,7 @@ class _RegisterState extends State<Register> {
                                 text: 'Fetching your data',
                               );
                               var url = Uri.parse(
-                                  'http://192.168.1.128:8000/api/register'); // Replace with your API endpoint
+                                  'https://django.belajarpro.online/api/register'); // Replace with your API endpoint
                               var headers = {
                                 'Content-Type': 'application/json'
                               }; // Replace with the appropriate headers
@@ -310,12 +311,12 @@ class _RegisterState extends State<Register> {
                                 if (kDebugMode) {
                                   print(jsonData);
                                 }
-                                // DatabaseHelper.instance.saveSession(
-                                //     emailController.text,
-                                //     jsonData['id'],
-                                //     "0",
-                                //     "default.png",
-                                //     userController.text);
+                                DatabaseHelper.instance.saveSession(
+                                    emailController.text,
+                                    jsonData['id'],
+                                    "default.png",
+                                    nameController.text,
+                                    dateText);
                                 successAlert();
                               } else {
                                 // Error occurred

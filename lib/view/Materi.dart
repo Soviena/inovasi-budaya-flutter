@@ -16,7 +16,7 @@ class Materi extends StatefulWidget {
 
 class _MateriState extends State<Materi> {
   dynamic materi = [];
-  String url = "http://192.168.1.128:8000/";
+  String url = "https://django.belajarpro.online/";
 
   void getData() async {
     await http.get(Uri.parse("${url}api/materi")).then(

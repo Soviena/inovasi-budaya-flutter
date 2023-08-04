@@ -23,7 +23,7 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  String url = "http://192.168.1.128:8000/";
+  String url = "https://django.belajarpro.online/";
   final TextEditingController name = TextEditingController();
   final TextEditingController email = TextEditingController();
   final picker = ImagePicker();
@@ -71,10 +71,13 @@ class _ProfileState extends State<Profile> {
         ),
         WebUiSettings(
             context: context,
-            enableResize: true,
+            enableResize: false,
             enableZoom: true,
             mouseWheelZoom: true,
             boundary: CroppieBoundary(
+                width: (MediaQuery.of(context).size.width * 0.7).ceil(),
+                height: (MediaQuery.of(context).size.width * 0.7).ceil()),
+            viewPort: CroppieViewPort(
                 width: (MediaQuery.of(context).size.width * 0.7).ceil(),
                 height: (MediaQuery.of(context).size.width * 0.7).ceil()))
       ],
@@ -116,7 +119,7 @@ class _ProfileState extends State<Profile> {
   }
 
   dynamic profilePic = const NetworkImage(
-      "http://192.168.1.128:8000/storage/uploaded/user/default.png");
+      "https://django.belajarpro.online/storage/uploaded/user/default.png");
   dynamic newProfilepic;
 
   Widget profileContainer() {

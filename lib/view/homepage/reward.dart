@@ -15,7 +15,7 @@ class Rewards extends StatelessWidget {
             judul: r['pivot']['rewardsName'],
             deskripsi: r['pivot']['deskripsi'],
             image:
-                "http://192.168.1.128:8000/storage/uploaded/user/${r['profilepic']}"));
+                "https://django.belajarpro.online/storage/uploaded/user/${r['profilepic']}"));
       }
     }
     return containerArray;

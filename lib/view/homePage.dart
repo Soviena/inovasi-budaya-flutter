@@ -23,7 +23,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String url = "http://192.168.1.128:8000/";
+  String url = "https://django.belajarpro.online/";
 
   var arr = [
     'assets/image/Siapkeakhlak.jpg',
