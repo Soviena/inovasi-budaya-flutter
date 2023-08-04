@@ -201,7 +201,7 @@ class _FeedbackUserState extends State<FeedbackUser> {
                     Container(
                       margin: const EdgeInsets.symmetric(vertical: 20),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(35),
+                        borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
                       ),
                       child: TextField(
@@ -209,7 +209,7 @@ class _FeedbackUserState extends State<FeedbackUser> {
                         decoration: InputDecoration(
                           hintText: 'Subject',
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
+                            borderRadius: BorderRadius.circular(20),
                           ),
                           contentPadding:
                               const EdgeInsets.symmetric(horizontal: 10),
@@ -219,7 +219,7 @@ class _FeedbackUserState extends State<FeedbackUser> {
                     Container(
                       margin: const EdgeInsets.symmetric(vertical: 20),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(35),
+                        borderRadius: BorderRadius.circular(10),
                         color: Colors.white,
                       ),
                       child: TextField(
@@ -229,7 +229,7 @@ class _FeedbackUserState extends State<FeedbackUser> {
                         decoration: InputDecoration(
                           hintText: 'Isi Feedback',
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
+                            borderRadius: BorderRadius.circular(10),
                           ),
                           contentPadding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 20),
