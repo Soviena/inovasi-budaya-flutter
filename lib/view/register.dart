@@ -13,6 +13,8 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   // String api = "http://192.168.1.124/api/";
+  bool _showPassword = false;
+  bool _showPassword2 = false;
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -184,20 +186,41 @@ class _RegisterState extends State<Register> {
                               child: const Text(
                                 'Masukan password anda',
                                 style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 18),
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 18,
+                                ),
                               ),
                             ),
                             Container(
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.white),
-                              child: TextField(
-                                controller: passwordController,
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                ),
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.white,
+                              ),
+                              child: Stack(
+                                alignment: Alignment.centerRight,
+                                children: [
+                                  TextField(
+                                    controller: passwordController,
+                                    obscureText: !_showPassword,
+                                    decoration: const InputDecoration(
+                                      border: OutlineInputBorder(),
+                                    ),
+                                  ),
+                                  IconButton(
+                                    icon: Icon(
+                                      _showPassword
+                                          ? Icons.visibility
+                                          : Icons.visibility_off,
+                                      color: Colors.grey,
+                                    ),
+                                    onPressed: () {
+                                      setState(() {
+                                        _showPassword = !_showPassword;
+                                      });
+                                    },
+                                  ),
+                                ],
                               ),
                             ),
                           ],
@@ -212,20 +235,41 @@ class _RegisterState extends State<Register> {
                               child: const Text(
                                 'Verifikasi password anda',
                                 style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 18),
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 18,
+                                ),
                               ),
                             ),
                             Container(
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.white),
-                              child: TextField(
-                                controller: passwordController2,
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                ),
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.white,
+                              ),
+                              child: Stack(
+                                alignment: Alignment.centerRight,
+                                children: [
+                                  TextField(
+                                    controller: passwordController2,
+                                    obscureText: !_showPassword2,
+                                    decoration: const InputDecoration(
+                                      border: OutlineInputBorder(),
+                                    ),
+                                  ),
+                                  IconButton(
+                                    icon: Icon(
+                                      _showPassword2
+                                          ? Icons.visibility
+                                          : Icons.visibility_off,
+                                      color: Colors.grey,
+                                    ),
+                                    onPressed: () {
+                                      setState(() {
+                                        _showPassword2 = !_showPassword2;
+                                      });
+                                    },
+                                  ),
+                                ],
                               ),
                             ),
                           ],
