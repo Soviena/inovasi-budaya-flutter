@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
@@ -115,7 +117,7 @@ class _ProfileState extends State<Profile> {
 
   dynamic profilePic = const NetworkImage(
       "http://192.168.1.128:8000/storage/uploaded/user/default.png");
-  dynamic newProfilepic = null;
+  dynamic newProfilepic;
 
   Widget profileContainer() {
     if (editState) {
@@ -277,7 +279,9 @@ class _ProfileState extends State<Profile> {
                       multipartFile = http.MultipartFile.fromBytes(
                           "picture", uint8List,
                           filename: 'picture');
-                      print("**** Added as multipart file");
+                      if (kDebugMode) {
+                        print("**** Added as multipart file");
+                      }
                     } else {
                       var length = await newProfilepic.length();
                       var fileStream = http.ByteStream(

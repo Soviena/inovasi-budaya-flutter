@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/dbHelper.dart';
 import 'package:quickalert/quickalert.dart';
@@ -166,14 +167,18 @@ class _LoginPageState extends State<LoginPage> {
           return;
         }
       } else {
-        print('Request failed with status code: ${response.statusCode}');
+        if (kDebugMode) {
+          print('Request failed with status code: ${response.statusCode}');
+        }
         Navigator.pop(context);
         failedAlert(context);
 
         return;
       }
     } catch (error) {
-      print('****************Error: $error');
+      if (kDebugMode) {
+        print('****************Error: $error');
+      }
       Navigator.pop(context);
       failedAlert(context);
     }
@@ -199,7 +204,9 @@ class _LoginPageState extends State<LoginPage> {
         DatabaseHelper.instance.updateSession(jsonVal['email'], jsonVal['name'],
             jsonVal['tanggal_lahir'], jsonVal['profilepic'], jsonVal['id']);
       } catch (e) {
-        print(e);
+        if (kDebugMode) {
+          print(e);
+        }
       }
       // ignore: use_build_context_synchronously
       Navigator.popAndPushNamed(context, "/home");

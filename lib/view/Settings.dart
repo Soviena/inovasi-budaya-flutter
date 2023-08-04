@@ -1,3 +1,6 @@
+// ignore_for_file: file_names
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/burger_menu.dart';
 import 'package:workmanager/workmanager.dart';
@@ -260,16 +263,20 @@ class _SettingsState extends State<Settings> {
                       hours: duration.inHours,
                       minutes: duration.inMinutes % 60);
 
-                  print('Current Time: $currentTime');
-                  print('Future Time: $futureTime');
-                  print('Remaining Duration: $remainingDuration');
+                  if (kDebugMode) {
+                    print('Current Time: $currentTime');
+                    print('Future Time: $futureTime');
+                    print('Remaining Duration: $remainingDuration');
+                  }
                   Workmanager().cancelByUniqueName("peregangan");
                   Workmanager().registerPeriodicTask(
                       "peregangan", "pengingatPeregangan",
                       frequency: const Duration(days: 1),
                       initialDelay: remainingDuration);
                 } else if (type == "interval") {
-                  print("interval");
+                  if (kDebugMode) {
+                    print("interval");
+                  }
                   Workmanager().cancelByUniqueName("peregangan");
                   Workmanager().registerPeriodicTask(
                       "peregangan", "pengingatPeregangan",
@@ -278,7 +285,9 @@ class _SettingsState extends State<Settings> {
                               .replaceAll(RegExp(r'[\.,].*'), "")
                               .replaceAll("-", ""))));
                 } else {
-                  print("off");
+                  if (kDebugMode) {
+                    print("off");
+                  }
                   Workmanager().cancelByUniqueName("peregangan");
                 }
               },

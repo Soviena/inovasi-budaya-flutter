@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -10,6 +12,7 @@ class Aktivitas extends StatefulWidget {
   final int idBudaya;
 
   @override
+  // ignore: library_private_types_in_public_api
   _AktivitasState createState() => _AktivitasState();
 }
 
@@ -112,7 +115,6 @@ class _AktivitasState extends State<Aktivitas> {
 
   @override
   void initState() {
-    // TODO: implement initState
     getData();
     super.initState();
   }

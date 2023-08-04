@@ -1,3 +1,6 @@
+// ignore_for_file: file_names
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/burger_menu.dart';
 import 'package:inovasi_budaya/view/homepage/tataNilaiAkhlak.dart';
@@ -69,7 +72,9 @@ class _HomePageState extends State<HomePage> {
         },
       );
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 
@@ -116,13 +121,14 @@ class _HomePageState extends State<HomePage> {
         },
       );
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 
   @override
   void initState() {
-    // TODO: implement initState
     getBudayaNow();
     getBudaya();
     getTimInternal();

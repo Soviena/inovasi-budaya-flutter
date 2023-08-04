@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:http/http.dart' as http;
@@ -306,7 +307,9 @@ class _RegisterState extends State<Register> {
                               if (response.statusCode == 200) {
                                 // Successful request
                                 dynamic jsonData = jsonDecode(response.body);
-                                print(jsonData);
+                                if (kDebugMode) {
+                                  print(jsonData);
+                                }
                                 // DatabaseHelper.instance.saveSession(
                                 //     emailController.text,
                                 //     jsonData['id'],
@@ -316,8 +319,10 @@ class _RegisterState extends State<Register> {
                                 successAlert();
                               } else {
                                 // Error occurred
-                                print(
-                                    'Request failed with status: ${response.statusCode}');
+                                if (kDebugMode) {
+                                  print(
+                                      'Request failed with status: ${response.statusCode}');
+                                }
                                 failedAlert();
                               }
                             },

@@ -1,5 +1,8 @@
+// ignore_for_file: file_names
+
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/dbHelper.dart';
 import 'package:quickalert/quickalert.dart';
@@ -74,7 +77,9 @@ class _FeedbackUserState extends State<FeedbackUser> {
       successAlert();
     } else {
       // Error occurred
-      print('Request failed with status: ${response.statusCode}');
+      if (kDebugMode) {
+        print('Request failed with status: ${response.statusCode}');
+      }
       // ignore: use_build_context_synchronously
       Navigator.pop(context);
       failedAlert();

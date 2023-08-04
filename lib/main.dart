@@ -1,5 +1,6 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/Aktivitas.dart';
@@ -25,7 +26,9 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  print('Handling a background message ${message.messageId}');
+  if (kDebugMode) {
+    print('Handling a background message ${message.messageId}');
+  }
 }
 
 const AndroidNotificationChannel channel = AndroidNotificationChannel(
@@ -38,7 +41,9 @@ const AndroidNotificationChannel channel = AndroidNotificationChannel(
 getToken() async {
   token = await FirebaseMessaging.instance.getToken();
   FirebaseMessaging.instance.subscribeToTopic('budaya');
-  print("Token : $token");
+  if (kDebugMode) {
+    print("Token : $token");
+  }
 }
 
 void callbackDispatcher() {

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -32,7 +34,6 @@ class _KinerjaState extends State<Kinerja> {
 
   @override
   void initState() {
-    // TODO: implement initState
     getData();
     super.initState();
   }

@@ -43,7 +43,7 @@ class _RewardState extends State<Reward> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Tutup'),
+              child: const Text('Tutup'),
             ),
           ],
         );

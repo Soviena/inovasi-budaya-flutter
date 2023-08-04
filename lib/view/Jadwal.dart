@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -98,7 +100,6 @@ class _JadwalState extends State<Jadwal> {
 
   @override
   void initState() {
-    // TODO: implement initState
     makeAccordion();
     super.initState();
   }

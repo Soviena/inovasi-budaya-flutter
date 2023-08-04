@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/homepage/component/circleImageTitle.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -84,14 +86,12 @@ class VisiMisi extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  child: Container(
-                    alignment: Alignment.topLeft,
-                    child: const Text(
-                      'Misi',
-                      style: TextStyle(
-                        fontSize: 36,
-                        color: Colors.white,
-                      ),
+                  alignment: Alignment.topLeft,
+                  child: const Text(
+                    'Misi',
+                    style: TextStyle(
+                      fontSize: 36,
+                      color: Colors.white,
                     ),
                   ),
                 ),

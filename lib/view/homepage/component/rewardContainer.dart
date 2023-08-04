@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class RewardContainer extends StatelessWidget {
@@ -38,7 +40,7 @@ class RewardContainer extends StatelessWidget {
             ),
           ),
           const Padding(padding: EdgeInsets.only(top: 18.0)),
-          Container(
+          SizedBox(
             width: MediaQuery.of(context).size.width * 0.3,
             height: MediaQuery.of(context).size.width * 0.3,
             child: ClipRRect(

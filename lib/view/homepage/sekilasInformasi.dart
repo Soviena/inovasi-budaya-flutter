@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/view/homepage/component/divider.dart';
 import 'package:inovasi_budaya/view/homepage/component/iconContainerButton.dart';

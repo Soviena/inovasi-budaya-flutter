@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, camel_case_types
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -95,7 +97,6 @@ class _Safety_MomentState extends State<Safety_Moment> {
 
   @override
   void initState() {
-    // TODO: implement initState
     getData();
     super.initState();
   }
