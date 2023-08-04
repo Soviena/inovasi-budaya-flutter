@@ -1,9 +1,13 @@
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:sqflite_common_ffi_web/sqflite_ffi_web.dart';
+// import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 class DatabaseHelper {
   static final DatabaseHelper instance = DatabaseHelper._();
+  static late DatabaseFactory databaseFactory;
   static Database? _database;
 
   DatabaseHelper._();
@@ -15,24 +19,47 @@ class DatabaseHelper {
   }
 
   Future<Database> _initDatabase() async {
-    String path = join(await getDatabasesPath(), 'session.db');
-    return await openDatabase(
-      path,
-      version: 1,
-      onCreate: (Database db, int version) async {
+    String path = "";
+    if (kIsWeb) {
+      // Change default factory on the web
+      databaseFactory = databaseFactoryFfiWeb;
+      path = 'my_web_web.db';
+      return await databaseFactory.openDatabase(
+        path,
+        options: OpenDatabaseOptions(
+          version: 1,
+          onCreate: (Database db, int version) async {
+            await db.execute('''
+            CREATE TABLE sessions (
+              id INTEGER PRIMARY KEY,
+              email TEXT,
+              uid INTEGER,
+              loggedin TEXT,
+              name TEXT,
+              profilePic TEXT,
+              dob TEXT
+            )
+          ''');
+          },
+        ),
+      );
+    } else {
+      path = join(await getDatabasesPath(), 'session.db');
+      return await openDatabase(path, version: 1,
+          onCreate: (Database db, int version) async {
         await db.execute('''
-          CREATE TABLE sessions (
-            id INTEGER PRIMARY KEY,
-            email TEXT,
-            uid INTEGER,
-            loggedin TEXT,
-            name TEXT,
-            profilePic TEXT,
-            dob TEXT
-          )
-        ''');
-      },
-    );
+            CREATE TABLE sessions (
+              id INTEGER PRIMARY KEY,
+              email TEXT,
+              uid INTEGER,
+              loggedin TEXT,
+              name TEXT,
+              profilePic TEXT,
+              dob TEXT
+            )
+          ''');
+      });
+    }
   }
 
   Future<void> saveSession(
@@ -41,7 +68,7 @@ class DatabaseHelper {
     await db.insert('sessions', {
       'email': email,
       'uid': uid,
-      'loggedin': true,
+      'loggedin': "true",
       'name': name,
       'profilePic': profilePic,
       'dob': dob
@@ -52,7 +79,7 @@ class DatabaseHelper {
     final db = await instance.database;
     List<Map<String, dynamic>> result = await db.query('sessions', limit: 1);
     if (result.isNotEmpty) {
-      return result.first['loggedin'] == '1';
+      return result.first['loggedin'] == 'true';
     }
     return false;
   }
@@ -79,7 +106,7 @@ class DatabaseHelper {
         {
           'email': email,
           'uid': uid,
-          'loggedin': true,
+          'loggedin': "true",
           'name': name,
           'profilePic': profilepic,
           'dob': dob

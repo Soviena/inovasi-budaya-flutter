@@ -7,6 +7,7 @@ import 'package:inovasi_budaya/view/burger_menu.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:http/http.dart' as http;
+import 'package:universal_html/html.dart' as html;
 
 import 'dart:io';
 
@@ -66,36 +67,53 @@ class _ProfileState extends State<Profile> {
         IOSUiSettings(
           minimumAspectRatio: 1.0,
         ),
+        WebUiSettings(
+            context: context,
+            enableResize: true,
+            enableZoom: true,
+            mouseWheelZoom: true,
+            boundary: CroppieBoundary(
+                width: (MediaQuery.of(context).size.width * 0.7).ceil(),
+                height: (MediaQuery.of(context).size.width * 0.7).ceil()))
       ],
     );
 
     return croppedFile;
   }
 
-  Future<File?> _pickImage() async {
+  Future<CroppedFile?> _pickImage() async {
     final pickedImage = await picker.pickImage(source: ImageSource.gallery);
     if (pickedImage != null) {
       CroppedFile? croppedPicture = await _cropImage(File(pickedImage.path));
-      File picture = File(croppedPicture!.path);
-      return picture;
+      // File picture = File(croppedPicture!.path);
+      return croppedPicture;
     } else {
       return null;
     }
   }
 
   void editProfilepic() async {
-    File? pic = await _pickImage();
+    CroppedFile? pic = await _pickImage();
     if (pic != null) {
+      if (kIsWeb) {
+        final response =
+            await html.HttpRequest.request(pic.path, responseType: 'blob');
+        final blob = response.response;
+        newProfilepic = html.File([blob], "newPic");
+      } else {
+        newProfilepic = File(pic.path);
+      }
       setState(() {
-        newProfilepic = pic;
-        profilePic = FileImage(pic);
+        newProfilepic;
+        profilePic =
+            kIsWeb ? NetworkImage(pic.path) : FileImage(File(pic.path));
       });
     } else {
       return;
     }
   }
 
-  ImageProvider<Object> profilePic = const NetworkImage(
+  dynamic profilePic = const NetworkImage(
       "http://192.168.1.128:8000/storage/uploaded/user/default.png");
   dynamic newProfilepic = null;
 
@@ -247,12 +265,27 @@ class _ProfileState extends State<Profile> {
                   var request = http.MultipartRequest(
                       'POST', Uri.parse("${url}api/user/${user['uid']}/edit"));
                   if (newProfilepic != null) {
-                    var length = await newProfilepic.length();
-                    var fileStream = http.ByteStream(
-                        Stream.castFrom(newProfilepic.openRead()));
-                    var multipartFile = http.MultipartFile(
-                        'picture', fileStream, length,
-                        filename: newProfilepic.path.split('/').last);
+                    dynamic multipartFile;
+                    if (kIsWeb) {
+                      final reader = html.FileReader();
+                      reader.readAsArrayBuffer(newProfilepic);
+                      await reader.onLoad
+                          .first; // Wait for the reader to finish reading.
+                      // Convert the Uint8List to a List<int>.
+                      final uint8List =
+                          Uint8List.fromList(reader.result as List<int>);
+                      multipartFile = http.MultipartFile.fromBytes(
+                          "picture", uint8List,
+                          filename: 'picture');
+                      print("**** Added as multipart file");
+                    } else {
+                      var length = await newProfilepic.length();
+                      var fileStream = http.ByteStream(
+                          Stream.castFrom(newProfilepic.openRead()));
+                      multipartFile = http.MultipartFile(
+                          'picture', fileStream, length,
+                          filename: newProfilepic.path.split('/').last);
+                    }
                     request.files.add(multipartFile);
                   }
                   request.fields['email'] = email.text;
@@ -261,9 +294,9 @@ class _ProfileState extends State<Profile> {
 
                   try {
                     var response = await request.send();
-                    Map<String, dynamic> jsonResponse =
-                        jsonDecode(await response.stream.bytesToString());
                     if (response.statusCode == 200) {
+                      Map<String, dynamic> jsonResponse =
+                          jsonDecode(await response.stream.bytesToString());
                       DatabaseHelper.instance.updateSession(
                           jsonResponse['email'],
                           jsonResponse['name'],
@@ -488,7 +521,6 @@ class _ProfileState extends State<Profile> {
 
   @override
   void initState() {
-    // TODO: implement initState
     getData();
     super.initState();
   }

@@ -26,7 +26,7 @@ class _RewardState extends State<Reward> {
           title: Text(
             rewardsName,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.orange,
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -34,7 +34,7 @@ class _RewardState extends State<Reward> {
           ),
           content: Text(
             deskripsi,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
             ),
           ),
@@ -121,10 +121,13 @@ class _RewardState extends State<Reward> {
               headerBackgroundColorOpened:
                   const Color.fromARGB(255, 250, 131, 15),
               header: Text(p['periode'], style: _headerStyle),
-              content: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: users,
+              content: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: users,
+                ),
               ),
             ));
           }
@@ -143,7 +146,6 @@ class _RewardState extends State<Reward> {
 
   @override
   void initState() {
-    // TODO: implement initState
     getData();
     super.initState();
   }
