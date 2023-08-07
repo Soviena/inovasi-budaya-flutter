@@ -107,27 +107,30 @@ class _InformasiBudayaState extends State<InformasiBudaya> {
                               widget.budaya[index]['tanggal'] + "-01")),
                           style: const TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.all(6.0),
                       alignment: Alignment.topLeft,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            widget.budaya[index]['judul'],
-                            style: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
+                          Center(
+                            child: Text(
+                              widget.budaya[index]['judul'],
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
+                          Padding(padding: EdgeInsets.only(bottom: 3.0)),
                           Text(
                             widget.budaya[index]['deskripsi'],
                             style: const TextStyle(
