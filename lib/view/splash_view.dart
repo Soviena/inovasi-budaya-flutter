@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:inovasi_budaya/dbHelper.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -14,7 +15,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String url = 'https://django.belajarpro.online/api/';
+  String url = 'https://django.belajarpro.online/';
 
   void _showLoginPopup(BuildContext context) {
     showDialog(
@@ -81,6 +82,15 @@ class _LoginPageState extends State<LoginPage> {
                     obscureText: true,
                   ),
                 ),
+                Container(
+                  margin: const EdgeInsets.only(top: 15),
+                  child: TextButton(
+                      onPressed: () {
+                        launchUrl(Uri.parse('${url}password/reset'),
+                            mode: LaunchMode.externalApplication);
+                      },
+                      child: const Text("Lupa Password?")),
+                )
               ],
             ),
           ),
@@ -144,7 +154,7 @@ class _LoginPageState extends State<LoginPage> {
     String jsonBody = '{"email": "$email", "password": "$password"}';
 
     try {
-      http.Response response = await http.post(Uri.parse("${url}login"),
+      http.Response response = await http.post(Uri.parse("${url}api/login"),
           headers: headers, body: jsonBody);
 
       if (response.statusCode == 200) {
@@ -199,7 +209,7 @@ class _LoginPageState extends State<LoginPage> {
     if (value != null && value['loggedin'] == 'true') {
       try {
         http.Response response =
-            await http.get(Uri.parse("${url}user/get/${value['uid']}"));
+            await http.get(Uri.parse("${url}api/user/get/${value['uid']}"));
         dynamic jsonVal = jsonDecode(response.body);
         DatabaseHelper.instance.updateSession(
             jsonVal['email'],
