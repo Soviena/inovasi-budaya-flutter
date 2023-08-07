@@ -196,13 +196,17 @@ class _LoginPageState extends State<LoginPage> {
 
   void getSession() async {
     dynamic value = await DatabaseHelper.instance.getSession();
-    if (value != null && value['loggedin'] == '1') {
+    if (value != null && value['loggedin'] == 'true') {
       try {
         http.Response response =
             await http.get(Uri.parse("${url}user/get/${value['uid']}"));
         dynamic jsonVal = jsonDecode(response.body);
-        DatabaseHelper.instance.updateSession(jsonVal['email'], jsonVal['name'],
-            jsonVal['tanggal_lahir'], jsonVal['profilepic'], jsonVal['id']);
+        DatabaseHelper.instance.updateSession(
+            jsonVal['email'],
+            jsonVal['name'],
+            jsonVal['tanggal_lahir'],
+            jsonVal['profilepic'],
+            jsonVal['id'].toString());
       } catch (e) {
         if (kDebugMode) {
           print(e);

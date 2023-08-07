@@ -2,6 +2,7 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:inovasi_budaya/dbHelper.dart';
 import 'package:inovasi_budaya/view/burger_menu.dart';
 import 'package:inovasi_budaya/view/homepage/tataNilaiAkhlak.dart';
 import 'package:inovasi_budaya/view/homepage/visiMisi.dart';
@@ -127,12 +128,35 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  void incrementVisit() async {
+    dynamic uid = await DatabaseHelper.instance.getUid();
+    try {
+      await http.get(Uri.parse("${url}api/visit/$uid/increment")).then(
+        (response) {
+          if (response.statusCode == 200) {
+            if (kDebugMode) {
+              print(jsonDecode(response.body)['msg']);
+            }
+          } else {
+            throw (response.body);
+          }
+        },
+      );
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+        print(uid);
+      }
+    }
+  }
+
   @override
   void initState() {
     getBudayaNow();
     getBudaya();
     getTimInternal();
     getReward();
+    incrementVisit();
     super.initState();
   }
 

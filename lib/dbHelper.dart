@@ -28,6 +28,9 @@ class DatabaseHelper {
       return await openDatabase(
           path); // Return an empty database instance for web.
     } else {
+      if (kDebugMode) {
+        print("Database inititalized for android");
+      }
       path = join(await getDatabasesPath(), 'session.db');
       return await openDatabase(path, version: 1,
           onCreate: (Database db, int version) async {
@@ -69,6 +72,9 @@ class DatabaseHelper {
         'profilePic': profilePic,
         'dob': dob,
       });
+      if (kDebugMode) {
+        print("user session saved");
+      }
     }
   }
 
@@ -115,6 +121,11 @@ class DatabaseHelper {
       }
       return null;
     }
+  }
+
+  Future<dynamic> getUid() async {
+    dynamic data = await getSession();
+    return data['uid'];
   }
 
   Future<dynamic> updateSession(String email, String name, String dob,
