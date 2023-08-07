@@ -326,7 +326,7 @@ class _ProfileState extends State<Profile> {
                           jsonResponse['name'],
                           jsonResponse['dob'],
                           jsonResponse['profilePic'],
-                          jsonResponse['uid']);
+                          jsonResponse['uid'].toString());
                       if (kDebugMode) {
                         print('File uploaded successfully!');
                       }
