@@ -60,13 +60,16 @@ class RewardContainer extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 16),
-          Text(
-            deskripsi,
-            style: const TextStyle(
-              color: Colors.orange,
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
+          Container(
+            margin: const EdgeInsets.only(top: 18),
+            padding: const EdgeInsets.all(15),
+            child: Text(
+              deskripsi,
+              style: const TextStyle(
+                color: Colors.orange,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ],

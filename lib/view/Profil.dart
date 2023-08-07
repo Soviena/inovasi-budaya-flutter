@@ -50,6 +50,17 @@ class _ProfileState extends State<Profile> {
     });
   }
 
+  void failedAlert() {
+    Navigator.pop(context);
+
+    QuickAlert.show(
+      context: context,
+      type: QuickAlertType.error,
+      title: 'Oops',
+      text: 'Pastikan data diri sudah benar dan lengkap',
+    );
+  }
+
   Future<CroppedFile?> _cropImage(File imageFile) async {
     CroppedFile? croppedFile = await cropper.cropImage(
       sourcePath: imageFile.path,
@@ -267,6 +278,12 @@ class _ProfileState extends State<Profile> {
                     title: 'Loading',
                     text: 'Mengupdate akun',
                   );
+                  if (email.text == "" ||
+                      name.text == "" ||
+                      tanggalLahir == "") {
+                    failedAlert();
+                    return;
+                  }
                   var request = http.MultipartRequest(
                       'POST', Uri.parse("${url}api/user/${user['uid']}/edit"));
                   if (newProfilepic != null) {

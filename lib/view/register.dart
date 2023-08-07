@@ -357,7 +357,7 @@ class _RegisterState extends State<Register> {
                                 }
                                 DatabaseHelper.instance.saveSession(
                                     emailController.text,
-                                    jsonData['id'],
+                                    jsonData['id'].toString(),
                                     "default.png",
                                     nameController.text,
                                     dateText);

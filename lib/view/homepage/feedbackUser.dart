@@ -33,26 +33,33 @@ class _FeedbackUserState extends State<FeedbackUser> {
     );
   }
 
-  void failedAlert() {
+  void failedAlert(String text) {
     Navigator.pop(context);
 
     QuickAlert.show(
       context: context,
       type: QuickAlertType.error,
       title: 'Oops',
-      text: 'Kesalahan jaringan',
+      text: text,
     );
   }
 
   void postFeedback() async {
-    dynamic sessionData = await DatabaseHelper.instance.getSession();
-    // ignore: use_build_context_synchronously
     QuickAlert.show(
       context: context,
       type: QuickAlertType.loading,
       title: 'Loading',
-      text: 'Fetching your data',
+      text: 'Loading untuk mengirimkan ke server',
     );
+    if (subjectTextController.text == "") {
+      failedAlert("Subject nya bisa di isi dulu ya..");
+      return;
+    } else if (feedbackTextController.text == "") {
+      failedAlert("Feedback tidak boleh kosong jika ingin mengirim :)");
+      return;
+    }
+    dynamic sessionData = await DatabaseHelper.instance.getSession();
+    // ignore: use_build_context_synchronously
     var url = Uri.parse(
         'https://django.belajarpro.online/api/feedback/new'); // Replace with your API endpoint
     var headers = {
@@ -81,8 +88,7 @@ class _FeedbackUserState extends State<FeedbackUser> {
         print('Request failed with status: ${response.statusCode}');
       }
       // ignore: use_build_context_synchronously
-      Navigator.pop(context);
-      failedAlert();
+      failedAlert("Kesalahan jaringan, kode : ${response.statusCode}");
     }
   }
 
