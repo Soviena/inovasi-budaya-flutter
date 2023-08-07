@@ -31,7 +31,8 @@ class _RegisterState extends State<Register> {
         context: context,
         type: QuickAlertType.success,
         title: 'Yeay!',
-        text: 'Akun berhasil dibuat',
+        text:
+            'Akun berhasil dibuat, Silahkan Verifikasi Email.. Cek folder spam juga ya :)',
         onConfirmBtnTap: () {
           Navigator.popUntil(context, (route) => false);
           Navigator.pushNamed(context, '/home');
