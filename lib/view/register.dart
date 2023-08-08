@@ -377,7 +377,8 @@ class _RegisterState extends State<Register> {
                                         jsonData['id'].toString(),
                                         "default.png",
                                         nameController.text,
-                                        dateText);
+                                        dateText,
+                                        "no");
                                     successAlert();
                                   } else {
                                     if (kDebugMode) {

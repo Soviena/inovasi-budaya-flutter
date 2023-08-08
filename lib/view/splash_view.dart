@@ -166,7 +166,8 @@ class _LoginPageState extends State<LoginPage> {
               jsonResponse['uid'],
               jsonResponse['profilePic'],
               jsonResponse['name'],
-              jsonResponse['dob'].toString());
+              jsonResponse['dob'].toString(),
+              (jsonResponse['email_verified_at'] != null).toString());
           Navigator.pop(context);
           Navigator.pop(context);
           Navigator.popAndPushNamed(context, '/home');
@@ -216,7 +217,8 @@ class _LoginPageState extends State<LoginPage> {
             jsonVal['name'],
             jsonVal['tanggal_lahir'],
             jsonVal['profilepic'],
-            jsonVal['id'].toString());
+            jsonVal['id'].toString(),
+            (jsonVal['email_verified_at'] != null).toString());
       } catch (e) {
         if (kDebugMode) {
           print(e);

@@ -77,7 +77,7 @@ class _RewardState extends State<Reward> {
                           maxWidth: MediaQuery.of(context).size.width * 0.25),
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 3),
-                      margin: const EdgeInsets.only(top: 5),
+                      margin: const EdgeInsets.only(top: 5, left: 5, right: 5),
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 26, 73, 128),
                         borderRadius: BorderRadius.circular(12.5),

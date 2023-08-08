@@ -130,7 +130,7 @@ class _InformasiBudayaState extends State<InformasiBudaya> {
                               ),
                             ),
                           ),
-                          Padding(padding: EdgeInsets.only(bottom: 3.0)),
+                          const Padding(padding: EdgeInsets.only(bottom: 3.0)),
                           Text(
                             widget.budaya[index]['deskripsi'],
                             style: const TextStyle(

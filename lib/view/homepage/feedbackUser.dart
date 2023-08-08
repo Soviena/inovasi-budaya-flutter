@@ -128,7 +128,7 @@ class _FeedbackUserState extends State<FeedbackUser> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Padding(padding: EdgeInsets.only(top: 5)),
+                  const Padding(padding: EdgeInsets.only(top: 5)),
                   const Text(
                     "Untuk mendapatkan reminder silakan tekan tombol dibawah ini",
                     style: TextStyle(

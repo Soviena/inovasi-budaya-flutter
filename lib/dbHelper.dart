@@ -42,7 +42,8 @@ class DatabaseHelper {
               loggedin TEXT,
               name TEXT,
               profilePic TEXT,
-              dob TEXT
+              dob TEXT,
+              verified TEXT
             )
           ''');
       });
@@ -50,7 +51,7 @@ class DatabaseHelper {
   }
 
   Future<void> saveSession(String email, String uid, String profilePic,
-      String name, String dob) async {
+      String name, String dob, String verified) async {
     if (kIsWeb) {
       final sessionData = {
         'email': email,
@@ -59,6 +60,7 @@ class DatabaseHelper {
         'name': name,
         'profilePic': profilePic,
         'dob': dob,
+        'verified': verified
       };
       // Store the session data in local storage
       html.window.localStorage['session'] = jsonEncode(sessionData);
@@ -71,6 +73,7 @@ class DatabaseHelper {
         'name': name,
         'profilePic': profilePic,
         'dob': dob,
+        'verified': verified
       });
       if (kDebugMode) {
         print("user session saved");
@@ -129,7 +132,7 @@ class DatabaseHelper {
   }
 
   Future<dynamic> updateSession(String email, String name, String dob,
-      String profilepic, String uid) async {
+      String profilepic, String uid, String verified) async {
     if (kIsWeb) {
       final sessionData = {
         'email': email,
@@ -138,6 +141,7 @@ class DatabaseHelper {
         'name': name,
         'profilePic': profilepic,
         'dob': dob,
+        'verified': verified
       };
       // Update the session data in local storage
       html.window.localStorage['session'] = jsonEncode(sessionData);
@@ -151,7 +155,8 @@ class DatabaseHelper {
             'loggedin': "true",
             'name': name,
             'profilePic': profilepic,
-            'dob': dob
+            'dob': dob,
+            'verified': verified
           },
           where: "uid = ?",
           whereArgs: [uid]);
