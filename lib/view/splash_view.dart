@@ -287,6 +287,10 @@ class _LoginPageState extends State<LoginPage> {
                           color: Colors.orange,
                         ),
                       ),
+                      Text(
+                        "Versi 0.9 Testing",
+                        style: TextStyle(fontSize: 12, color: Colors.white),
+                      )
                     ],
                   ),
                 ),
