@@ -46,7 +46,137 @@ class DatabaseHelper {
               verified TEXT
             )
           ''');
+        await db.execute('''
+          CREATE TABLE budaya (
+            id INTEGER PRIMARY KEY,
+            judul TEXT,
+            deskripsi TEXT,
+            tanggal TEXT,
+            updated TEXT NULLABLE
+          )
+      ''');
+        await db.execute('''
+          CREATE TABLE notification (
+            id INTEGER PRIMARY KEY,
+            judul TEXT,
+            deskripsi TEXT
+          )
+      ''');
       });
+    }
+  }
+
+  Future<void> addNotification(int id, String judul, String desc) async {
+    if (kIsWeb) {
+      if (kDebugMode) {
+        print("Not implemented for web");
+      }
+    } else {
+      final db = await instance.database;
+      await db.insert(
+          'notification',
+          {
+            'id': id,
+            'judul': judul,
+            'deskripsi': desc,
+          },
+          conflictAlgorithm: ConflictAlgorithm.replace);
+    }
+  }
+
+  Future<bool> getNotificationExist(int id) async {
+    if (kIsWeb) {
+      if (kDebugMode) {
+        print("Not implemented for web");
+      }
+      return false;
+    } else {
+      final db = await instance.database;
+      List<Map<String, dynamic>> result = await db.query('notification',
+          where: 'id = ?', whereArgs: [id], limit: 1);
+      if (result.isNotEmpty) {
+        return true;
+      }
+      return false;
+    }
+  }
+
+  Future<void> saveBudaya(
+      int id, String judul, String desc, String tanggal, String updated) async {
+    if (kIsWeb) {
+      if (kDebugMode) {
+        print("Not implemented for web");
+      }
+    } else {
+      final db = await instance.database;
+      await db.insert(
+          'budaya',
+          {
+            'id': id,
+            'judul': judul,
+            'deskripsi': desc,
+            'tanggal': tanggal,
+            'updated': updated,
+          },
+          conflictAlgorithm: ConflictAlgorithm.replace);
+    }
+  }
+
+  Future<dynamic> getAllBudaya() async {
+    if (kIsWeb) {
+      return null;
+    } else {
+      final db = await instance.database;
+      List<Map<String, dynamic>> result = await db.query('budaya');
+      if (result.isNotEmpty) {
+        return result;
+      }
+      return null;
+    }
+  }
+
+  Future<dynamic> getAllbudayaThisYear() async {
+    if (kIsWeb) {
+      return null;
+    } else {
+      final db = await instance.database;
+      List<Map<String, dynamic>> result = await db.query('budaya',
+          where: 'tanggal LIKE ?', whereArgs: ['${DateTime.now().year}%']);
+      if (result.isNotEmpty) {
+        return result;
+      }
+      return null;
+    }
+  }
+
+  Future<dynamic> getBudaya(int id) async {
+    if (kIsWeb) {
+      return null;
+    } else {
+      final db = await instance.database;
+      List<Map<String, dynamic>> result =
+          await db.query('budaya', where: 'id = ?', whereArgs: [id]);
+      if (result.isNotEmpty) {
+        return result;
+      }
+      return null;
+    }
+  }
+
+  Future<dynamic> getBudayaNow() async {
+    if (kIsWeb) {
+      return null;
+    } else {
+      final db = await instance.database;
+      List<Map<String, dynamic>> result = await db.query('budaya',
+          where: 'tanggal = ? ',
+          whereArgs: [
+            '${DateTime.now().year}-${DateTime.now().month.toString().padLeft(2, "0")}'
+          ]);
+      if (result.isNotEmpty) {
+        return result;
+      }
+      return null;
     }
   }
 
