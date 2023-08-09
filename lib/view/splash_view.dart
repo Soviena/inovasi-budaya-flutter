@@ -212,20 +212,23 @@ class _LoginPageState extends State<LoginPage> {
         http.Response response =
             await http.get(Uri.parse("${url}api/user/get/${value['uid']}"));
         dynamic jsonVal = jsonDecode(response.body);
-        DatabaseHelper.instance.updateSession(
-            jsonVal['email'],
-            jsonVal['name'],
-            jsonVal['tanggal_lahir'],
-            jsonVal['profilepic'],
-            jsonVal['id'].toString(),
-            (jsonVal['email_verified_at'] != null).toString());
+        await DatabaseHelper.instance
+            .updateSession(
+                jsonVal['email'],
+                jsonVal['name'],
+                jsonVal['tanggal_lahir'],
+                jsonVal['profilepic'],
+                jsonVal['id'].toString(),
+                (jsonVal['email_verified_at'] != null).toString())
+            .then((value) {
+          Navigator.popAndPushNamed(context, "/home");
+        });
       } catch (e) {
         if (kDebugMode) {
           print(e);
         }
       }
       // ignore: use_build_context_synchronously
-      Navigator.popAndPushNamed(context, "/home");
     } else {
       return;
     }
