@@ -206,32 +206,33 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void getSession() async {
-    dynamic value = await DatabaseHelper.instance.getSession();
-    if (value != null && value['loggedin'] == 'true') {
-      try {
-        http.Response response =
-            await http.get(Uri.parse("${url}api/user/get/${value['uid']}"));
-        dynamic jsonVal = jsonDecode(response.body);
-        await DatabaseHelper.instance
-            .updateSession(
-                jsonVal['email'],
-                jsonVal['name'],
-                jsonVal['tanggal_lahir'],
-                jsonVal['profilepic'],
-                jsonVal['id'].toString(),
-                (jsonVal['email_verified_at'] != null).toString())
-            .then((value) {
+    await DatabaseHelper.instance.getSession().then((value) async {
+      if (value != null && value['loggedin'] == 'true') {
+        try {
+          http.Response response =
+              await http.get(Uri.parse("${url}api/user/get/${value['uid']}"));
+          dynamic jsonVal = jsonDecode(response.body);
+          await DatabaseHelper.instance
+              .updateSession(
+                  jsonVal['email'],
+                  jsonVal['name'],
+                  jsonVal['tanggal_lahir'],
+                  jsonVal['profilepic'],
+                  jsonVal['id'].toString(),
+                  (jsonVal['email_verified_at'] != null).toString())
+              .then((value) {
+            Navigator.popAndPushNamed(context, "/home");
+          });
+        } catch (e) {
+          if (kDebugMode) {
+            print(e);
+          }
           Navigator.popAndPushNamed(context, "/home");
-        });
-      } catch (e) {
-        if (kDebugMode) {
-          print(e);
         }
+      } else {
+        return;
       }
-      // ignore: use_build_context_synchronously
-    } else {
-      return;
-    }
+    });
   }
 
   @override

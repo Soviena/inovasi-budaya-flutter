@@ -174,6 +174,9 @@ void main() async {
         initialDelay: initialDelay);
     await DatabaseHelper.instance
         .addNotification(1, "jumatbersih", "setiap jumat jam 8 15");
+    if (kDebugMode) {
+      print("Added new notif for juamtbersih");
+    }
   }
   boolNotif = await DatabaseHelper.instance.getNotificationExist(2);
   if (!boolNotif) {
@@ -188,6 +191,9 @@ void main() async {
         initialDelay: initialDelay);
     await DatabaseHelper.instance
         .addNotification(2, "peregangan10", "peregangan harian jam 10");
+    if (kDebugMode) {
+      print("Added new notif for peregangan 10");
+    }
   }
   boolNotif = await DatabaseHelper.instance.getNotificationExist(3);
   if (!boolNotif) {
@@ -202,6 +208,9 @@ void main() async {
         initialDelay: initialDelay);
     await DatabaseHelper.instance
         .addNotification(3, "peregangan15", "peregangan harian jam 15");
+    if (kDebugMode) {
+      print("Added new notif for peregangan 15");
+    }
   }
   runApp(
     MaterialApp(

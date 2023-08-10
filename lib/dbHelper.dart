@@ -128,6 +128,9 @@ class DatabaseHelper {
     } else {
       final db = await instance.database;
       List<Map<String, dynamic>> result = await db.query('budaya');
+      if (kDebugMode) {
+        print("Db Helper $result");
+      }
       if (result.isNotEmpty) {
         return result;
       }
@@ -142,6 +145,10 @@ class DatabaseHelper {
       final db = await instance.database;
       List<Map<String, dynamic>> result = await db.query('budaya',
           where: 'tanggal LIKE ?', whereArgs: ['${DateTime.now().year}%']);
+      if (kDebugMode) {
+        print("Db Helper $result");
+      }
+
       if (result.isNotEmpty) {
         return result;
       }
@@ -157,7 +164,7 @@ class DatabaseHelper {
       List<Map<String, dynamic>> result =
           await db.query('budaya', where: 'id = ?', whereArgs: [id]);
       if (result.isNotEmpty) {
-        return result;
+        return result.first;
       }
       return null;
     }
@@ -174,7 +181,7 @@ class DatabaseHelper {
             '${DateTime.now().year}-${DateTime.now().month.toString().padLeft(2, "0")}'
           ]);
       if (result.isNotEmpty) {
-        return result;
+        return result.first;
       }
       return null;
     }
