@@ -280,7 +280,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       Text(
-                        'BUDAYA',
+                        'E-CULTURE',
                         style: TextStyle(
                           fontSize: 38,
                           fontWeight: FontWeight.bold,
@@ -296,7 +296,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       Text(
-                        "Versi 0.9 Testing",
+                        "Versi 0.9.7 Testing",
                         style: TextStyle(fontSize: 12, color: Colors.white),
                       )
                     ],
