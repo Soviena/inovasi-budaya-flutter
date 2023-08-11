@@ -61,6 +61,9 @@ class _HomePageState extends State<HomePage> {
       await http.get(Uri.parse("${url}api/budaya/year/now")).then(
         (response) async {
           if (response.statusCode == 200) {
+            if (kDebugMode) {
+              print(response.body);
+            }
             budaya = jsonDecode(response.body);
             setState(() {
               budaya;
@@ -95,8 +98,12 @@ class _HomePageState extends State<HomePage> {
                   print("Added Notification for ${date.toString()}");
                 }
               }
-              await DatabaseHelper.instance.saveBudaya(int.parse(b['id']),
-                  b['judul'], b['deskripsi'], b['tanggal'], b['updated_at']);
+              await DatabaseHelper.instance.saveBudaya(b['id'], b['judul'],
+                  b['deskripsi'], b['tanggal'], b['updated_at']);
+            }
+          } else if (response.statusCode == 404) {
+            if (kDebugMode) {
+              print("No data");
             }
           } else {
             throw Exception("Error connectiong to server");
