@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.inovasi_budaya">
+    package="com.sucofindobandung.eculture">
    <application
-        android:label="inovasi_budaya"
+        android:label="E Culture Sucofindo"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
