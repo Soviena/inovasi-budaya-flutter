@@ -17,7 +17,7 @@ class Aktivitas extends StatefulWidget {
 }
 
 class _AktivitasState extends State<Aktivitas> {
-  String url = "https://django.belajarpro.online/";
+  String url = "https://admin.sucofindobandung.com/";
   // ignore: non_constant_identifier_names
   dynamic Budaya = {
     "id": 0,

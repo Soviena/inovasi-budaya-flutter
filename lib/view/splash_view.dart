@@ -15,7 +15,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String url = 'https://django.belajarpro.online/';
+  String url = 'https://admin.sucofindobandung.com/';
 
   void _showLoginPopup(BuildContext context) {
     showDialog(

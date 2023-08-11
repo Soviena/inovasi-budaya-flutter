@@ -39,7 +39,7 @@ class _FileContainerState extends State<FileContainer> {
                 print(widget.fileUrl);
               }
             },
-            child: const Icon(Icons.download),
+            child: const Icon(Icons.arrow_forward),
           ),
         ],
       ),

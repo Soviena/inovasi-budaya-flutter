@@ -18,7 +18,7 @@ class Safety_Moment extends StatefulWidget {
 
 class _Safety_MomentState extends State<Safety_Moment> {
   dynamic safety = [];
-  String url = "https://django.belajarpro.online/";
+  String url = "https://admin.sucofindobandung.com/";
   void getData() async {
     await http.get(Uri.parse("${url}api/safety")).then(
       (response) {

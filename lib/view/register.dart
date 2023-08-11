@@ -347,7 +347,7 @@ class _RegisterState extends State<Register> {
                                     text: 'Fetching your data',
                                   );
                                   var url = Uri.parse(
-                                      'https://django.belajarpro.online/api/register');
+                                      'https://admin.sucofindobandung.com/api/register');
                                   var headers = {
                                     'Content-Type': 'application/json'
                                   };

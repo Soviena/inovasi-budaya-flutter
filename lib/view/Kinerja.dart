@@ -17,7 +17,7 @@ class Kinerja extends StatefulWidget {
 class _KinerjaState extends State<Kinerja> {
   dynamic kinerja = [];
 
-  String url = "https://django.belajarpro.online/";
+  String url = "https://admin.sucofindobandung.com/";
 
   void getData() async {
     await http.get(Uri.parse("${url}api/kinerja")).then(

@@ -29,7 +29,7 @@ class _JadwalState extends State<Jadwal> {
 
   Future<dynamic> getData() async {
     var response = await http
-        .get(Uri.parse("https://django.belajarpro.online/api/budaya/all"));
+        .get(Uri.parse("https://admin.sucofindobandung.com/api/budaya/all"));
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
     } else {

@@ -61,7 +61,7 @@ class _FeedbackUserState extends State<FeedbackUser> {
     dynamic sessionData = await DatabaseHelper.instance.getSession();
     // ignore: use_build_context_synchronously
     var url = Uri.parse(
-        'https://django.belajarpro.online/api/feedback/new'); // Replace with your API endpoint
+        'https://admin.sucofindobandung.com/api/feedback/new'); // Replace with your API endpoint
     var headers = {
       'Content-Type': 'application/json'
     }; // Replace with the appropriate headers

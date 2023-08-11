@@ -115,6 +115,10 @@ void callbackDispatcher() {
             const NotificationDetails(android: notificationDetailsPengingat));
         break;
       case "peregangan":
+        if (DateTime.now().weekday == (DateTime.saturday) ||
+            DateTime.now().weekday == (DateTime.sunday)) {
+          break;
+        }
         notif.show(
             2,
             "Peregangan",
@@ -180,11 +184,19 @@ void main() async {
   }
   boolNotif = await DatabaseHelper.instance.getNotificationExist(2);
   if (!boolNotif) {
-    if (now.hour < 10) {
+    if (now.hour < 10 &&
+        (now.weekday != DateTime.saturday ||
+            now.weekday != DateTime.saturday)) {
       DateTime next10 = DateTime(now.year, now.month, now.day, 10, 0);
       initialDelay = next10.difference(now);
+    } else if (now.weekday == DateTime.friday) {
+      DateTime next10 = DateTime(now.year, now.month, now.day + 3, 10, 0);
+      initialDelay = next10.difference(now);
+    } else if (now.weekday == DateTime.saturday) {
+      DateTime next10 = DateTime(now.year, now.month, now.day + 2, 10, 0);
+      initialDelay = next10.difference(now);
     } else {
-      DateTime next10 = DateTime(now.year, now.month, now.day + 1, 10, 0);
+      DateTime next10 = DateTime(now.year, now.month, now.day + 2, 10, 0);
       initialDelay = next10.difference(now);
     }
     Workmanager().registerOneOffTask('stretching', 'firstperegangan10',
