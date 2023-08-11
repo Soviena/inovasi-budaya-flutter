@@ -45,8 +45,8 @@ class _ProfileState extends State<Profile> {
       email.text = user['email'];
       tanggalLahir = user['dob'];
       user;
-      profilePic =
-          NetworkImage("${url}storage/uploaded/user/${user['profilePic']}");
+      profilePic = NetworkImage(
+          "${url}public/storage/uploaded/user/${user['profilePic']}");
     });
   }
 
@@ -187,7 +187,7 @@ class _ProfileState extends State<Profile> {
   Widget emailNotice = const Text("");
 
   dynamic profilePic = const NetworkImage(
-      "https://admin.sucofindobandung.com/storage/uploaded/user/default.png");
+      "https://admin.sucofindobandung.com/public/storage/uploaded/user/default.png");
   dynamic newProfilepic;
 
   Widget profileContainer() {

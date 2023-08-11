@@ -63,7 +63,8 @@ class _RewardState extends State<Reward> {
               users.add(Column(
                 children: [
                   Avatar(
-                    image: "${url}storage/uploaded/user/${user['profilepic']}",
+                    image:
+                        "${url}public/storage/uploaded/user/${user['profilepic']}",
                     titleText: user['name'],
                     network: true,
                   ),

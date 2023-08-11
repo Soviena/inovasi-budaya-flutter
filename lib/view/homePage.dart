@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> {
           for (var t in tim) {
             timInternal.add(
               Avatar(
-                image: "${url}storage/uploaded/user/${t['profilepic']}",
+                image: "${url}public/storage/uploaded/user/${t['profilepic']}",
                 titleText: t['name'],
                 margin: const EdgeInsets.all(10),
                 size: 0.3,

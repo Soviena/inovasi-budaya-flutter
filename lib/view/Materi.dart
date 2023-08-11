@@ -75,7 +75,7 @@ class _MateriState extends State<Materi> {
               FileContainer(
                 titleText: materi[index]['title'],
                 fileUrl:
-                    "${url}storage/uploaded/materi/${materi[index]['fileName']}",
+                    "${url}public/storage/uploaded/materi/${materi[index]['fileName']}",
                 iconImage: "assets/image/Gambar_Kinerja_Kecil.png",
                 route: "",
               ),

@@ -156,12 +156,12 @@ class _AktivitasState extends State<Aktivitas> {
             onTap: () {
               viewImage(
                   context,
-                  "${url}storage/uploaded/aktivitas/${Budaya['aktivitas'][index]["fileName"]}",
+                  "${url}public/storage/uploaded/aktivitas/${Budaya['aktivitas'][index]["fileName"]}",
                   Budaya['aktivitas'][index]['deskripsi'] ?? "");
             },
             child: ImageContainer(
               image:
-                  "${url}storage/uploaded/aktivitas/${Budaya['aktivitas'][index]["fileName"]}",
+                  "${url}public/storage/uploaded/aktivitas/${Budaya['aktivitas'][index]["fileName"]}",
               deskripsi: Budaya['aktivitas'][index]['judul'] ?? "",
               network: true,
             ),

@@ -139,12 +139,12 @@ class _Safety_MomentState extends State<Safety_Moment> {
             onTap: () {
               viewImage(
                   context,
-                  "${url}storage/uploaded/safety/${safety[index]['fileName']}",
+                  "${url}public/storage/uploaded/safety/${safety[index]['fileName']}",
                   safety[index]['deskripsi']);
             },
             child: ImageContainer(
               image:
-                  "${url}storage/uploaded/safety/${safety[index]['fileName']}",
+                  "${url}public/storage/uploaded/safety/${safety[index]['fileName']}",
               deskripsi: safety[index]['judul'],
               network: true,
             ),
