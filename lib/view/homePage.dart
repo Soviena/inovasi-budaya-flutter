@@ -128,6 +128,8 @@ class _HomePageState extends State<HomePage> {
             setState(() {
               budayaNow;
             });
+          } else if (response.statusCode == 404) {
+            print("Not found for this month");
           } else {
             if (kDebugMode) {
               print(response.statusCode);

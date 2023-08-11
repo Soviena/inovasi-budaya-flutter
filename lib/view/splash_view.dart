@@ -163,7 +163,7 @@ class _LoginPageState extends State<LoginPage> {
         if (jsonResponse.containsKey('loggedin')) {
           DatabaseHelper.instance.saveSession(
               jsonResponse['email'],
-              jsonResponse['uid'],
+              jsonResponse['uid'].toString(),
               jsonResponse['profilePic'],
               jsonResponse['name'],
               jsonResponse['dob'].toString(),
@@ -171,6 +171,10 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.pop(context);
           Navigator.pop(context);
           Navigator.popAndPushNamed(context, '/home');
+        } else if (response.statusCode == 404) {
+          if (kDebugMode) {
+            print("not found");
+          }
         } else {
           Navigator.pop(context);
 

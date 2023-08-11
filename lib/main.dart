@@ -150,11 +150,13 @@ void main() async {
     badge: true,
     sound: true,
   );
-  await Permission.notification.isDenied.then((value) {
-    if (value) {
-      Permission.notification.request();
-    }
-  });
+  if (!kIsWeb) {
+    await Permission.notification.isDenied.then((value) {
+      if (value) {
+        Permission.notification.request();
+      }
+    });
+  }
   getToken();
   WidgetsFlutterBinding.ensureInitialized();
   Workmanager().initialize(
