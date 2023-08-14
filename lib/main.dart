@@ -172,7 +172,12 @@ void main() async {
   Duration initialDelay;
   bool boolNotif = await DatabaseHelper.instance.getNotificationExist(1);
   if (!boolNotif) {
-    DateTime nextFriday = now.add(Duration(days: (5 - now.weekday + 7) % 7));
+    DateTime nextFriday;
+    if (DateTime.now().weekday == DateTime.friday) {
+      nextFriday = now.add(const Duration(days: 7));
+    } else {
+      nextFriday = now.add(Duration(days: (5 - now.weekday + 7) % 7));
+    }
     DateTime nextFridayAt815 =
         DateTime(nextFriday.year, nextFriday.month, nextFriday.day, 8, 15);
     initialDelay = nextFridayAt815.difference(now);
