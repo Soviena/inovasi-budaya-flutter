@@ -72,6 +72,7 @@ class Avatar extends StatelessWidget {
               child: Text(
                 titleText,
                 style: const TextStyle(
+                  overflow: TextOverflow.ellipsis,
                   color: Colors.white,
                   fontSize: 14,
                 ),
