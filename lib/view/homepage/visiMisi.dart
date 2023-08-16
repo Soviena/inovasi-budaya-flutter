@@ -154,7 +154,7 @@ class VisiMisi extends StatelessWidget {
                     titleText: 'Pengujian'),
                 Avatar(
                     image: 'assets/image/Sertifikasi.png',
-                    titleText: 'Serifikasi'),
+                    titleText: 'Sertifikasi'),
               ],
             ),
           ),
