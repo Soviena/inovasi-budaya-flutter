@@ -89,7 +89,7 @@ class _AkhlakState extends State<Akhlak> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'Sucofindo',
+            'SUCOFINDO',
             style: TextStyle(
               fontSize: 46,
               fontWeight: FontWeight.bold,
