@@ -97,7 +97,7 @@ class _AkhlakState extends State<Akhlak> {
             ),
           ),
           const Text(
-            'Ber-AKHLAK',
+            'BER-AKHLAK',
             style: TextStyle(
               fontSize: 42,
               fontWeight: FontWeight.bold,

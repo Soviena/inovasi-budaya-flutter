@@ -9,6 +9,7 @@ import 'package:inovasi_budaya/view/kinerjaClicked.dart';
 import 'package:inovasi_budaya/view/register.dart';
 import 'package:inovasi_budaya/view/reward.dart';
 import 'package:inovasi_budaya/view/splash_view.dart';
+import 'package:inovasi_budaya/view/landingPage.dart';
 import 'package:inovasi_budaya/view/homePage.dart';
 import 'package:inovasi_budaya/view/Jadwal.dart';
 import 'package:inovasi_budaya/view/Kinerja.dart';
@@ -235,7 +236,7 @@ void main() async {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const LoginPage(),
-      initialRoute: '/splashView',
+      initialRoute: '/landingpage',
       onGenerateRoute: (settings) {
         final Uri uri = Uri.parse(settings.name!);
         if (uri.path == '/aktivitas') {
@@ -248,6 +249,7 @@ void main() async {
         return null;
       },
       routes: {
+        '/landingpage': (context) => const LandingPage(),
         '/splashView': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
         '/register': (context) => const Register(),
