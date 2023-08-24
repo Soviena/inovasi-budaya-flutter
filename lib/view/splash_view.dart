@@ -296,7 +296,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       Text(
-                        "Versi 0.9.7 Testing",
+                        "Versi 0.9.10 Testing",
                         style: TextStyle(fontSize: 12, color: Colors.white),
                       )
                     ],
