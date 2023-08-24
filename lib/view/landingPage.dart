@@ -19,7 +19,6 @@ class _LandingPageState extends State<LandingPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getDb();
   }
@@ -35,7 +34,7 @@ class _LandingPageState extends State<LandingPage> {
     });
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/image/LandingPagebg.png'),
             fit: BoxFit.cover,
@@ -53,10 +52,10 @@ class _LandingPageState extends State<LandingPage> {
                   height: 250,
                 ),
               ),
-              Text(
+              const Text(
                 'Aplikasi Pegawai Sucofindo',
                 style: TextStyle(
-                  color: const Color.fromARGB(255, 45, 75, 155),
+                  color: Color.fromARGB(255, 45, 75, 155),
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                 ),

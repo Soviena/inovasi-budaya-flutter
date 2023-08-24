@@ -136,7 +136,9 @@ class _HomePageState extends State<HomePage> {
               budayaNow;
             });
           } else if (response.statusCode == 404) {
-            print("Not found for this month");
+            if (kDebugMode) {
+              print("Not found for this month");
+            }
           } else {
             if (kDebugMode) {
               print(response.statusCode);
