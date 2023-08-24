@@ -16,7 +16,7 @@ class Materi extends StatefulWidget {
 
 class _MateriState extends State<Materi> {
   dynamic materi = [];
-  String url = "https://django.belajarpro.online/";
+  String url = "https://admin.sucofindobandung.com/";
 
   void getData() async {
     await http.get(Uri.parse("${url}api/materi")).then(
@@ -75,7 +75,7 @@ class _MateriState extends State<Materi> {
               FileContainer(
                 titleText: materi[index]['title'],
                 fileUrl:
-                    "${url}storage/uploaded/materi/${materi[index]['fileName']}",
+                    "${url}public/storage/uploaded/materi/${materi[index]['fileName']}",
                 iconImage: "assets/image/Gambar_Kinerja_Kecil.png",
                 route: "",
               ),

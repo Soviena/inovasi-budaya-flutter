@@ -13,6 +13,7 @@ import 'package:inovasi_budaya/view/homepage/timInternalisasi.dart';
 import 'package:inovasi_budaya/view/homepage/reward.dart';
 import 'package:inovasi_budaya/view/homepage/feedbackUser.dart';
 import 'package:inovasi_budaya/view/homepage/component/circleImageTitle.dart';
+import 'package:intl/intl.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
 import 'package:http/http.dart' as http;
@@ -28,7 +29,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String url = "https://django.belajarpro.online/";
+  String url = "https://admin.sucofindobandung.com/";
 
   var arr = [
     'assets/image/Siapkeakhlak.jpg',
@@ -60,40 +61,67 @@ class _HomePageState extends State<HomePage> {
       await http.get(Uri.parse("${url}api/budaya/year/now")).then(
         (response) async {
           if (response.statusCode == 200) {
+            if (kDebugMode) {
+              print(response.body);
+            }
             budaya = jsonDecode(response.body);
             setState(() {
               budaya;
             });
             for (var b in budaya) {
-              notif.zonedSchedule(
-                  int.parse(b['id']),
-                  b['judul'],
-                  b['deskripsi'],
-                  TZDateTime.now(getLocation('Asia/Jakarta'))
-                      .add(const Duration(minutes: 2)),
-                  const NotificationDetails(
-                      android: AndroidNotificationDetails(
-                          'budaya', 'Notifikasi Budaya',
-                          importance: Importance.max,
-                          color: Colors.blue,
-                          playSound: true,
-                          icon: '@mipmap/ic_launcher')),
-                  uiLocalNotificationDateInterpretation:
-                      UILocalNotificationDateInterpretation.absoluteTime,
-                  androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle);
-              await DatabaseHelper.instance.saveBudaya(int.parse(b['id']),
-                  b['judul'], b['deskripsi'], b['tanggal'], b['updated_at']);
+              DateTime date = DateFormat('yyyy-MM')
+                  .parse(b['tanggal'])
+                  .add(const Duration(hours: 8, minutes: 30));
+              if (date.isAfter(DateTime.now())) {
+                if (date.weekday == DateTime.saturday) {
+                  date.add(const Duration(days: 2));
+                } else if (date.weekday == DateTime.sunday) {
+                  date.add(const Duration(days: 1));
+                }
+                notif.zonedSchedule(
+                    int.parse(b['id']),
+                    b['judul'],
+                    b['deskripsi'],
+                    TZDateTime.from(date, getLocation('Asia/Jakarta')),
+                    const NotificationDetails(
+                        android: AndroidNotificationDetails(
+                            'budaya', 'Notifikasi Budaya',
+                            importance: Importance.max,
+                            color: Colors.blue,
+                            playSound: true,
+                            icon: '@mipmap/ic_launcher')),
+                    uiLocalNotificationDateInterpretation:
+                        UILocalNotificationDateInterpretation.absoluteTime,
+                    androidScheduleMode:
+                        AndroidScheduleMode.exactAllowWhileIdle);
+                if (kDebugMode) {
+                  print("Added Notification for ${date.toString()}");
+                }
+              }
+              await DatabaseHelper.instance.saveBudaya(b['id'], b['judul'],
+                  b['deskripsi'], b['tanggal'], b['updated_at']);
             }
+          } else if (response.statusCode == 404) {
+            if (kDebugMode) {
+              print("No data");
+            }
+          } else {
+            throw Exception("Error connectiong to server");
           }
         },
       );
-    } on Exception catch (e) {
+    } catch (e) {
       if (kDebugMode) {
         print(e);
       }
-      budaya = await DatabaseHelper.instance.getAllbudayaThisYear();
-      setState(() {
-        budaya;
+      DatabaseHelper.instance.getAllbudayaThisYear().then((value) {
+        if (kDebugMode) {
+          print(value);
+        }
+        budaya = value;
+        setState(() {
+          budaya;
+        });
       });
     }
   }
@@ -107,6 +135,13 @@ class _HomePageState extends State<HomePage> {
             setState(() {
               budayaNow;
             });
+          } else if (response.statusCode == 404) {
+            print("Not found for this month");
+          } else {
+            if (kDebugMode) {
+              print(response.statusCode);
+            }
+            throw Exception("Error connectiong to server");
           }
         },
       );
@@ -114,9 +149,12 @@ class _HomePageState extends State<HomePage> {
       if (kDebugMode) {
         print(e);
       }
-      budaya = await DatabaseHelper.instance.getBudayaNow().then((value) {
+      await DatabaseHelper.instance.getBudayaNow().then((value) {
+        if (kDebugMode) {
+          print(value);
+        }
         setState(() {
-          budaya = value;
+          budayaNow = value;
         });
       });
     }
@@ -133,7 +171,7 @@ class _HomePageState extends State<HomePage> {
           for (var t in tim) {
             timInternal.add(
               Avatar(
-                image: "${url}storage/uploaded/user/${t['profilepic']}",
+                image: "${url}public/storage/uploaded/user/${t['profilepic']}",
                 titleText: t['name'],
                 margin: const EdgeInsets.all(10),
                 size: 0.3,

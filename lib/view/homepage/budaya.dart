@@ -14,7 +14,7 @@ class InformasiBudaya extends StatefulWidget {
 }
 
 class _InformasiBudayaState extends State<InformasiBudaya> {
-  String url = "https://django.belajarpro.online/";
+  String url = "https://admin.sucofindobandung.com/";
 
   @override
   Widget build(BuildContext context) {

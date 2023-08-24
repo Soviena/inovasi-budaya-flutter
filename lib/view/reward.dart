@@ -15,7 +15,7 @@ class Reward extends StatefulWidget {
 
 class _RewardState extends State<Reward> {
   List<AccordionSection> periode = [];
-  String url = "https://django.belajarpro.online/";
+  String url = "https://admin.sucofindobandung.com/";
 
   void _showRewardDetailModal(String rewardsName, String deskripsi) {
     showDialog(
@@ -63,7 +63,8 @@ class _RewardState extends State<Reward> {
               users.add(Column(
                 children: [
                   Avatar(
-                    image: "${url}storage/uploaded/user/${user['profilepic']}",
+                    image:
+                        "${url}public/storage/uploaded/user/${user['profilepic']}",
                     titleText: user['name'],
                     network: true,
                   ),

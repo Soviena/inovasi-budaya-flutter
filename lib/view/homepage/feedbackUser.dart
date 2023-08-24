@@ -61,7 +61,7 @@ class _FeedbackUserState extends State<FeedbackUser> {
     dynamic sessionData = await DatabaseHelper.instance.getSession();
     // ignore: use_build_context_synchronously
     var url = Uri.parse(
-        'https://django.belajarpro.online/api/feedback/new'); // Replace with your API endpoint
+        'https://admin.sucofindobandung.com/api/feedback/new'); // Replace with your API endpoint
     var headers = {
       'Content-Type': 'application/json'
     }; // Replace with the appropriate headers
@@ -110,76 +110,38 @@ class _FeedbackUserState extends State<FeedbackUser> {
           children: [
             Container(
               margin: const EdgeInsets.all(32.0),
-              child: Column(
+              child: const Column(
                 children: [
-                  const Text(
-                    "Dapatkan Update Terkini",
+                  Text(
+                    "Gunakan Terus Aplikasi",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const Text(
-                    "Program Budaya Sucofindo",
+                  Text(
+                    "E-Culture Sucofindo",
                     style: TextStyle(
                       color: Colors.orange,
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const Padding(padding: EdgeInsets.only(top: 5)),
-                  const Text(
-                    "Untuk mendapatkan reminder silakan tekan tombol dibawah ini",
+                  Padding(padding: EdgeInsets.only(top: 5)),
+                  Text(
+                    "Agar mendapatkan reward-reward menarik setiap periode",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 12,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 15),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(35),
-                      color: Colors.white,
-                    ),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Your Email Address',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(35),
-                        ),
-                        contentPadding:
-                            const EdgeInsets.symmetric(horizontal: 10),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 15),
-                    padding: const EdgeInsets.symmetric(horizontal: 3),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(180, 40),
-                        backgroundColor:
-                            const Color.fromARGB(255, 250, 131, 15),
-                        foregroundColor: Colors.black,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      child: const Text(
-                        'Subscribe Us',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                      onPressed: () {},
-                    ),
-                  ),
                 ],
               ),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(vertical: 140),
+              margin: const EdgeInsets.only(top: 250),
               padding: const EdgeInsets.symmetric(horizontal: 25),
               width: 350,
               height: 520,

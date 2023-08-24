@@ -116,6 +116,10 @@ void callbackDispatcher() {
             const NotificationDetails(android: notificationDetailsPengingat));
         break;
       case "peregangan":
+        if (DateTime.now().weekday == (DateTime.saturday) ||
+            DateTime.now().weekday == (DateTime.sunday)) {
+          break;
+        }
         notif.show(
             2,
             "Peregangan",
@@ -147,11 +151,13 @@ void main() async {
     badge: true,
     sound: true,
   );
-  await Permission.notification.isDenied.then((value) {
-    if (value) {
-      Permission.notification.request();
-    }
-  });
+  if (!kIsWeb) {
+    await Permission.notification.isDenied.then((value) {
+      if (value) {
+        Permission.notification.request();
+      }
+    });
+  }
   getToken();
   WidgetsFlutterBinding.ensureInitialized();
   Workmanager().initialize(
@@ -167,7 +173,12 @@ void main() async {
   Duration initialDelay;
   bool boolNotif = await DatabaseHelper.instance.getNotificationExist(1);
   if (!boolNotif) {
-    DateTime nextFriday = now.add(Duration(days: (5 - now.weekday + 7) % 7));
+    DateTime nextFriday;
+    if (DateTime.now().weekday == DateTime.friday) {
+      nextFriday = now.add(const Duration(days: 7));
+    } else {
+      nextFriday = now.add(Duration(days: (5 - now.weekday + 7) % 7));
+    }
     DateTime nextFridayAt815 =
         DateTime(nextFriday.year, nextFriday.month, nextFriday.day, 8, 15);
     initialDelay = nextFridayAt815.difference(now);
@@ -175,20 +186,34 @@ void main() async {
         initialDelay: initialDelay);
     await DatabaseHelper.instance
         .addNotification(1, "jumatbersih", "setiap jumat jam 8 15");
+    if (kDebugMode) {
+      print("Added new notif for juamtbersih");
+    }
   }
   boolNotif = await DatabaseHelper.instance.getNotificationExist(2);
   if (!boolNotif) {
-    if (now.hour < 10) {
+    if (now.hour < 10 &&
+        (now.weekday != DateTime.saturday ||
+            now.weekday != DateTime.saturday)) {
       DateTime next10 = DateTime(now.year, now.month, now.day, 10, 0);
       initialDelay = next10.difference(now);
+    } else if (now.weekday == DateTime.friday) {
+      DateTime next10 = DateTime(now.year, now.month, now.day + 3, 10, 0);
+      initialDelay = next10.difference(now);
+    } else if (now.weekday == DateTime.saturday) {
+      DateTime next10 = DateTime(now.year, now.month, now.day + 2, 10, 0);
+      initialDelay = next10.difference(now);
     } else {
-      DateTime next10 = DateTime(now.year, now.month, now.day + 1, 10, 0);
+      DateTime next10 = DateTime(now.year, now.month, now.day + 2, 10, 0);
       initialDelay = next10.difference(now);
     }
     Workmanager().registerOneOffTask('stretching', 'firstperegangan10',
         initialDelay: initialDelay);
     await DatabaseHelper.instance
         .addNotification(2, "peregangan10", "peregangan harian jam 10");
+    if (kDebugMode) {
+      print("Added new notif for peregangan 10");
+    }
   }
   boolNotif = await DatabaseHelper.instance.getNotificationExist(3);
   if (!boolNotif) {
@@ -203,6 +228,9 @@ void main() async {
         initialDelay: initialDelay);
     await DatabaseHelper.instance
         .addNotification(3, "peregangan15", "peregangan harian jam 15");
+    if (kDebugMode) {
+      print("Added new notif for peregangan 15");
+    }
   }
   runApp(
     MaterialApp(

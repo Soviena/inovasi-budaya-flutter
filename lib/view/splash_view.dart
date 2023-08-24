@@ -15,7 +15,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String url = 'https://django.belajarpro.online/';
+  String url = 'https://admin.sucofindobandung.com/';
 
   void _showLoginPopup(BuildContext context) {
     showDialog(
@@ -163,7 +163,7 @@ class _LoginPageState extends State<LoginPage> {
         if (jsonResponse.containsKey('loggedin')) {
           DatabaseHelper.instance.saveSession(
               jsonResponse['email'],
-              jsonResponse['uid'],
+              jsonResponse['uid'].toString(),
               jsonResponse['profilePic'],
               jsonResponse['name'],
               jsonResponse['dob'].toString(),
@@ -171,6 +171,10 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.pop(context);
           Navigator.pop(context);
           Navigator.popAndPushNamed(context, '/home');
+        } else if (response.statusCode == 404) {
+          if (kDebugMode) {
+            print("not found");
+          }
         } else {
           Navigator.pop(context);
 
@@ -206,32 +210,33 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void getSession() async {
-    dynamic value = await DatabaseHelper.instance.getSession();
-    if (value != null && value['loggedin'] == 'true') {
-      try {
-        http.Response response =
-            await http.get(Uri.parse("${url}api/user/get/${value['uid']}"));
-        dynamic jsonVal = jsonDecode(response.body);
-        await DatabaseHelper.instance
-            .updateSession(
-                jsonVal['email'],
-                jsonVal['name'],
-                jsonVal['tanggal_lahir'],
-                jsonVal['profilepic'],
-                jsonVal['id'].toString(),
-                (jsonVal['email_verified_at'] != null).toString())
-            .then((value) {
+    await DatabaseHelper.instance.getSession().then((value) async {
+      if (value != null && value['loggedin'] == 'true') {
+        try {
+          http.Response response =
+              await http.get(Uri.parse("${url}api/user/get/${value['uid']}"));
+          dynamic jsonVal = jsonDecode(response.body);
+          await DatabaseHelper.instance
+              .updateSession(
+                  jsonVal['email'],
+                  jsonVal['name'],
+                  jsonVal['tanggal_lahir'],
+                  jsonVal['profilepic'],
+                  jsonVal['id'].toString(),
+                  (jsonVal['email_verified_at'] != null).toString())
+              .then((value) {
+            Navigator.popAndPushNamed(context, "/home");
+          });
+        } catch (e) {
+          if (kDebugMode) {
+            print(e);
+          }
           Navigator.popAndPushNamed(context, "/home");
-        });
-      } catch (e) {
-        if (kDebugMode) {
-          print(e);
         }
+      } else {
+        return;
       }
-      // ignore: use_build_context_synchronously
-    } else {
-      return;
-    }
+    });
   }
 
   @override
@@ -275,7 +280,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       Text(
-                        'BUDAYA',
+                        'E-CULTURE',
                         style: TextStyle(
                           fontSize: 38,
                           fontWeight: FontWeight.bold,
@@ -291,7 +296,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       Text(
-                        "Versi 0.9 Testing",
+                        "Versi 0.9.7 Testing",
                         style: TextStyle(fontSize: 12, color: Colors.white),
                       )
                     ],

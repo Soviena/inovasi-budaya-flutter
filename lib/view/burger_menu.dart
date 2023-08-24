@@ -133,17 +133,6 @@ class _BurgerListState extends State<BurgerList> {
             ),
             ListTile(
               onTap: () {
-                Navigator.popAndPushNamed(context, "/setting");
-              },
-              contentPadding:
-                  const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-              title: const Text(
-                "Pengaturan",
-                style: TextStyle(fontSize: 30, color: Colors.white),
-              ),
-            ),
-            ListTile(
-              onTap: () {
                 logOut();
                 Navigator.popUntil(context, (route) => route.isFirst);
                 Navigator.popAndPushNamed(context, "/splashView");
