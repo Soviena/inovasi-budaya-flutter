@@ -130,13 +130,18 @@ class _InformasiBudayaState extends State<InformasiBudaya> {
                               ),
                             ),
                           ),
-                          const Padding(padding: EdgeInsets.only(bottom: 3.0)),
-                          Text(
-                            widget.budaya[index]['deskripsi'],
-                            style: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
+                          Container(
+                            margin: const EdgeInsets.only(top: 3),
+                            child: Text(
+                              widget.budaya[index]['deskripsi'],
+                              softWrap: true,
+                              maxLines: 7,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                              ),
                             ),
                           ),
                         ],

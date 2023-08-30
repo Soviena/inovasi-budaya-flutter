@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                   date.add(const Duration(days: 1));
                 }
                 notif.zonedSchedule(
-                    int.parse(b['id']),
+                    b['id'],
                     b['judul'],
                     b['deskripsi'],
                     TZDateTime.from(date, getLocation('Asia/Jakarta')),
