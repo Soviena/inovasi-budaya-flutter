@@ -1,6 +1,5 @@
 // ignore_for_file: file_names
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -29,20 +28,8 @@ class _FileContainerState extends State<FileContainer> {
         width: 40,
         height: 40,
       ),
-      title: Row(
-        children: <Widget>[
-          Text(widget.titleText),
-          const Spacer(),
-          GestureDetector(
-            onTap: () {
-              if (kDebugMode) {
-                print(widget.fileUrl);
-              }
-            },
-            child: const Icon(Icons.arrow_forward),
-          ),
-        ],
-      ),
+      title: Text(widget.titleText),
+      trailing: const Icon(Icons.arrow_forward),
       onTap: () {
         launchUrl(Uri.parse(widget.fileUrl),
             mode: LaunchMode.externalApplication);
